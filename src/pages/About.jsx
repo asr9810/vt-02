@@ -14,7 +14,7 @@ import dummyImg from "../assets/dummy.png";
 
 import { useEffect, useRef } from "react";
 
-import roadImage from "../assets/roadvertical.png";
+import roadImage from "../assets/roadvert1.png";
 import busImage from "../assets/bus-top-view.png";
 
 export default function About() {
@@ -28,18 +28,18 @@ export default function About() {
   const busRef = useRef(null);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!busRef.current || !sectionRef.current) return;
-      const sectionTop = sectionRef.current.getBoundingClientRect().top;
-      const scrollY = window.scrollY || window.pageYOffset;
-      const offset = Math.max(0, scrollY - sectionRef.current.offsetTop);
-      busRef.current.style.transform = `translate(-50%, ${offset}px)`;
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!busRef.current || !sectionRef.current) return;
+  //     const sectionTop = sectionRef.current.getBoundingClientRect().top;
+  //     const scrollY = window.scrollY || window.pageYOffset;
+  //     const offset = Math.max(0, scrollY - sectionRef.current.offsetTop);
+  //     busRef.current.style.transform = `translate(-50%, ${offset}px)`;
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   // const scrollRef = useRef(null);
   const awardsScrollRef = useRef(null);
@@ -77,207 +77,112 @@ export default function About() {
     "/awards/aw7.jpg",
   ]; // Replace with actual image imports
 
-  useEffect(() => {
-    const scrollContainer = document.querySelector(".overflow-x-auto");
-    const bus = document.getElementById("bus-icon");
+  // useEffect(() => {
+  //   const scrollContainer = document.querySelector(".overflow-x-auto");
+  //   const bus = document.getElementById("bus-icon");
 
-    if (!scrollContainer || !bus) return;
+  //   if (!scrollContainer || !bus) return;
 
-    let animationFrameId;
-    let scrollLeft = 0;
+  //   let animationFrameId;
+  //   let scrollLeft = 0;
 
-    const scrollSpeed = 1.5;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    const busMaxLeft = scrollContainer.scrollWidth - 180; // adjust based on bus width
+  //   const scrollSpeed = 1.5;
+  //   const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+  //   const busMaxLeft = scrollContainer.scrollWidth - 180; // adjust based on bus width
 
-    const animate = () => {
-      scrollLeft += scrollSpeed;
+  //   const animate = () => {
+  //     scrollLeft += scrollSpeed;
 
-      // Scroll the container only till it can scroll
-      if (scrollLeft <= maxScroll) {
-        scrollContainer.scrollLeft = scrollLeft;
-      }
+  //     // Scroll the container only till it can scroll
+  //     if (scrollLeft <= maxScroll) {
+  //       scrollContainer.scrollLeft = scrollLeft;
+  //     }
 
-      // Move the bus independently (bus continues past scroll end)
-      bus.style.left = `${scrollLeft + 100}px`;
+  //     // Move the bus independently (bus continues past scroll end)
+  //     bus.style.left = `${scrollLeft + 100}px`;
 
-      // If bus reaches the very end of the container width
-      if (scrollLeft >= busMaxLeft) {
-        // reset
-        scrollLeft = 0;
-        scrollContainer.scrollLeft = 0;
-        bus.style.left = `100px`;
-      }
+  //     // If bus reaches the very end of the container width
+  //     if (scrollLeft >= busMaxLeft) {
+  //       // reset
+  //       scrollLeft = 0;
+  //       scrollContainer.scrollLeft = 0;
+  //       bus.style.left = `100px`;
+  //     }
 
-      animationFrameId = requestAnimationFrame(animate);
+  //     animationFrameId = requestAnimationFrame(animate);
+  //   };
+
+  //   animate();
+
+  //   return () => cancelAnimationFrame(animationFrameId);
+  // }, []);
+
+
+ useEffect(() => {
+    const bus = busRef.current;
+    const section = sectionRef.current;
+    if (!bus || !section) return;
+
+    let latestScrollY = 0;
+    let ticking = false;
+
+    const handleScroll = () => {
+      latestScrollY = window.scrollY;
+      requestTick();
     };
 
-    animate();
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(updatePosition);
+        ticking = true;
+      }
+    };
 
-    return () => cancelAnimationFrame(animationFrameId);
+    const updatePosition = () => {
+      const sectionTop = section.offsetTop;
+      const maxTravel = 3971 - 198;
+      let offset = latestScrollY - sectionTop;
+      if (offset < 0) offset = 0;
+      if (offset > maxTravel) offset = maxTravel;
+
+      bus.style.transform = `translate(-50%, ${offset}px)`;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // const timelineData = {
-  //   topRow: [
-  //     {
-  //       year: "1969",
-  //       content:
-  //         "Vivek Travels began its journey with sending its bus for the first time to Katra.",
-  //       image: "/timeline/1969 b.png",
-  //     },
-  //     {
-  //       year: "1985",
-  //       content:
-  //         "Vivek Travels got its first government tender from Ministry of Railways for buses.",
-  //       image: "/timeline/1985.png",
-  //     },
-  //     {
-  //       year: "1998",
-  //       content:
-  //         "Vivek Travels stepped in domain of student transportation for schools.",
-  //       image: "/timeline/1998.png",
-  //     },
-  //     {
-  //       year: "2015",
-  //       content:
-  //         "Vistrit Bhatia joined the business, bringing innovation, digital strategy and a future-forward vision for Vivek Travels.",
-  //       image: "/timeline/2015.png",
-  //     },
-  //     {
-  //       year: "2017",
-  //       content:
-  //         "Vivek Travels bought 11 Scania multi axle high-end luxury buses for UPSRTC, inaugurated by CM Yogi Adityanath.",
-  //       image: "/timeline/2017 b.png",
-  //     },
-
-  //     {
-  //       year: "2021",
-  //       content:
-  //         "In consortium with JBM Auto, 90 electric buses started operation for Ahmedabad Janmarg Ltd.",
-  //       image: "/timeline/2021 a.png",
-  //     },
-  //     {
-  //       year: "2022",
-  //       content:
-  //         "Achieved 1000+ car fleet milestone, establishing Vivek Travels as a top fleet operator.",
-  //       image: "/timeline/2022 c.png",
-  //     },
-  //     {
-  //       year: "2024",
-  //       content:
-  //         "Vivek Travels partnered with FlixBus and introduced 6 Bharat Benz Sleeper buses for long-distance interstate routes.",
-  //       image: "/timeline/Neugo.png",
-  //     },
-  //     {
-  //       year: "2024",
-  //       content:
-  //         "Partnered with ZingBus and introduced new Volvo Sleeper buses for interstate operations.",
-  //       image: "/timeline/Zing b.png",
-  //     },
-  //     {
-  //       year: "2025",
-  //       content:
-  //         "Vivek Travels launched VT Bus brand for interstate travel, now bookable via Redbus, Yatra and more.",
-  //       image: "/timeline/VT Bus.png",
-  //     },
-  //   ],
-  //   bottomRow: [
-  //     {
-  //       year: "1969",
-  //       content:
-  //         "Vivek Travels was founded by Mr Baldev Raj Bhatia in September 1969 with a vision for seamless customer experience.",
-  //       image: "/timeline/baldev.png",
-  //     },
-  //     {
-  //       year: "1982",
-  //       content:
-  //         "Mr. Vivek Bhatia assumed leadership, expanding operations and strengthening the company foundation.",
-  //       image: "/timeline/1982.png",
-  //     },
-  //     {
-  //       year: "1994",
-  //       content:
-  //         "Secured its first government car rental tender — beginning the car rental journey.",
-  //       image: "/timeline/1994.png",
-  //     },
-  //     {
-  //       year: "2009",
-  //       content: "Vivek Travels crossed the fleet size of 100 vehicles.",
-  //       image: "/timeline/2009a.png",
-  //     },
-  //     {
-  //       year: "2016",
-  //       content:
-  //         "Purchased 3 Volvo luxury buses for Himachal Road Transport Corporation (HRTC).",
-  //       image: "/timeline/2016.png",
-  //     },
-  //     {
-  //       year: "2017",
-  //       content:
-  //         "Awarded 'Best School Bus Transporter' at the Prawaas Awards 2017.",
-  //       image: "/timeline/2017 c.png",
-  //     },
-  //     {
-  //       year: "2019",
-  //       content:
-  //         "Entered electric mobility with 3 electric cars for sustainable transport.",
-  //       image: "/timeline/2019.png",
-  //     },
-  //     {
-  //       year: "2022",
-  //       content:
-  //         "Bagged first independent contract for 50 electric buses for Delhi Metro Rail Corporation.",
-  //       image: "/timeline/2022 a.png",
-  //     },
-  //     {
-  //       year: "2024",
-  //       content:
-  //         "Crossed a fleet size of 200 electric cars for clients across India.",
-  //       image: "/timeline/2024 200 Cars MS.png",
-  //     },
-  //     {
-  //       year: "2024",
-  //       content:
-  //         "Became operational partner for Neugo and launched electric buses on various interstate routes.",
-  //       image: "/timeline/Neugo.png",
-  //     },
-  //     {
-  //       year: "2025",
-  //       content:
-  //         "Commenced operations of 500 electric buses in Delhi with JBM Auto.",
-  //       image: "/timeline/JBM Buses.png",
-  //     },
-  //   ],
-  // };
 
 
-  const timelineLeft = [
-    { year: "1969", image: "/timeline/baldev.png", content: "Vivek Travels was founded by Mr Baldev Raj Bhatia in September 1969." },
-    { year: "1982", image: "/timeline/1982.png", content: "Mr. Vivek Bhatia assumed leadership, expanding operations." },
-    { year: "1994", image: "/timeline/1994.png", content: "Secured first government car rental tender — starting car rental journey." },
-    { year: "2009", image: "/timeline/2009a.png", content: "Crossed the fleet size of 100 vehicles." },
-    { year: "2016", image: "/timeline/2016.png", content: "Purchased Volvo luxury buses for HRTC." },
-    { year: "2017", image: "/timeline/2017 c.png", content: "Won 'Best School Bus Transporter' award." },
-    { year: "2019", image: "/timeline/2019.png", content: "Entered electric mobility with 3 electric cars." },
-    { year: "2022", image: "/timeline/2022 a.png", content: "Bagged contract for 50 electric buses for DMRC." },
-    { year: "2024", image: "/timeline/2024 200 Cars MS.png", content: "Crossed 200 electric cars for clients across India." },
-    { year: "2025", image: "/timeline/VT Bus.png", content: "Launched VT Bus brand for interstate travel." },
-    { year: "2025", image: "/timeline/Zing b.png", content: "Partnered with ZingBus for new Volvo Sleeper buses." }
+const timelineLeft = [
+    { year: "1969", image: "/timeline/baldev.png", content: "Vivek Travels was founded by Mr Baldev Raj Bhatia in September 1969 with a passion and vision to provide seamless customer experience." },
+    { year: "1982", image: "/timeline/1982.png", content: "Mr. Vivek Bhatia assumed leadership of Vivek Travels, expanding operations and strengthening its transport service foundation." },
+    { year: "1994", image: "/timeline/1994.png", content: "Vivek Travels got its first government tender for cars and since then it kept expanding the domain of car rentals." },
+    { year: "2009", image: "/timeline/2009a.png", content: "Vivek Travels crossed the fleet of 100 vehicles." },
+    { year: "2016", image: "/timeline/2016.png", content: "Vivek Travels bought 3 Volvo high-end luxury buses for Himachal Road Transport Corporation." },
+    { year: "2017", image: "/timeline/2017 c.png", content: "Vivek Travels was awarded with the best transport for school buses award at Prawaas Awards 2017." },
+    { year: "2019", image: "/timeline/2019.png", content: "Entered electric mobility with three electric cars, marking a major step toward sustainable and eco friendly transport solutions for its clients." },
+    { year: "2022", image: "/timeline/2022 a.png", content: "Vivek Travels bagged its first independent contract for 50 Electric buses for Delhi Metro Rail Corporation in Delhi." },
+     { year: "2024", image: "/timeline/Neugo.png", content: "Vivek Travels became operational partner for Neugo and commenced the operations of electric buses on various interstate routes." },
+    { year: "2025", image: "/timeline/VT Bus.png", content: "Vivek Travels launched its own brand with the name of VT Bus for interstate commute of passengers. The seats can be booked through Redbus, Yatra.com and other prominent platforms." },
+    { year: "2025", image: "/timeline/Zing b.png", content: "Vivek Travels Partnered with ZingBus bought brand new Volvo Buses and Sleeper buses to operate on interstate routes." }
   ];
 
   const timelineRight = [
-    { year: "1985", image: "/timeline/1985.png", content: "Got first government tender from Ministry of Railways." },
-    { year: "1998", image: "/timeline/1998.png", content: "Stepped into student transportation for schools." },
-    { year: "2015", image: "/timeline/2015.png", content: "Vistrit Bhatia joined, bringing innovation and vision." },
-    { year: "2021", image: "/timeline/2021 a.png", content: "90 electric buses started operation for Ahmedabad Janmarg Ltd." },
-    { year: "2022", image: "/timeline/2022 c.png", content: "Achieved 1000+ car fleet milestone." },
-    { year: "2024", image: "/timeline/Neugo.png", content: "Partnered with FlixBus and introduced new sleeper buses." },
-    { year: "2025", image: "/timeline/JBM Buses.png", content: "Launched 500 electric buses in Delhi." },
-    { year: "2023", image: "/timeline/2023.png", content: "Introduced premium sleeper coaches for interstate services." },
-    { year: "2024", image: "/timeline/2024_extra.png", content: "Expanded operations with new travel hubs across India." },
-    { year: "2025", image: "/timeline/2025_new.png", content: "Celebrated milestone of 55+ years in transport excellence." }
+    { year: "1969", image: "/timeline/1969 b.png", content: "Vivek Travels began its journey with sending its bus for the first time to Katra." },
+    { year: "1985", image: "/timeline/1985.png", content: "Vivek Travels got its first government tender from Ministry of Railways for buses." },
+    { year: "1998", image: "/timeline/1998.png", content: "Vivek Travels stepped in domain of student transportation for schools." },
+    { year: "2015", image: "/timeline/2015.png", content: "Vistrit Bhatia joined the business, bringing innovation, digital strategy and a future-forward vision for Vivek Travels." },
+    { year: "2017", image: "/timeline/2017 b.png", content: "Vivek Travels bought 11 Scania multi axle high-end luxury buses for Uttar Pradesh Road Transport Corporation which were inaugurate by the Chief Minister of Uttar Pradesh Shri Yogi Adityanath." },
+    { year: "2021", image: "/timeline/2021 a.png", content: "In consortium with JBM Auto, Vivek Travels commenced the operation of 90 electric buses for Ahmedabad Janmarg Ltd. In Ahmedabad Gujrat." },
+    { year: "2022", image: "/timeline/2022 c.png", content: "Achieved 1000+ car fleet milestone, establishing Vivek Travels as a leading ground mobility service provider and fleet operator." },
+    { year: "2024", image: "/timeline/2024 200 Cars MS.png", content: "Crossed a fleet size of 200 electric cars." },
+    { year: "2024", image: "/timeline/2025 a.png", content: "Vivek Travels partnered with FlixBus and got 6 Bharat Benz Sleeper buses to operate on long distance interstate routes." },
+    { year: "2025", image: "/timeline/JBM Buses.png", content: "Vivek Travels commenced the operations of 500 electric buses in Delhi as operational partner with JBM Auto." }
   ];
- 
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Image Section */}
@@ -337,7 +242,7 @@ export default function About() {
       </section>
 
       {/* Our Journey Section */}
- <section ref={sectionRef} className="w-[968px] mx-auto  relative py-10" style={{ height: '4133px' }}>
+<section ref={sectionRef} className="w-[968px] mx-auto relative py-10" style={{ height: '4133px' }}>
       <h2 className="text-white text-center text-[40px] font-bold mb-20">Our Journey</h2>
 
       <div className="relative flex justify-center">
@@ -347,13 +252,13 @@ export default function About() {
           className="absolute top-0 h-[3971px] w-[164px] z-10"
         />
 
-        {/* <img
+        <img
           ref={busRef}
           src={busImage}
           alt="Bus"
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 z-20"
-          style={{ width: '56px', height: '198px' }}
-        /> */}
+          className="absolute left-1/2 transform -translate-x-1/2 z-20"
+          style={{ width: '56px', height: '198px', transition: 'transform 0.3s ease-out' }}
+        />
 
         <div className="flex justify-between w-full px-[60px]">
           <div className="flex flex-col gap-[80px] pt-0">
@@ -378,6 +283,7 @@ export default function About() {
         </div>
       </div>
     </section>
+
 
       {/* Our Leadership Section */}
       <section className="py-16 bg-white">
