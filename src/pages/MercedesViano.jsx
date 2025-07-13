@@ -32,6 +32,7 @@ export default function MercedesViano() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("");
 
   const carouselRef = useRef(null);
 
@@ -88,7 +89,7 @@ export default function MercedesViano() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
                 style={{ scrollbarWidth: "none"}}
               >
                 {[dummy1, dummy2, dummy2, dummy2].map((img, idx) => (
@@ -96,6 +97,7 @@ export default function MercedesViano() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
+                         onClick={() => setMainImage(img)}
                     className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
                   />
                 ))}

@@ -16,6 +16,7 @@ export default function Ioniq5() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("/ourFleet/EV/ioniq5/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -67,14 +68,15 @@ const KiaCarnivalConfig = {
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%", height: "579px"}}
+              style={{ width: "100%",  }}
             >
               <img
-                src="/ourFleet/EV/ioniq5/1.jpg"
+                src={mainImage}
                 alt="Main Car"
-                className="object-contain h-full "
+                className="object-contain h-full transition-all duration-300"
               />
             </div>
+            
 
             <div className="flex items-center justify-between w-full">
               <button
@@ -86,7 +88,7 @@ const KiaCarnivalConfig = {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
                 style={{ scrollbarWidth: "none"}}
               >
                 {["/ourFleet/EV/ioniq5/1.jpg", "/ourFleet/EV/ioniq5/2.jpg", "/ourFleet/EV/ioniq5/3.jpg"].map((img, idx) => (
@@ -94,6 +96,7 @@ const KiaCarnivalConfig = {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
+                    onClick={() => setMainImage(img)}
                     className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
                   />
                 ))}

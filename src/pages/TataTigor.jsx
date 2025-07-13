@@ -16,6 +16,7 @@ export default function TataTigor() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("/ourFleet/EV/tigore/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -65,7 +66,7 @@ export default function TataTigor() {
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
-            <div
+            {/* <div
               className="border rounded-md flex justify-center items-center"
               style={{ width: "100%", height: "579px"}}
             >
@@ -73,6 +74,16 @@ export default function TataTigor() {
                 src="/ourFleet/EV/tigore/1.jpg"
                 alt="Main Car"
                 className="object-contain h-full "
+              />
+            </div> */}
+                  <div
+              className="border rounded-md flex justify-center items-center"
+              style={{ width: "100%",  }}
+            >
+              <img
+                src={mainImage}
+                alt="Main Car"
+                className="object-contain h-full transition-all duration-300"
               />
             </div>
 
@@ -86,7 +97,7 @@ export default function TataTigor() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
                 style={{ scrollbarWidth: "none"}}
               >
                 {["/ourFleet/EV/tigore/1.jpg", "/ourFleet/EV/tigore/2.jpg", "/ourFleet/EV/tigore/3.jpg"].map((img, idx) => (
@@ -94,6 +105,7 @@ export default function TataTigor() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
+                    onClick={() => setMainImage(img)}
                     className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
                   />
                 ))}

@@ -36,6 +36,7 @@ export default function About() {
   //     const offset = Math.max(0, scrollY - sectionRef.current.offsetTop);
   //     busRef.current.style.transform = `translate(-50%, ${offset}px)`;
   //   };
+  
 
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
@@ -242,47 +243,126 @@ const timelineLeft = [
       </section>
 
       {/* Our Journey Section */}
-<section ref={sectionRef} className="w-[968px] mx-auto relative py-10" style={{ height: '4133px' }}>
-      <h2 className="text-white text-center text-[40px] font-bold mb-20">Our Journey</h2>
+      <section ref={sectionRef} className="w-[968px] mx-auto relative py-10" style={{ height: '4133px' }}>
+        <h2 className="text-white text-center text-[40px] font-bold mb-20">Our Journey</h2>
 
-      <div className="relative flex justify-center">
-        <img
-          src={roadImage}
-          alt="Road"
-          className="absolute top-0 h-[3971px] w-[164px] z-10"
-        />
+        <div className="relative flex justify-center">
+          <img
+            src={roadImage}
+            alt="Road"
+            className="absolute top-0 h-[3971px] w-[164px] z-10"
+          />
 
-        <img
-          ref={busRef}
-          src={busImage}
-          alt="Bus"
-          className="absolute left-1/2 transform -translate-x-1/2 z-20"
-          style={{ width: '56px', height: '198px', transition: 'transform 0.3s ease-out' }}
-        />
+          <img
+            ref={busRef}
+            src={busImage}
+            alt="Bus"
+            className="absolute left-[510px] transform -translate-x-1/2 z-20"
+            style={{ width: '56px', height: '198px', transition: 'transform 0.3s ease-out' }}
+          />
 
-        <div className="flex justify-between w-full px-[60px]">
-          <div className="flex flex-col gap-[80px] pt-0">
-            {timelineLeft.map((item, index) => (
-              <div key={index} className="w-[200px] h-[296px] bg-white p-3 flex flex-col items-center text-center">
-                <h3 className="text-[20px] font-semibold mb-2">{item.year}</h3>
-                <img src={item.image} alt="Timeline" className="w-full h-[150px] object-cover mb-2" />
-                <p className="text-[12px] leading-[16px] text-black text-justify">{item.content}</p>
-              </div>
-            ))}
-          </div>
+          <div className="flex justify-between w-full px-[60px]">
+            <div className="flex flex-col gap-[80px] pt-0 ">
+              {timelineLeft.map((item, index) => (
+                <div key={index} className="relative w-[200px] h-[296px] bg-white p-3 flex flex-col items-center text-center ">
+                  <img src={item.image} alt="Timeline" className="w-full h-[150px] object-cover mb-2" />
+                  <h3 className="text-[20px] font-semibold mb-2" style={{fontFamily: "DM Sans, sans-serif",}}>{item.year}</h3>
+                  <p className="text-[12px] leading-[16px] text-black text-justify font-dmSans" style={{fontFamily: "DM Sans, sans-serif",}}>{item.content}</p>
+                  <div className="absolute border-2 w-[5vw] left-[100%] top-[50%]"></div>
+                </div>
+              ))}
+            </div>
 
-          <div className="flex flex-col gap-[80px] pt-[40px]">
-            {timelineRight.map((item, index) => (
-              <div key={index} className="w-[200px] h-[296px] bg-white p-3 flex flex-col items-center text-center">
-                <h3 className="text-[20px] font-semibold mb-2">{item.year}</h3>
-                <img src={item.image} alt="Timeline" className="w-full h-[150px] object-cover mb-2" />
-                <p className="text-[12px] leading-[16px] text-black text-justify">{item.content}</p>
-              </div>
-            ))}
+            <div className="flex flex-col gap-[80px] pt-[40px]">
+              {timelineRight.map((item, index) => (
+                <div key={index} className=" relative w-[200px] h-[296px] bg-white p-3 flex flex-col items-center text-center">
+                  <img src={item.image} alt="Timeline" className="w-full h-[150px] object-cover mb-2" />
+                  <h3 className="text-[20px] font-semibold mb-2" style={{fontFamily: "DM Sans, sans-serif",}}>{item.year}</h3>
+                  <p className="text-[12px] leading-[16px] text-black text-justify font-dmSans" style={{fontFamily: "DM Sans, sans-serif",}}>{item.content}</p>
+                  <div className="absolute border-2 w-[5vw] right-[100%] top-[50%]"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+{/* <section
+  ref={sectionRef}
+  className="relative w-full max-w-[968px] mx-auto py-10 overflow-hidden"
+  style={{ height: '4133px' }}
+>
+  <h2 className="text-white text-center text-[32px] sm:text-[40px] font-bold mb-20">
+    Our Journey
+  </h2>
+
+  <div className="relative flex justify-center">
+    
+    <img
+      src={roadImage}
+      alt="Road"
+      className="absolute top-0 h-[3971px] w-[30px] sm:w-[164px] z-10"
+    />
+
+
+    <img
+      ref={busRef}
+      src={busImage}
+      alt="Bus"
+      className="absolute left-1/2 transform -translate-x-1/2 z-20"
+      style={{
+        width: "20px", // smaller bus to fit inside 30px road
+        height: "auto",
+        transition: "transform 0.3s ease-out",
+      }}
+    />
+
+    <div className="w-full relative z-30">
+      {[...Array(Math.max(timelineLeft.length, timelineRight.length))].map((_, index) => {
+        const isLeft = index % 2 === 0;
+        const item = isLeft ? timelineLeft[index] : timelineRight[index];
+        if (!item) return null;
+
+        return (
+          <div
+            key={index}
+            className={`w-full flex ${isLeft ? 'justify-start' : 'justify-end'} items-center mb-[50px] px-1 sm:px-[60px]`}
+          >
+          
+            <div className="hidden sm:block sm:w-[40px]" />
+
+      
+            <div
+              className="bg-white w-[35vw] sm:w-[200px] h-[220px] p-2 sm:p-3 flex flex-col items-center text-center shadow"
+              style={{ fontFamily: 'DM Sans, sans-serif' }}
+            >
+              <img
+                src={item.image}
+                alt="Timeline"
+                className="w-full h-[90px] object-cover mb-2"
+              />
+              <h3 className="text-[13px] sm:text-[20px] font-semibold mb-1">
+                {item.year}
+              </h3>
+              <p className="text-[10px] sm:text-[12px] leading-[14px] text-black text-justify">
+                {item.content}
+              </p>
+              <div
+                className={`absolute border-2 w-[10px] sm:w-[5vw] top-1/2 ${isLeft ? 'left-full' : 'right-full'}`}
+              ></div>
+            </div>
+
+            {isLeft ? null : <div className="w-[12px] sm:hidden" />}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section> */}
+
+
+
+
 
 
       {/* Our Leadership Section */}

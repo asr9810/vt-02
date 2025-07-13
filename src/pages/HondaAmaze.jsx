@@ -7,6 +7,43 @@ import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
 
+// const hondaAmazeConfig = {
+//   vehicleName: `Honda Amaze Rental Service`,
+//   introText: `Choose our immaculate Honda Amaze cars that drive as if they were your own...`,
+//   rentalIntroText: `The Honda Amaze is just right - stylish enough to grab attention...`,
+//   rentalDetails: [
+//     {
+//       title: "Travel Inclusions",
+//       items: [
+//         "Charges applicable from garage to garage",
+//         "Night charges applicable after 11:00 PM IST",
+//         "Fuel, toll, state tax, and driver charges included",
+//         "Parking and GST charges extra",
+//       ],
+//     },
+//     {
+//       title: "Amenities",
+//       items: ["Air conditioned", "GPS Tracker", "Chauffeur", "Ample Luggage Area"],
+//     },
+//     {
+//       title: "Features",
+//       items: [
+//         "Safety features like seatbelt reminders, high-speed alerts...",
+//         "The spacious cabin to make every journey feel effortless.",
+//         "The SmartPlay infotainment system to keep entertained.",
+//       ],
+//     },
+//   ],
+//   rentalClosingParagraph: `Get your Honda Amaze booked with Vivek Travels so you can travel...`,
+//   vehicleSpecs: [
+//     ["Air conditioning", "yes"],
+//     ["Mileage", "around 18-19 kmp"],
+//     ["Seats", "4 passengers+ driver"],
+//     ["Engine", "1197 cc"],
+//   ],
+//   vehicleParagraph: `We ensure that our Honda Amaze is clean, maintained, and always ready...`,
+// };
+
 const hondaAmazeConfig = {
   vehicleName: `Honda Amaze Rental Service`,
   introText: `Choose our immaculate Honda Amaze cars that drive as if they were your own; ideal for weekend escapades, pickups from the airport, discovery of the city or other; ideal for life’s little adventures. Your journey is unique whether you are going it alone or with friends and family. We are Delhi-based and thus we know what all travelers want: dependable rides, unrivaled cost, realistic pricing, and the best. We find driving, whether it’s a quick run or a coast-to-coast odyssey seamless and jitter-free here for you.`,
@@ -70,8 +107,9 @@ export default function HondaAmaze() {
     name: "",
     contact: "",
   });
-  const [activeTab, setActiveTab] = useState("local");
 
+  const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("/ourFleet/Sedan/amaze/1.jpg");
   const carouselRef = useRef(null);
 
   const scrollCarousel = (direction) => {
@@ -108,12 +146,13 @@ export default function HondaAmaze() {
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%", height: "579px" }}
+              // style={{ width: "100%", height: "579px" }}
+              style={{ width: "100%",  }}
             >
               <img
-                src="/ourFleet/Sedan/amaze/1.jpg"
+                src={mainImage}
                 alt="Main Car"
-                className="object-contain h-full "
+                className="object-contain h-full transition-all duration-300"
               />
             </div>
 
@@ -127,7 +166,7 @@ export default function HondaAmaze() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px] cursor-pointer"
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -139,7 +178,8 @@ export default function HondaAmaze() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    onClick={() => setMainImage(img)}
+                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0 hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
@@ -216,6 +256,7 @@ export default function HondaAmaze() {
           </div>
         </div>
       </div>
+
       <VehicleDetailInfoSection {...hondaAmazeConfig} />
       <WhyRideSection />
       <br className="block md:hidden" />

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import mapImage from "../assets/mapImage.png";
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export default function Contact() {
     companyName: "",
     requirements: "",
   });
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,11 +22,49 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
-  };
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const { name, contactNumber, email, companyName, requirements } = formData;
+
+  if (!name || !contactNumber || !email || !companyName || !requirements) {
+    alert("Please fill out all fields before submitting.");
+    return;
+  }
+
+  setIsLoading(true);
+
+  emailjs.send(
+    'service_m0nv47o',
+    'template_9ih7o16',
+    formData,
+    'RUwUlhUU23_UxQkLn'
+  )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      alert("Enquiry sent successfully!");
+      setFormData({
+        name: "",
+        contactNumber: "",
+        email: "",
+        companyName: "",
+        requirements: "",
+      });
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      alert("Something went wrong. Please try again.");
+    })
+    .finally(() => {
+      setIsLoading(false);
+    });
+};
+
+
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -52,7 +92,7 @@ export default function Contact() {
     <div className="flex flex-col gap-4 w-full md:w-[530px]">
       {[
         { name: "name", placeholder: "*Enter Your Name" },
-        { name: "contactNumber", placeholder: "*Contact Number" },
+        { name: "contactNumber", placeholder: "*Contact Number", type:'number' },
         { name: "email", placeholder: "*Enter Your E-Mail", type: "email" },
         { name: "companyName", placeholder: "*Company Name" },
       ].map((field, idx) => (
@@ -92,15 +132,23 @@ export default function Contact() {
       </div>
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        className="bg-[#3D3E98] text-white flex items-center justify-center hover:bg-[#2D2E78] transition-colors h-[48px] md:h-[100px] text-[16px] md:text-[24px] font-bold tracking-widest w-full px-4"
-        style={{
-          fontFamily: "DM Sans",
-        }}
-      >
-        SEND ENQUIRY
-      </button>
+    <button
+  type="submit"
+  disabled={isLoading}
+  className={`bg-[#3D3E98] text-white flex items-center justify-center hover:bg-[#2D2E78] transition-colors h-[48px] md:h-[100px] text-[16px] md:text-[24px] font-bold tracking-widest w-full px-4 ${
+    isLoading ? 'opacity-60 cursor-not-allowed' : ''
+  }`}
+  style={{
+    fontFamily: "DM Sans",
+  }}
+>
+  {isLoading ? (
+    <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+  ) : (
+    'SEND ENQUIRY'
+  )}
+</button>
+
     </div>
   </form>
 </div>

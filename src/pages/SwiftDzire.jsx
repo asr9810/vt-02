@@ -17,6 +17,8 @@ export default function SwiftDzire() {
   });
 
   const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("/ourFleet/Sedan/dzire/1.jpg");
+
 
   const carouselRef = useRef(null);
 
@@ -90,7 +92,7 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
   };
   return (
     <>
-      <div className="w-full px-4 py-10 flex flex-col items-center">
+      <div className="w-full px-4 py-10 flex flex-col items-center ">
         <h1
           className="text-[#3D3E98] text-center mb-10 text-[28px] sm:text-[46px]"
           style={{
@@ -104,8 +106,8 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
-            <div
-              className="border rounded-md flex justify-center items-center h-[300px] sm:h-[579px]"
+            {/* <div
+              className="border rounded-md flex justify-center items-center h-[300px] sm:h-[579px] "
               style={{ width: "100%" }}
             >
               <img
@@ -113,7 +115,18 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
                 alt="Main Car"
                 className="object-contain h-full"
               />
+            </div> */}
+            <div
+              className="border rounded-md flex justify-center items-center h-[300px] sm:h-[579px]"
+              style={{ width: "100%" }}
+            >
+              <img
+                src={mainImage}
+                alt="Main Car"
+                className="object-contain h-full transition-all duration-300"
+              />
             </div>
+
 
             <div className="flex items-center justify-between w-full">
               <button
@@ -125,7 +138,7 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px]"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px] cursor-pointer"
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -137,7 +150,8 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0"
+                    onClick={() => setMainImage(img)} // ← update image on click
+                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>

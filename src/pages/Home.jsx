@@ -345,22 +345,6 @@ journey every time`,
     }
   };
 
-  // const nextSlide = () => {
-  //   setCurrentSlide((prev) => (prev + 1) % features.length);
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
-  // };
-
-  // const formatNumber = (num) => {
-  //   if (num >= 1000000) {
-  //     return (num / 1000000).toFixed(0) + "M+";
-  //   } else if (num >= 1000) {
-  //     return (num / 1000).toFixed(0) + "K+";
-  //   }
-  //   return num + "+";
-  // };
 
   const chunkArrayWithPadding = (array, size) => {
     const chunks = [];

@@ -35,6 +35,7 @@ export default function KiaCarens() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
+  const [mainImage, setMainImage] = useState("/ourFleet/SUV-MUV/carens/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -91,7 +92,7 @@ export default function KiaCarens() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
                 style={{ scrollbarWidth: "none"}}
               >
                 {[   "/ourFleet/SUV-MUV/carens/1.jpg",
@@ -101,6 +102,7 @@ export default function KiaCarens() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
+                      onClick={() => setMainImage(img)}
                     className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
                   />
                 ))}
