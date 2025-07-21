@@ -16,6 +16,7 @@ import { useEffect, useRef } from "react";
 
 import roadImage from "../assets/roadvert1.png";
 import busImage from "../assets/bus-top-view.png";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function About() {
   // Timeline data for Our Journey section
@@ -27,6 +28,21 @@ export default function About() {
 
   const busRef = useRef(null);
   const sectionRef = useRef(null);
+
+   const awardsScrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (awardsScrollRef.current) {
+      awardsScrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (awardsScrollRef.current) {
+      awardsScrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
+
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -43,7 +59,7 @@ export default function About() {
   // }, []);
 
   // const scrollRef = useRef(null);
-  const awardsScrollRef = useRef(null);
+  // const awardsScrollRef = useRef(null);
 
   // useEffect(() => {
   //   const container = awardsScrollRef.current;
@@ -526,14 +542,14 @@ const timelineLeft = [
       </section>
 
       {/* Awards & Recognition Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-[1240px] mx-auto px-4 flex flex-col items-center gap-10">
-          {/* Section Title */}
+         
           <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] text-center font-[DM Sans]">
             Awards & Recognition
           </h2>
 
-          {/* Horizontal Scrollable Awards Container */}
+        
           <div
             ref={awardsScrollRef}
             style={{
@@ -557,7 +573,54 @@ const timelineLeft = [
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+       <section className="py-16 bg-white">
+      <div className="max-w-[1240px] mx-auto px-4 flex flex-col items-center gap-10">
+        {/* Section Title */}
+        <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] text-center font-[DM Sans]">
+          Awards & Recognition
+        </h2>
+
+        {/* Carousel Area */}
+        <div className="relative w-full">
+          {/* Left Arrow */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-[-50px] top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-3 hidden sm:flex"
+          >
+            <FaChevronLeft size={20} className="text-[#3D3E98]" />
+          </button>
+
+          {/* Scrollable Container */}
+          <div
+            ref={awardsScrollRef}
+            className="flex gap-5 overflow-x-auto scroll-smooth w-full no-scrollbar px-8"
+          >
+            {awardImages.map((img, i) => (
+              <div
+                key={i}
+                className="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] h-[200px] md:h-[300px] flex-shrink-0"
+              >
+                <img
+                  src={img}
+                  alt={`Award ${i + 1}`}
+                  className="w-full h-full object-cover rounded shadow-md"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-[-50px] top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-3 hidden sm:flex"
+          >
+            <FaChevronRight size={20} className="text-[#3D3E98]" />
+          </button>
+        </div>
+      </div>
+    </section>
     </div>
   );
 }

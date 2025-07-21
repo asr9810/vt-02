@@ -1,12 +1,18 @@
 import React from "react";
 
 const images = [
-  "/gallery/gal1.jpg",
-  "/gallery/gal2.jpg",
-  "/gallery/gal3.jpg",
-  "/gallery/gal4.jpg",
-  "/gallery/gal5.jpeg",
-  "/gallery/gal6.JPG",
+  // "/gallery/gal1.jpg",
+  // "/gallery/gal2.jpg",
+  // "/gallery/gal3.jpg",
+  // "/gallery/gal4.jpg",
+  // "/gallery/gal5.jpeg",
+  // "/gallery/gal6.JPG",
+  "/gallery/gal1-min.jpg",
+  "/gallery/gal2-min.jpg",
+  "/gallery/gal3-min.jpg",
+  "/gallery/gal4-min.jpg",
+  "/gallery/gal5-min.jpeg",
+  "/gallery/gal6-min.JPG",
 ]; // Replace with actual image paths
 
 export default function Gallery() {

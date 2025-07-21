@@ -15,6 +15,15 @@
   animation: busMove 20s linear infinite;
 }
 
+/* styles.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* 
 @custom-variant dark (&:is(.dark *));
 :root {

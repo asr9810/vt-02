@@ -106,7 +106,7 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 w-full">
       {/* Main Navigation */}
-      <div className="bg-white h-[100px] px-4 md:px-20 py-[30px] flex items-center justify-between">
+      <div className="bg-white h-[100px] px-1  md:px-10 py-[30px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link to="/">
@@ -134,8 +134,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center justify-end flex-1">
-          <ul className="flex gap-[34px]">
+        <div className="hidden md:flex items-center justify-evenly flex-1 ">
+          <ul className="flex gap-[24px]">
             <li>
               <Link
                 to="/about"
@@ -275,6 +275,38 @@ const Navbar = () => {
               >
                 Contact Us
               </Link>
+            </li>
+            <li>
+              {/* <Link> */}
+                <div className="flex items-center w-[240px]  rounded-[8px] overflow-hidden ">
+             
+              <a href="tel:01147080808">
+                <div className="w-[54px]  bg-white flex items-center justify-center rounded-l-[8px] ">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      stroke="#3D3E98"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+  
+              <div className="flex-1 flex items-center justify-start">
+                <span className="text-black font-['Montserrat'] font-medium text-[20px] leading-[14.62px] text-center capitalize">
+                  <a href="tel:01147080808">(011) 4708 0808</a>
+                </span>
+              </div>
+            </div>
+              {/* </Link> */}
             </li>
           </ul>
         </div>
@@ -430,13 +462,13 @@ const Navbar = () => {
       )}
 
       {/* Contact Bar - Hidden on mobile */}
-      <div className="hidden md:block bg-[#3D3E98] h-[50px] px-20 shadow-[0_4px_4px_-2px_rgba(0,0,0,0.6)]">
+      {/* <div className="hidden md:block bg-[#3D3E98] h-[50px] px-20 shadow-[0_4px_4px_-2px_rgba(0,0,0,0.6)]">
         <div className="flex items-center justify-end h-full">
-          {/* Phone section container */}
+    
           <div className="flex items-center pr-9 h-[40px] gap-[32px]">
-            {/* Phone container */}
+
             <div className="flex items-center w-[280px] h-[40px] border border-white rounded-[8px] overflow-hidden">
-              {/* Phone icon section */}
+             
               <a href="tel:01147080808">
                 <div className="w-[72px] h-[40px] bg-white flex items-center justify-center rounded-l-[8px]">
                   <svg
@@ -456,7 +488,7 @@ const Navbar = () => {
                   </svg>
                 </div>
               </a>
-              {/* Phone number text */}
+  
               <div className="flex-1 flex items-center justify-center pr-6">
                 <span className="text-white font-['Montserrat'] font-medium text-[20px] leading-[14.62px] text-center capitalize">
                   <a href="tel:01147080808">(011) 4708 0808</a>
@@ -465,7 +497,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Social Media Icons */}
+        
           <div className="flex gap-[16px] items-center">
             <a
               href="https://facebook.com"
@@ -554,7 +586,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex md:hidden bg-[#3D3E98] px-[18px] py-[5px] h-[30.648649215698242px] justify-between items-center">
         {/* Phone container */}

@@ -1,5 +1,4 @@
 
-"use client"
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
@@ -114,8 +113,9 @@ const navigate = useNavigate();
                 key={index}
                 style={{
                   width: "209.67px",
-                  height: "209.67px",
+                  height: "230.67px",
                   cursor: "pointer",
+                  // border:'1px solid black',
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   transform: hoveredCard === index ? "translateY(-8px)" : "translateY(0)",
                 }}
@@ -125,7 +125,7 @@ const navigate = useNavigate();
                 <div
                   style={{
                     width: "209.67px",
-                    height: "209.67px",
+                    height: "230.67px",
                     borderRadius: "8.39px",
                     gap: "6.71px",
                     background: "#F6F6F6",
@@ -175,7 +175,7 @@ const navigate = useNavigate();
                   <div
                     style={{
                       width: "193.73px",
-                      height: "42.90px",
+                      height: "56.90px",
                       gap: "10.9px",
                       marginTop: "24.32px",
                       marginLeft: "8.39px",
@@ -187,7 +187,7 @@ const navigate = useNavigate();
                   >
                     {/* Title */}
                     <div
-                      className={` font-dmSans font-bold text-[16px] leading-[16.77px] tracking-[0] text-center align-middle transition-colors ${
+                      className={` font-dmSans font-bold text-[16px] leading-[16px] tracking-[0] text-center align-middle transition-colors ${
                         hoveredCard === index ? "text-[#2A2B7A]" : "text-[#3D3E98]"
                       }`}
                     >
@@ -196,7 +196,7 @@ const navigate = useNavigate();
 
                     {/* Description */}
                     <div
-                      className={`px-4 h-auto font-dmSans font-medium text-[10.06px] leading-[150%] tracking-[0] text-center align-middle transition-colors ${
+                      className={`px-1 h-auto font-dmSans font-medium text-[12.06px] leading-[150%] tracking-[0] text-center align-middle transition-colors ${
                         hoveredCard === index ? "text-[rgba(0,0,0,0.8)]" : "text-[rgba(0,0,0,0.7)]"
                       }`}
                    style={{ fontFamily: "DM Sans, sans-serif" }} >
