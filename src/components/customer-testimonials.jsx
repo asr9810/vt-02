@@ -631,10 +631,10 @@ export default function CustomerTestimonials() {
                         style={{
                           width: "260px",
                           height: "132px",
-                          paddingTop: "16px",
-                          paddingRight: "80px",
-                          paddingBottom: "16px",
-                          paddingLeft: "80px",
+                          paddingTop: "8px",
+                          paddingRight: "20px",
+                          paddingBottom: "8px",
+                          paddingLeft: "20px",
                           borderWidth: "1px",
                           borderStyle: "solid",
                           borderColor: "#000000",
@@ -645,15 +645,27 @@ export default function CustomerTestimonials() {
                           flexShrink: 0,
                         }}
                       >
+                        {/* <img
+                          src={client.logo || "/placeholder.svg"}
+                          alt={client.name}
+                          style={{
+                            width: "100%",
+                            // height: "120px",
+                            objectFit: "contain",
+                            border:'1px solid black'
+                          }}
+                        /> */}
                         <img
                           src={client.logo || "/placeholder.svg"}
                           alt={client.name}
                           style={{
-                            width: "100px",
-                            height: "100px",
+                            width: "140px",
+                            height: "90px",
                             objectFit: "contain",
+
                           }}
                         />
+
                       </div>
                     ))}
                   </div>
@@ -688,10 +700,10 @@ export default function CustomerTestimonials() {
                           style={{
                             width: "260px",
                             height: "132px",
-                            paddingTop: "16px",
-                            paddingRight: "80px",
-                            paddingBottom: "16px",
-                            paddingLeft: "80px",
+                            paddingTop: "8px",
+                            paddingRight: "20px",
+                            paddingBottom: "8px",
+                            paddingLeft: "20px",
                             borderWidth: "1px",
                             borderStyle: "solid",
                             borderColor: "#000000",
@@ -706,9 +718,10 @@ export default function CustomerTestimonials() {
                             src={client.logo || "/placeholder.svg"}
                             alt={client.name}
                             style={{
-                              width: "100px",
-                              height: "100px",
+                              width: "140px",
+                              height: "90px",
                               objectFit: "contain",
+                             
                             }}
                           />
                         </div>

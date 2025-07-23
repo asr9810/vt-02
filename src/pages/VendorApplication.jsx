@@ -261,7 +261,7 @@ export default function VendorApplication() {
 
         {/* Desktop Image */}
         <div
-          className="bg-[#F8F8F8] hidden md:flex justify-center items-center rounded-[10px]"
+          className=" hidden md:flex justify-center items-center rounded-[10px]"
           style={{
             width: "644px",
             height: "1043px",
@@ -277,7 +277,7 @@ export default function VendorApplication() {
 
         {/* Form Section */}
         <div
-          className="bg-[#F8F8F8] w-full rounded-[10px] py-10 px-4 sm:px-6 flex flex-col"
+          className="w-full rounded-[10px] py-10 px-4 sm:px-6 flex flex-col"
           style={{ maxWidth: "645px" }}
         >
           <h1

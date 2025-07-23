@@ -572,7 +572,7 @@ journey every time`,
         <input
           type="text"
           name="name"
-          placeholder="Sanjeevan Sahu"
+          placeholder="Enter your name"
           value={formData.name}
           onChange={handleInputChange}
           className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
@@ -892,7 +892,7 @@ journey every time`,
             "tempo-travellers": "/ourFleet/TT/Urbania.jpg",
             "sedans": "/ourFleet/Sedan/Amaze.jpg",
             "luxury-buses": "/ourFleet/Buses/volvo/1.jpg",
-            "ev-cars": "/ourFleet/EV/Tata Tigor.jpg",
+            "ev-cars": "/ourFleet/EV/MG EV.jpg",
           }}
         />
       }
