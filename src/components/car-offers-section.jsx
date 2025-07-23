@@ -484,7 +484,7 @@ export default function CarOffersSection({ isVisible, onClose }) {
 
           {/* Cars List Section */}
           <div
-            className="px-2 md:px-4 space-y-1 border"
+            className="px-2 md:px-4 space-y-1 "
             style={{ maxHeight: "400px", overflowY: "auto" }}
           >
             {cars.map((car) => (

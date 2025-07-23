@@ -60,6 +60,7 @@ import MiniBusCoach from "./pages/MiniBusCoach";
 import LuxuryCoach from "./pages/LuxuryCoach";
 import ScaniaVolvoBus from "./pages/ScaniaVolvoBus";
 import Gallery from "./components/Gallery";
+import CarOffer from "./pages/CarOffer";
 
 export default function App() {
   return (
@@ -70,6 +71,7 @@ export default function App() {
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/car-offers" element={<CarOffer />} />
             <Route path="/our-fleet" element={<OurFleet />} />
             <Route path="/our-services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />

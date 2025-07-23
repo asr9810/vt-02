@@ -28,6 +28,8 @@ import WhyRideSection from "@/components/Why-ride-section";
 import CustomerTestimonials from "@/components/customer-testimonials";
 import WhatWeOffer from "@/components/what-we-offer";
 
+  import { useNavigate } from "react-router-dom";
+
 import banner1 from "../assets/hb1.jpg";
 import banner2 from "../assets/hb2.jpg";
 import banner3 from "../assets/hb3.jpg";
@@ -332,18 +334,26 @@ journey every time`,
     });
   };
 
+  const navigate = useNavigate();
   const handleSearch = () => {
     console.log("Search clicked", formData);
     if (formData.location || formData.destination || formData.from) {
       setShowOffers(true);
-      setTimeout(() => {
-        const offersElement = document.getElementById("offers-section");
-        if (offersElement) {
-          offersElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
+        const query = new URLSearchParams(formData).toString();
+        navigate(`/car-offers?${query}`);
+      // setTimeout(() => {
+      //   const offersElement = document.getElementById("offers-section");
+      //   if (offersElement) {
+      //     offersElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      //   }
+      // }, 100);
     }
   };
+
+
+  
+
+
 
 
   const chunkArrayWithPadding = (array, size) => {
@@ -589,6 +599,14 @@ journey every time`,
           Search
         </button>
       </div>
+          {/* {(isMobile && showOffers) || (!isMobile && showOffers) ? (
+            <div className="w-full md:w-auto mt-8 md:mt-0 md:ml-6">
+              <CarOffersSection
+                isVisible={showOffers}
+                onClose={() => setShowOffers(false)}
+              />
+            </div>
+          ) : null} */}
     </div>
   </div>
 </div>

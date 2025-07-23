@@ -104,7 +104,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky top-0 z-50 w-full">
+  <div className="sticky top-0 z-50 w-full  shadow-[0px_4px_12px_rgba(0,0,0,0.1)] bg-white">
+
       {/* Main Navigation */}
       <div className="bg-white h-[100px] px-1  md:px-10 py-[30px] flex items-center justify-between">
         {/* Logo */}
@@ -135,11 +136,13 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center justify-evenly flex-1 ">
-          <ul className="flex gap-[24px]">
+          {/* <ul className="flex gap-[18px]"> */}
+          <ul className="flex gap-[18px] lg:gap-[16px] md:gap-[12px] sm:gap-[8px]">
+
             <li>
               <Link
                 to="/about"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 About Us
               </Link>
@@ -147,7 +150,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/gallery"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Gallery
               </Link>
@@ -171,7 +174,7 @@ const Navbar = () => {
               }}
             >
               <span
-                className={`flex items-center font-semibold text-[18px] leading-[21.6px] text-center capitalize cursor-pointer transition-colors ${
+                className={`flex items-center font-semibold text-[16px] leading-[21.6px] text-center capitalize cursor-pointer transition-colors ${
                   isFleetOpen
                     ? "text-[#2D2E78]"
                     : "text-[#3D3E98] hover:text-[#2D2E78]"
@@ -238,7 +241,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/our-services"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Our Services
               </Link>
@@ -246,7 +249,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/clients"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Clients
               </Link>
@@ -254,7 +257,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/blogs"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Blogs
               </Link>
@@ -262,7 +265,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/vendor-application"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
                 // style={{fontWeight:'600'}}
               >
                 Vendor Application
@@ -271,7 +274,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact-us"
-                className="text-[#3D3E98] font-semibold text-[18px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
+                className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Contact Us
               </Link>
@@ -301,7 +304,7 @@ const Navbar = () => {
               </a>
   
               <div className="flex-1 flex items-center justify-start">
-                <span className="text-black font-['Montserrat'] font-medium text-[20px] leading-[14.62px] text-center capitalize">
+                <span className="text-black font-['Montserrat'] font-medium text-[16px] leading-[14.62px] text-center capitalize">
                   <a href="tel:01147080808">(011) 4708 0808</a>
                 </span>
               </div>
