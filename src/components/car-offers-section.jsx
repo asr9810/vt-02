@@ -589,36 +589,49 @@ export default function CarOffersSection({ isVisible, onClose }) {
           </div>
         </div>
       </div>
-      {modalOpen && (
-        <>
-          {/* Prevent background scroll */}
-          {/* <style>{`body { overflow: hidden; }`}</style> */}
+{modalOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+    onClick={() => {
+      setModalOpen(false);
+      document.body.style.overflow = "auto";
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="relative bg-white rounded-xl w-[90%] max-w-[800px] sm:max-w-[60%] max-h-[40vh]  overflow-hidden shadow-lg flex flex-col"
+    >
+      {/* Close Button */}
+      <button
+        className="absolute top-3 right-4 text-black font-bold text-2xl hover:text-gray-600 z-10"
+        onClick={() => {
+          setModalOpen(false);
+          document.body.style.overflow = "auto";
+        }}
+      >
+        ×
+      </button>
 
-          <div className="fixed inset-0 z-50 flex items-end justify-center backdrop-blur-sm bg-black/40 border border-black">
-            <div className="bg-white p-4 rounded-xl max-w-[90%] max-h-[90vh] overflow-auto relative shadow-lg">
-              <button
-                className="absolute top-2 right-4 text-black font-bold text-2xl hover:text-gray-600"
-                onClick={() => {
-                  setModalOpen(false);
-                  document.body.style.overflow = "auto"; // Restore scroll when modal closes
-                }}
-              >
-                ×
-              </button>
-              <div className="flex flex-wrap gap-4 justify-center mt-4">
-                {modalImages.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`Car image ${idx + 1}`}
-                    className="w-[250px] h-auto rounded-lg object-cover shadow"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+      {/* Scrollable Content */}
+      <div className="overflow-y-auto px-4 pt-10 pb-4 h-full">
+        <div className="flex flex-col sm:flex-col md:flex-row gap-4 justify-center items-center">
+          {modalImages.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`Car image ${idx + 1}`}
+              className="w-[90%] sm:w-[150px] md:w-[250px] h-auto rounded-lg object-cover shadow"
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
     </>
   );
 }

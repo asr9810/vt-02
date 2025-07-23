@@ -399,17 +399,27 @@ journey every time`,
           />
         </div>
 
-        {/* Content Container */}
- 
-<div
-  className="hidden md:block  absolute z-10 rounded-[3px] bg-[#3D3E98] opacity-100"
+  {/* Content Container */}
+ {/* desktop view */}
+{/* <div
+  className="hidden md:block  absolute z-10 rounded-[3px] bg-[#3D3E98] opacity-100 border border-black"
   style={{
     width: "1250px",
     height: "302px",
     top: "-50px",
     left: "136px",
   }}
+> */}
+<div
+  className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1250px] mx-auto left-1/2 transform -translate-x-1/2"
+  style={{
+    top: "-50px",
+    height: "302px",
+  }}
 >
+
+
+
   <div className="px-[44px] py-[32px] w-full h-full flex flex-col justify-between">
     {/* Heading */}
     <h2
@@ -448,7 +458,9 @@ journey every time`,
     </div>
 
     {/* Fields with Labels */}
-    <div className="flex items-start mt-6 gap-4">
+    {/* <div className="flex items-start mt-6 gap-4"> */}
+    <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
+
       {/* Location or From + Destination */}
       {activeTab === "local" ? (
         <div className="flex flex-col">
@@ -614,7 +626,7 @@ journey every time`,
        <div className="block md:hidden relative z-10 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-start md:pl-[75px]">
           {/* Pick Your Ride Form */}
           {!isMobile || !showOffers ? (
-            <div className="bg-[#3D3E98] text-white shadow-2xl w-[334.04px] md:w-[450px] rounded-[7.42px] md:rounded-[8px] pt-[20.78px] md:pt-[32px] pr-[23.75px] md:pr-[32px] pb-[20.78px] md:pb-[32px] pl-[23.75px] md:pl-[32px] mb-10 md:mb-0">
+            <div className="bg-[#3D3E98] text-white shadow-2xl w-[334.04px] md:w-[450px] rounded-[7.42px] md:rounded-[8px] pt-[20.78px] md:pt-[32px] pr-[23.75px] md:pr-[32px] pb-[20.78px] md:pb-[32px] pl-[23.75px] md:pl-[32px] mb-10 md:mb-0 ">
               <h2 className="text-xl md:text-2xl font-bold text-center mb-6 font-sans">
                 Pick Your Ride
               </h2>

@@ -107,7 +107,7 @@ const Navbar = () => {
   <div className="sticky top-0 z-50 w-full  shadow-[0px_4px_12px_rgba(0,0,0,0.1)] bg-white">
 
       {/* Main Navigation */}
-      <div className="bg-white h-[100px] px-1  md:px-10 py-[30px] flex items-center justify-between">
+      <div className="bg-white h-[100px] px-1  md:px-8 py-[30px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link to="/">
@@ -135,9 +135,12 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center justify-evenly flex-1 ">
-          {/* <ul className="flex gap-[18px]"> */}
-          <ul className="flex gap-[18px] lg:gap-[16px] md:gap-[12px] sm:gap-[8px]">
+{/* 
+        <div className="hidden md:flex items-center justify-between flex-1 overflow-x-auto  ">
+        <ul className="flex overflow-x-auto gap-2 md:gap-5  scrollbar-hide px-2 "> */}
+
+        <div className="hidden md:flex items-center justify-between flex-1 min-w-0 pl-auto">
+        <ul className="flex flex-wrap items-center gap-4 lg:gap-7 text-[15px] min-w-0 whitespace-nowrap overflow-hidden  ml-auto ">
 
             <li>
               <Link
