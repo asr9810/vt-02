@@ -130,7 +130,8 @@ export default function HyundaiAura() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
+                // className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
+                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -143,7 +144,7 @@ export default function HyundaiAura() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)} // ← update image on click
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>

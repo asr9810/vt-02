@@ -7,22 +7,50 @@ import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
 
-
-
-
-
 const MarutiSuzukiInvictoConfig = {
   vehicleName: `Maruti Suzuki Invicto Rental Service`,
   introText: `We offer a fleet of excellent condition Maruti Suzuki Invicto automobiles that represent the highest standard of comfort, for any weekend getaway, an airport transfer, business travel or first-class city travel. Based in Delhi, we know that welcoming the passenger class of the Maruti Suzuki Invicto means you mean business, we believe these requests work together for an enjoyable, hassle-free, value-based experience.`,
   rentalIntroText: `The Maruti Suzuki Invicto is the intersection of luxury and practicality - the quality and size to accommodate your full family, while still being sophisticated enough for executive travel. With impressive quality, every expedition is memorable for the river and the passengers. Use it for important business meetings, family celebrations, airport transportation - whatever the case, the Invicto improves every situation. At Vivek Travels, our talented professional drivers have been trained for Timeliness – and as a result, they assure you will arrive comfortably, recharged and ready for what's next.`,
 
-  rentalDetails: [{'title': 'Travel Inclusions', 'items': ['Charges applicable from garage to garage', 'Night charges applicable after 11:00 PM IST', 'Fuel, toll, state tax, and driver charges included', 'Parking and GST charges extra']}, {'title': 'Amenities', 'items': ['Air conditioned', 'GPS Tracker', 'Chauffeur', 'Ample Luggage Area']}, {'title': 'Features', 'items': ['Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.', 'The spacious cabin to make every journey feel effortless. ', 'The SmartPlay infotainment system to keep entertained.']}],
+  rentalDetails: [
+    {
+      title: "Travel Inclusions",
+      items: [
+        "Charges applicable from garage to garage",
+        "Night charges applicable after 11:00 PM IST",
+        "Fuel, toll, state tax, and driver charges included",
+        "Parking and GST charges extra",
+      ],
+    },
+    {
+      title: "Amenities",
+      items: [
+        "Air conditioned",
+        "GPS Tracker",
+        "Chauffeur",
+        "Ample Luggage Area",
+      ],
+    },
+    {
+      title: "Features",
+      items: [
+        "Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.",
+        "The spacious cabin to make every journey feel effortless. ",
+        "The SmartPlay infotainment system to keep entertained.",
+      ],
+    },
+  ],
 
   rentalClosingParagraph: `Discover the Maruti Suzuki Invicto with Vivek Travels for premium travel from Delhi NCR throughout India. With each booking, a courteous, highly trained chauffeur who appreciates that luxury is in the details – comfort, peace of mind, and safety. The Vivek Travels fleet of Invictos is clean, premium, and spacious, with high-quality features designed to make every mile feel like a breeze. Are you ready to elevate your experience? Contact us! `,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '23.24 kmpl'], ['Seats', '6 passengers+ driver'], ['Engine', '1987 cc']],
+  vehicleSpecs: [
+    ["Air conditioning", "yes"],
+    ["Mileage", "23.24 kmpl"],
+    ["Seats", "6 passengers+ driver"],
+    ["Engine", "1987 cc"],
+  ],
 
-  vehicleParagraph: `All of the Maruti Suzuki Invictos in qualified fleet are in immaculate condition, completely prepared, and providing you a real sense of quality. Our cab drivers are commercially licensed professional/ courteous drivers. Plus, they know every route that you can imagine, so you can relax with complete comfort. It is our mission to make your trip truly as if it flows as effortlessly and stylishly as possible.`
+  vehicleParagraph: `All of the Maruti Suzuki Invictos in qualified fleet are in immaculate condition, completely prepared, and providing you a real sense of quality. Our cab drivers are commercially licensed professional/ courteous drivers. Plus, they know every route that you can imagine, so you can relax with complete comfort. It is our mission to make your trip truly as if it flows as effortlessly and stylishly as possible.`,
 };
 
 export default function MarutiSuzukiInvicto() {
@@ -82,7 +110,7 @@ export default function MarutiSuzukiInvicto() {
             </div> */}
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -101,18 +129,20 @@ export default function MarutiSuzukiInvicto() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
-                style={{ scrollbarWidth: "none"}}
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                style={{ scrollbarWidth: "none" }}
               >
-                {[     "/ourFleet/SUV-MUV/invicto/1.jpg",
-      "/ourFleet/SUV-MUV/invicto/2.jpg",
-      "/ourFleet/SUV-MUV/invicto/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/SUV-MUV/invicto/1.jpg",
+                  "/ourFleet/SUV-MUV/invicto/2.jpg",
+                  "/ourFleet/SUV-MUV/invicto/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
@@ -130,34 +160,55 @@ export default function MarutiSuzukiInvicto() {
             <div className="flex mb-4">
               <button
                 onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "local" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "local"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Local / Airport
               </button>
               <button
                 onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "outstation" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "outstation"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Outstation
               </button>
             </div>
 
             <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map((field, idx) => (
-                <div key={idx}>
-                  <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    {field.charAt(0).toUpperCase() + field.slice(1).replace("Time", " & Time")}
-                  </label>
-                  <input
-                    type={field === "dateTime" ? "datetime-local" : field === "contact" ? "tel" : "text"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={field === "contact" ? "+91 1234567890" : `Enter ${field}`}
-                    className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                  />
-                </div>
-              ))}
+              {["from", "destination", "dateTime", "name", "contact"].map(
+                (field, idx) => (
+                  <div key={idx}>
+                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
+                      {field.charAt(0).toUpperCase() +
+                        field.slice(1).replace("Time", " & Time")}
+                    </label>
+                    <input
+                      type={
+                        field === "dateTime"
+                          ? "datetime-local"
+                          : field === "contact"
+                          ? "tel"
+                          : "text"
+                      }
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      placeholder={
+                        field === "contact"
+                          ? "+91 1234567890"
+                          : `Enter ${field}`
+                      }
+                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
+                    />
+                  </div>
+                )
+              )}
               <button
                 type="submit"
                 className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"

@@ -7,22 +7,50 @@ import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
 
-
-
-
-
 const ToyotaRumionConfig = {
   vehicleName: `Toyota Rumion Rental Service`,
   introText: `We offer well-maintained, reliable Toyota Rumion cars ready for your next adventure – weekend trips, airport runs, business travel, or general transportation. We are based in Delhi and are local residents who are aware of a comfortable, reliable and affordable experience.`,
   rentalIntroText: `The Toyota Rumion is practical, stylish and spacious enough for your whole crew, also economical for your wallet. The interior is versatile, has a modern feel and is great on fuel so you will feel like you are going the distance. Whether you are taking your family on an outing, fulfilling your job requirements or airport pickups, the Rumion will transport you safely and comfortably. At Vivek Travels, our professional drivers will take care of everything, while you focus on the important things.`,
 
-  rentalDetails: [{'title': 'Travel Inclusions', 'items': ['Charges applicable from garage to garage', 'Night charges applicable after 11:00 PM IST', 'Fuel, toll, state tax, and driver charges included', 'Parking and GST charges extra']}, {'title': 'Amenities', 'items': ['Air conditioned', 'GPS Tracker', 'Chauffeur', 'Ample Luggage Area']}, {'title': 'Features', 'items': ['Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.', 'The spacious cabin to make every journey feel effortless. ', 'The SmartPlay infotainment system to keep entertained.']}],
+  rentalDetails: [
+    {
+      title: "Travel Inclusions",
+      items: [
+        "Charges applicable from garage to garage",
+        "Night charges applicable after 11:00 PM IST",
+        "Fuel, toll, state tax, and driver charges included",
+        "Parking and GST charges extra",
+      ],
+    },
+    {
+      title: "Amenities",
+      items: [
+        "Air conditioned",
+        "GPS Tracker",
+        "Chauffeur",
+        "Ample Luggage Area",
+      ],
+    },
+    {
+      title: "Features",
+      items: [
+        "Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.",
+        "The spacious cabin to make every journey feel effortless. ",
+        "The SmartPlay infotainment system to keep entertained.",
+      ],
+    },
+  ],
 
   rentalClosingParagraph: `Book your Toyota Rumion with Vivek Travels for effortless travelling from Delhi NCR to destinations throughout India. Every reservation comes with an experienced and friendly driver who genuinely cares about getting you there and back safely and on time. In addition to that, our fleet of Rumions is exceptionally clean, with vehicles that feel spacious and comfortable and little enhancements that make every mile enjoyable. With Vivek Travels, you can expect reliable, relaxing and quality travel with our offered Toyota Rumion. Want to make your reservation? Just call us and we will be happy to assist.`,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', 'around 20.51 kmpl'], ['Seats', '6 passengers+ driver'], ['Engine', '1462 cc']],
+  vehicleSpecs: [
+    ["Air conditioning", "yes"],
+    ["Mileage", "around 20.51 kmpl"],
+    ["Seats", "6 passengers+ driver"],
+    ["Engine", "1462 cc"],
+  ],
 
-  vehicleParagraph: `The Toyota Rumion in our fleet is immaculately clean, well-loved and well-maintained, and ready to make your trip unforgettable for all of the right reasons! Our drivers with years of of experience, a warmth that you can trust and have traveled every route we use, meaning you can just sit back and enjoy the journey! `
+  vehicleParagraph: `The Toyota Rumion in our fleet is immaculately clean, well-loved and well-maintained, and ready to make your trip unforgettable for all of the right reasons! Our drivers with years of of experience, a warmth that you can trust and have traveled every route we use, meaning you can just sit back and enjoy the journey! `,
 };
 
 export default function ToyotaRumion() {
@@ -80,9 +108,9 @@ export default function ToyotaRumion() {
                 className="object-contain h-full "
               />
             </div> */}
-                                    <div
+            <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -101,18 +129,20 @@ export default function ToyotaRumion() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
-                style={{ scrollbarWidth: "none"}}
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                style={{ scrollbarWidth: "none" }}
               >
-                {[    "/ourFleet/SUV-MUV/rumino/1.jpg",
-      "/ourFleet/SUV-MUV/rumino/2.jpg",
-      "/ourFleet/SUV-MUV/rumino/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/SUV-MUV/rumino/1.jpg",
+                  "/ourFleet/SUV-MUV/rumino/2.jpg",
+                  "/ourFleet/SUV-MUV/rumino/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
@@ -130,34 +160,55 @@ export default function ToyotaRumion() {
             <div className="flex mb-4">
               <button
                 onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "local" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "local"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Local / Airport
               </button>
               <button
                 onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "outstation" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "outstation"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Outstation
               </button>
             </div>
 
             <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map((field, idx) => (
-                <div key={idx}>
-                  <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    {field.charAt(0).toUpperCase() + field.slice(1).replace("Time", " & Time")}
-                  </label>
-                  <input
-                    type={field === "dateTime" ? "datetime-local" : field === "contact" ? "tel" : "text"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={field === "contact" ? "+91 1234567890" : `Enter ${field}`}
-                    className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                  />
-                </div>
-              ))}
+              {["from", "destination", "dateTime", "name", "contact"].map(
+                (field, idx) => (
+                  <div key={idx}>
+                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
+                      {field.charAt(0).toUpperCase() +
+                        field.slice(1).replace("Time", " & Time")}
+                    </label>
+                    <input
+                      type={
+                        field === "dateTime"
+                          ? "datetime-local"
+                          : field === "contact"
+                          ? "tel"
+                          : "text"
+                      }
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      placeholder={
+                        field === "contact"
+                          ? "+91 1234567890"
+                          : `Enter ${field}`
+                      }
+                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
+                    />
+                  </div>
+                )
+              )}
               <button
                 type="submit"
                 className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"

@@ -63,7 +63,7 @@ export default function InnovaCrysta() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
- const [mainImage, setMainImage] = useState("/ourFleet/SUV-MUV/crysta/1.jpg")
+  const [mainImage, setMainImage] = useState("/ourFleet/SUV-MUV/crysta/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -109,10 +109,10 @@ export default function InnovaCrysta() {
                 className="object-contain h-full "
               />
             </div> */}
-            
+
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -131,18 +131,20 @@ export default function InnovaCrysta() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
                 style={{ scrollbarWidth: "none" }}
               >
-                {["/ourFleet/SUV-MUV/crysta/1.jpg",
-      "/ourFleet/SUV-MUV/crysta/2.jpg",
-      "/ourFleet/SUV-MUV/crysta/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/SUV-MUV/crysta/1.jpg",
+                  "/ourFleet/SUV-MUV/crysta/2.jpg",
+                  "/ourFleet/SUV-MUV/crysta/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>

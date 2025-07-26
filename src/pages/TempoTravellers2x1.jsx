@@ -32,20 +32,55 @@ export default function TempoTravellers2x1() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-
   const KiaCarnivalConfig = {
-  vehicleName: `Tempo Travellers 2x1 rentals in Delhi NCR`,
-  introText: `Going with a group? Our Tempo Traveller 2x1 is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 2x1 Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
-  rentalIntroText: `With plenty of space set out in a 2x1 configuration, you do not have to worry about a middle seat or bumping knees, everyone has enough space to relax and spread out!! The interiors are clean, spacious and ventilated and well looked after so that you can enjoy a comfortable journey.`,
+    vehicleName: `Tempo Travellers 2x1 rentals in Delhi NCR`,
+    introText: `Going with a group? Our Tempo Traveller 2x1 is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 2x1 Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
+    rentalIntroText: `With plenty of space set out in a 2x1 configuration, you do not have to worry about a middle seat or bumping knees, everyone has enough space to relax and spread out!! The interiors are clean, spacious and ventilated and well looked after so that you can enjoy a comfortable journey.`,
 
-  rentalDetails: [{'title': 'Travel Inclusions', 'items': ['Charges applicable from garage to garage', 'Night charges applicable after 11:00 PM IST', 'Fuel, toll, state tax, and driver charges included', 'Parking and GST charges extra']}, {'title': 'Amenities', 'items': ['Water Bottle','Air conditioned', 'Blanket', 'GPS Charging point', 'Chauffeur', 'Reading light','Luggage space','Vomiting bag']}, {'title': 'Features', 'items': ['Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.', 'The spacious cabin to make every journey feel effortless. ', 'The SmartPlay infotainment system to keep entertained.']}],
+    rentalDetails: [
+      {
+        title: "Travel Inclusions",
+        items: [
+          "Charges applicable from garage to garage",
+          "Night charges applicable after 11:00 PM IST",
+          "Fuel, toll, state tax, and driver charges included",
+          "Parking and GST charges extra",
+        ],
+      },
+      {
+        title: "Amenities",
+        items: [
+          "Water Bottle",
+          "Air conditioned",
+          "Blanket",
+          "GPS Charging point",
+          "Chauffeur",
+          "Reading light",
+          "Luggage space",
+          "Vomiting bag",
+        ],
+      },
+      {
+        title: "Features",
+        items: [
+          "Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.",
+          "The spacious cabin to make every journey feel effortless. ",
+          "The SmartPlay infotainment system to keep entertained.",
+        ],
+      },
+    ],
 
-  rentalClosingParagraph: `You can book your Tempo Traveller 2x1 with Vivek Travels they will take your group to their destination, without sacrificing comfort for reliability. Whether it's a long or a short trip, we will ensure your group gets to where they need to, the right way.`,
+    rentalClosingParagraph: `You can book your Tempo Traveller 2x1 with Vivek Travels they will take your group to their destination, without sacrificing comfort for reliability. Whether it's a long or a short trip, we will ensure your group gets to where they need to, the right way.`,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '17 kmpl'], ['Seats', '15-17'], ['Engine', '2596 cc']],
+    vehicleSpecs: [
+      ["Air conditioning", "yes"],
+      ["Mileage", "17 kmpl"],
+      ["Seats", "15-17"],
+      ["Engine", "2596 cc"],
+    ],
 
-  vehicleParagraph: `With our experienced drivers, you can rest assured that you will have a safe, timely, and hassle-free ride, allowing your group to travel together in comfort without any logistic concerns.`
-};
+    vehicleParagraph: `With our experienced drivers, you can rest assured that you will have a safe, timely, and hassle-free ride, allowing your group to travel together in comfort without any logistic concerns.`,
+  };
 
   return (
     <>
@@ -76,7 +111,7 @@ export default function TempoTravellers2x1() {
             </div> */}
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -95,16 +130,19 @@ export default function TempoTravellers2x1() {
               <div
                 ref={carouselRef}
                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
-                style={{ scrollbarWidth: "none"}}
+                style={{ scrollbarWidth: "none" }}
               >
-                {["/ourFleet/TT/Urbania/1.jpg",
-      "/ourFleet/TT/Urbania/2.jpg","/ourFleet/TT/Urbania/3.jpg"].map((img, idx) => (
+                {[
+                  "/ourFleet/TT/Urbania/1.jpg",
+                  "/ourFleet/TT/Urbania/2.jpg",
+                  "/ourFleet/TT/Urbania/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
@@ -122,34 +160,55 @@ export default function TempoTravellers2x1() {
             <div className="flex mb-4">
               <button
                 onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "local" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "local"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Local / Airport
               </button>
               <button
                 onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "outstation" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "outstation"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Outstation
               </button>
             </div>
 
             <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map((field, idx) => (
-                <div key={idx}>
-                  <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    {field.charAt(0).toUpperCase() + field.slice(1).replace("Time", " & Time")}
-                  </label>
-                  <input
-                    type={field === "dateTime" ? "datetime-local" : field === "contact" ? "tel" : "text"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={field === "contact" ? "+91 1234567890" : `Enter ${field}`}
-                    className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                  />
-                </div>
-              ))}
+              {["from", "destination", "dateTime", "name", "contact"].map(
+                (field, idx) => (
+                  <div key={idx}>
+                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
+                      {field.charAt(0).toUpperCase() +
+                        field.slice(1).replace("Time", " & Time")}
+                    </label>
+                    <input
+                      type={
+                        field === "dateTime"
+                          ? "datetime-local"
+                          : field === "contact"
+                          ? "tel"
+                          : "text"
+                      }
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      placeholder={
+                        field === "contact"
+                          ? "+91 1234567890"
+                          : `Enter ${field}`
+                      }
+                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
+                    />
+                  </div>
+                )
+              )}
               <button
                 type="submit"
                 className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"
@@ -160,7 +219,7 @@ export default function TempoTravellers2x1() {
           </div>
         </div>
       </div>
-      <VehicleDetailInfoSection {...KiaCarnivalConfig}/>
+      <VehicleDetailInfoSection {...KiaCarnivalConfig} />
       <WhyRideSection />
       <br className="block md:hidden" />
       <ReservationBanner />

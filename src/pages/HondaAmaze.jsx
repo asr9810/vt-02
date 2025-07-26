@@ -144,8 +144,7 @@ export default function HondaAmaze() {
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
-            <div
-              className="border rounded-md flex justify-center items-center"
+            <div className="border rounded-md flex justify-center items-center"
               // style={{ width: "100%", height: "579px" }}
               style={{ width: "100%",  }}
             >
@@ -156,7 +155,7 @@ export default function HondaAmaze() {
               />
             </div>
 
-            <div className="flex items-center justify-between w-full">
+               <div className="flex items-center justify-between w-full ">
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
@@ -166,7 +165,8 @@ export default function HondaAmaze() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px] cursor-pointer"
+                // className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px] cursor-pointer"
+    className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -179,7 +179,7 @@ export default function HondaAmaze() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0 hover:opacity-80 transition-opacity duration-200"
+                     className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>

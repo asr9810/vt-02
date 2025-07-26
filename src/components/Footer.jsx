@@ -10,12 +10,13 @@ const Footer = () => {
         <div className="h-[408px] bg-[#ECECF5] px-[104px] pt-[39px] pb-[80px] " >
           <div className="flex justify-between items-start">
             {/* Left Section - Logo and Menu */}
-            <div className="flex flex-col">
+            <div className="flex flex-col ">
               {/* Logo */}
-              <div className="mb-[55px] ">
+              <div className="mb-[30px]  ">
                 <Link to="/">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VivekTravel%20logo%20png%201-M0wxdcCtuYNIdbeFDpapLT3F4OUvRG.png"
+                    // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VivekTravel%20logo%20png%201-M0wxdcCtuYNIdbeFDpapLT3F4OUvRG.png"
+                    src="/logo.png"
                     alt="Vivek Travels Logo"
                     className="w-[300px] h-[110px] object-contain"
                   />

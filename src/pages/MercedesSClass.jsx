@@ -7,20 +7,50 @@ import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
 
-
-
 const MercedesSClassConfig = {
   vehicleName: `Mercedes S-Class Rental Service`,
   introText: `You'll find a fleet of luxurious, impeccably maintained Mercedes S-Class vehicles awaiting every special journey — whether that's a high-profile meeting, airport transfer, city travel, or outstation drive. We operate out of Delhi, and we know that premium travel is about more than getting from point A to B; it's also about how you feel along the way. We'll guarantee every ride is smooth, dignified, and memorable.`,
   rentalIntroText: `The Mercedes S-Class is sophisticated, spacious, and drives like a dream — it's a vehicle for those who expect the very best. The ultra-luxurious interiors, whisper-quiet drive, and luxurious features all contribute to a level of comfort and prestige that is unmatched. At Vivek Travels, our professional chauffeurs are trained to mirror the vehicle's standard, and they provide courteous, discreet service along the way.`,
 
-  rentalDetails: [{'title': 'Travel Inclusions', 'items': ['Charges applicable from garage to garage', 'Night charges applicable after 11:00 PM IST', 'Fuel, toll, state tax, and driver charges included', 'Parking and GST charges extra']}, {'title': 'Amenities', 'items': ['Air conditioned', 'GPS Tracker', 'Chauffeur', 'Ample Luggage Area']}, {'title': 'Features', 'items': ['Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.', 'The spacious cabin to make every journey feel effortless. ', 'The SmartPlay infotainment system to keep entertained.']}],
+  rentalDetails: [
+    {
+      title: "Travel Inclusions",
+      items: [
+        "Charges applicable from garage to garage",
+        "Night charges applicable after 11:00 PM IST",
+        "Fuel, toll, state tax, and driver charges included",
+        "Parking and GST charges extra",
+      ],
+    },
+    {
+      title: "Amenities",
+      items: [
+        "Air conditioned",
+        "GPS Tracker",
+        "Chauffeur",
+        "Ample Luggage Area",
+      ],
+    },
+    {
+      title: "Features",
+      items: [
+        "Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.",
+        "The spacious cabin to make every journey feel effortless. ",
+        "The SmartPlay infotainment system to keep entertained.",
+      ],
+    },
+  ],
 
   rentalClosingParagraph: `You’ve found luxury travel in Delhi NCR if you are looking for it! Book a Mercedes S Class on Vivek Travels for high-end chauffeur-driven travel anywhere in India. Each journey comes with a perfect, premium vehicle and an experienced and polite driver. The S-Class ensures that every moment you are in the car feels special, from the minute you get in to the drop off.`,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '12 and 18 kmpl'], ['Seats', '4 passengers+ driver'], ['Engine', '2999 cc']],
+  vehicleSpecs: [
+    ["Air conditioning", "yes"],
+    ["Mileage", "12 and 18 kmpl"],
+    ["Seats", "4 passengers+ driver"],
+    ["Engine", "2999 cc"],
+  ],
 
-  vehicleParagraph: `Each S-Class in our fleet is immaculate and will always be prepared to provide an experience that is elegant, comfortable, and above all, first rate. Whether it is a short trip or a long one, you’ll arrive in comfort and style and never fail to leave a lasting impression.`
+  vehicleParagraph: `Each S-Class in our fleet is immaculate and will always be prepared to provide an experience that is elegant, comfortable, and above all, first rate. Whether it is a short trip or a long one, you’ll arrive in comfort and style and never fail to leave a lasting impression.`,
 };
 
 export default function MercedesSClass() {
@@ -33,7 +63,6 @@ export default function MercedesSClass() {
   });
   const [activeTab, setActiveTab] = useState("local");
   const [mainImage, setMainImage] = useState("/ourFleet/Luxury/sclass/1.jpg");
-  
 
   const carouselRef = useRef(null);
 
@@ -79,9 +108,9 @@ export default function MercedesSClass() {
                 className="object-contain h-full "
               />
             </div> */}
-                        <div
+            <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -100,18 +129,20 @@ export default function MercedesSClass() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
-                style={{ scrollbarWidth: "none"}}
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                style={{ scrollbarWidth: "none" }}
               >
-                {["/ourFleet/Luxury/sclass/1.jpg",
-      "/ourFleet/Luxury/sclass/2.jpg",
-      "/ourFleet/Luxury/sclass/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/Luxury/sclass/1.jpg",
+                  "/ourFleet/Luxury/sclass/2.jpg",
+                  "/ourFleet/Luxury/sclass/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                     onClick={() => setMainImage(img)}
-                    className="w-[320px] h-[251px] object-cover rounded border p-2 flex-shrink-0"
+                    onClick={() => setMainImage(img)}
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
@@ -129,34 +160,55 @@ export default function MercedesSClass() {
             <div className="flex mb-4">
               <button
                 onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "local" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "local"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Local / Airport
               </button>
               <button
                 onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "outstation" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "outstation"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Outstation
               </button>
             </div>
 
             <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map((field, idx) => (
-                <div key={idx}>
-                  <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    {field.charAt(0).toUpperCase() + field.slice(1).replace("Time", " & Time")}
-                  </label>
-                  <input
-                    type={field === "dateTime" ? "datetime-local" : field === "contact" ? "tel" : "text"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={field === "contact" ? "+91 1234567890" : `Enter ${field}`}
-                    className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                  />
-                </div>
-              ))}
+              {["from", "destination", "dateTime", "name", "contact"].map(
+                (field, idx) => (
+                  <div key={idx}>
+                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
+                      {field.charAt(0).toUpperCase() +
+                        field.slice(1).replace("Time", " & Time")}
+                    </label>
+                    <input
+                      type={
+                        field === "dateTime"
+                          ? "datetime-local"
+                          : field === "contact"
+                          ? "tel"
+                          : "text"
+                      }
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      placeholder={
+                        field === "contact"
+                          ? "+91 1234567890"
+                          : `Enter ${field}`
+                      }
+                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
+                    />
+                  </div>
+                )
+              )}
               <button
                 type="submit"
                 className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"

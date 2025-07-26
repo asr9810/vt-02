@@ -118,7 +118,7 @@ export default function BMW7Series() {
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px]"
+                    className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
                 style={{ scrollbarWidth: "none" }}
               >
                 {[   "/ourFleet/Luxury/bmw/1.jpg",
@@ -128,7 +128,7 @@ export default function BMW7Series() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0"
+                   className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>

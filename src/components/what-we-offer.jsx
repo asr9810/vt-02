@@ -99,11 +99,12 @@ const navigate = useNavigate();
           <div
             style={{
               width: "1102px",
-              height: "209.67px",
+              // height: "209.67px",
               gap: "13.42px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              // border:'1px solid black'
             }}
 
           >
@@ -113,7 +114,7 @@ const navigate = useNavigate();
                 key={index}
                 style={{
                   width: "209.67px",
-                  height: "230.67px",
+                  height: "270.67px",
                   cursor: "pointer",
                   // border:'1px solid black',
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
@@ -125,19 +126,20 @@ const navigate = useNavigate();
                 <div
                   style={{
                     width: "209.67px",
-                    height: "230.67px",
+                    height: "270.67px",
                     borderRadius: "8.39px",
                     gap: "6.71px",
                     background: "#F6F6F6",
                     overflow: "hidden",
                     transition: "box-shadow 0.3s ease",
+                    // border:'1px solid black'
                   }}
                 >
                   {/* Car Image */}
                   <div
                     style={{
                       width: "209.67px",
-                      height: "118.25px",
+                      // height: "118.25px",
                       borderTopLeftRadius: "8.39px",
                       borderTopRightRadius: "8.39px",
                       overflow: "hidden",
@@ -175,19 +177,20 @@ const navigate = useNavigate();
                   <div
                     style={{
                       width: "193.73px",
-                      height: "56.90px",
+                      height: "120.90px",
                       gap: "10.9px",
                       marginTop: "24.32px",
                       marginLeft: "8.39px",
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: "center",
-                      fontFamily: "DM Sans, sans-serif"
+                      justifyContent: "space-around",
+                      fontFamily: "DM Sans, sans-serif",
+                      // border:'1px solid red'
                     }}
                   >
                     {/* Title */}
                     <div
-                      className={` font-dmSans font-bold text-[16px] leading-[16px] tracking-[0] text-center align-middle transition-colors ${
+                      className={` font-dmSans font-bold text-[16px] leading-[18px] tracking-[0] text-center align-middle transition-colors ${
                         hoveredCard === index ? "text-[#2A2B7A]" : "text-[#3D3E98]"
                       }`}
                     >
@@ -196,7 +199,7 @@ const navigate = useNavigate();
 
                     {/* Description */}
                     <div
-                      className={`px-1 h-auto font-dmSans font-medium text-[12.06px] leading-[150%] tracking-[0] text-center align-middle transition-colors ${
+                      className={` px-1 h-auto font-dmSans font-medium text-[14px] leading-[150%] tracking-[0] text-center align-middle transition-colors ${
                         hoveredCard === index ? "text-[rgba(0,0,0,0.8)]" : "text-[rgba(0,0,0,0.7)]"
                       }`}
                    style={{ fontFamily: "DM Sans, sans-serif" }} >

@@ -6,6 +6,7 @@ import dummy2 from "../assets/carlogo.png";
 import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
+import emailjs from "emailjs-com";
 
 export default function SwiftDzire() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,10 @@ export default function SwiftDzire() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+
+
+
 
   const config = {
     vehicleName: `Swift Dzire Rental Service`,
@@ -128,7 +133,7 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
             </div>
 
 
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-between w-full ">
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
@@ -138,7 +143,7 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide h-[180px] sm:h-[251px] cursor-pointer"
+                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[251px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -150,9 +155,10 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                    onClick={() => setMainImage(img)} // ← update image on click
-                    className="w-[320px] h-full object-cover rounded border p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    onClick={() => setMainImage(img)}
+                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
+
                 ))}
               </div>
 
@@ -164,7 +170,6 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
               </button>
             </div>
           </div>
-
           <div className="w-full lg:w-[460px]  h-[80%] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">
             <div className="flex mb-4">
               <button
