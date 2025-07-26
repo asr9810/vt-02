@@ -28,7 +28,7 @@ import WhyRideSection from "@/components/Why-ride-section";
 import CustomerTestimonials from "@/components/customer-testimonials";
 import WhatWeOffer from "@/components/what-we-offer";
 
-  import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import banner1 from "../assets/hb1.jpg";
 import banner2 from "../assets/hb2.jpg";
@@ -37,6 +37,8 @@ import BookYourRideMobile from "@/components/BookYourRideMobile";
 import OurFleetsSection from "@/components/OurFleetsSection";
 import OurFleetsMobile from "@/components/OurFleetsMobile";
 import { useIsMobile } from "@/hook/useIsMobile";
+import { StepsSection } from "../components/Why-ride-section";
+import StepsSectionDesktop from "../components/StepSectionDesctop";
 // import banner3 from "../assets/hero3.png";
 
 export default function Home() {
@@ -206,7 +208,7 @@ journey every time`,
   ];
 
   const fleetData = {
-    "sedans": {
+    sedans: {
       title: "Sedans",
       description: `Fits all your needs for city rides and airport transfers-comfortable seating, fuel economy, and professional service to meet your everyday travel needs.`,
       brands: [
@@ -339,8 +341,8 @@ journey every time`,
     console.log("Search clicked", formData);
     if (formData.location || formData.destination || formData.from) {
       setShowOffers(true);
-        const query = new URLSearchParams(formData).toString();
-        navigate(`/car-offers?${query}`);
+      const query = new URLSearchParams(formData).toString();
+      navigate(`/car-offers?${query}`);
       // setTimeout(() => {
       //   const offersElement = document.getElementById("offers-section");
       //   if (offersElement) {
@@ -349,12 +351,6 @@ journey every time`,
       // }, 100);
     }
   };
-
-
-  
-
-
-
 
   const chunkArrayWithPadding = (array, size) => {
     const chunks = [];
@@ -399,9 +395,9 @@ journey every time`,
           />
         </div>
 
-  {/* Content Container */}
- {/* desktop view */}
-{/* <div
+        {/* Content Container */}
+        {/* desktop view */}
+        {/* <div
   className="hidden md:block  absolute z-10 rounded-[3px] bg-[#3D3E98] opacity-100 border border-black"
   style={{
     width: "1250px",
@@ -410,208 +406,211 @@ journey every time`,
     left: "136px",
   }}
 > */}
-<div
-  className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1250px] mx-auto left-1/2 transform -translate-x-1/2"
-  style={{
-    top: "-50px",
-    height: "302px",
-  }}
->
-
-
-
-  <div className="px-[44px] py-[32px] w-full h-full flex flex-col justify-between">
-    {/* Heading */}
-    <h2
-      className="text-white font-bold"
-      style={{
-        fontFamily: "DM Sans",
-        fontSize: "30px",
-        lineHeight: "11.17px",
-        height: "21px",
-        width: "207px",
-      }}
-    >
-      Pick Your Ride
-    </h2>
-
-    {/* Tabs */}
-    <div className="flex space-x-2 mt-[12px]" style={{ width: "396px", height: "53px" }}>
-      <button
-        onClick={() => setActiveTab("local")}
-        className={`w-[188px] h-[53px] rounded bg-[#FAFAFA] text-[#3D3E98] font-semibold ${
-          activeTab === "local" ? "border-2 border-[#3D3E98]" : "opacity-80"
-        }`}
-        style={{ fontFamily: "DM Sans" }}
-      >
-        Local / Airport
-      </button>
-      <button
-        onClick={() => setActiveTab("outstation")}
-        className={`w-[188px] h-[53px] rounded bg-[#FAFAFA] text-[#3D3E98] font-semibold ${
-          activeTab === "outstation" ? "border-2 border-[#3D3E98]" : "opacity-80"
-        }`}
-        style={{ fontFamily: "DM Sans" }}
-      >
-        Outstation
-      </button>
-    </div>
-
-    {/* Fields with Labels */}
-    {/* <div className="flex items-start mt-6 gap-4"> */}
-    <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
-
-      {/* Location or From + Destination */}
-      {activeTab === "local" ? (
-        <div className="flex flex-col">
-          <label
-            className="text-white mb-[6px]"
-            style={{
-              fontFamily: "DM Sans",
-              fontSize: "20px",
-              fontWeight: 700,
-              lineHeight: "11.17px",
-            }}
-          >
-            Location
-          </label>
-          <input
-            type="text"
-            name="location"
-            placeholder="Start typing location name"
-            value={formData.location}
-            onChange={handleInputChange}
-            className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-          />
-        </div>
-      ) : (
-        <>
-          <div className="flex flex-col">
-            <label
-              className="text-white mb-[6px]"
+        <div
+          className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1250px] mx-auto left-1/2 transform -translate-x-1/2"
+          style={{
+            top: "-50px",
+            height: "302px",
+          }}
+        >
+          <div className="px-[44px] py-[32px] w-full h-full flex flex-col justify-between">
+            {/* Heading */}
+            <h2
+              className="text-white font-bold"
               style={{
                 fontFamily: "DM Sans",
-                fontSize: "20px",
-                fontWeight: 700,
+                fontSize: "30px",
                 lineHeight: "11.17px",
+                height: "21px",
+                width: "207px",
               }}
             >
-              From
-            </label>
-            <input
-              type="text"
-              name="from"
-              placeholder="From"
-              value={formData.from}
-              onChange={handleInputChange}
-              className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label
-              className="text-white mb-[6px]"
-              style={{
-                fontFamily: "DM Sans",
-                fontSize: "20px",
-                fontWeight: 700,
-                lineHeight: "11.17px",
-              }}
+              Pick Your Ride
+            </h2>
+
+            {/* Tabs */}
+            <div
+              className="flex space-x-2 mt-[12px]"
+              style={{ width: "396px", height: "53px" }}
             >
-              Destination
-            </label>
-            <input
-              type="text"
-              name="destination"
-              placeholder="Destination"
-              value={formData.destination}
-              onChange={handleInputChange}
-              className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-            />
-          </div>
-        </>
-      )}
+              <button
+                onClick={() => setActiveTab("local")}
+                className={`w-[188px] h-[53px] rounded bg-[#FAFAFA] text-[#3D3E98] font-semibold ${
+                  activeTab === "local"
+                    ? "border-2 border-[#3D3E98]"
+                    : "opacity-80"
+                }`}
+                style={{ fontFamily: "DM Sans" }}
+              >
+                Local / Airport
+              </button>
+              <button
+                onClick={() => setActiveTab("outstation")}
+                className={`w-[188px] h-[53px] rounded bg-[#FAFAFA] text-[#3D3E98] font-semibold ${
+                  activeTab === "outstation"
+                    ? "border-2 border-[#3D3E98]"
+                    : "opacity-80"
+                }`}
+                style={{ fontFamily: "DM Sans" }}
+              >
+                Outstation
+              </button>
+            </div>
 
-      {/* Date & Time */}
-      <div className="flex flex-col">
-        <label
-          className="text-white mb-[6px]"
-          style={{
-            fontFamily: "DM Sans",
-            fontSize: "20px",
-            fontWeight: 700,
-            lineHeight: "11.17px",
-          }}
-        >
-          Date & Time
-        </label>
-        <input
-          type="datetime-local"
-          name="datetime"
-          value={`${formData.date}T${formData.time}`}
-          onChange={(e) => {
-            const [date, time] = e.target.value.split("T");
-            setFormData({ ...formData, date, time });
-          }}
-          className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-        />
-      </div>
+            {/* Fields with Labels */}
+            {/* <div className="flex items-start mt-6 gap-4"> */}
+            <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
+              {/* Location or From + Destination */}
+              {activeTab === "local" ? (
+                <div className="flex flex-col">
+                  <label
+                    className="text-white mb-[6px]"
+                    style={{
+                      fontFamily: "DM Sans",
+                      fontSize: "20px",
+                      fontWeight: 700,
+                      lineHeight: "11.17px",
+                    }}
+                  >
+                    Location
+                  </label>
+                  <input
+                    type="text"
+                    name="location"
+                    placeholder="Start typing location name"
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  />
+                </div>
+              ) : (
+                <>
+                  <div className="flex flex-col">
+                    <label
+                      className="text-white mb-[6px]"
+                      style={{
+                        fontFamily: "DM Sans",
+                        fontSize: "20px",
+                        fontWeight: 700,
+                        lineHeight: "11.17px",
+                      }}
+                    >
+                      From
+                    </label>
+                    <input
+                      type="text"
+                      name="from"
+                      placeholder="From"
+                      value={formData.from}
+                      onChange={handleInputChange}
+                      className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      className="text-white mb-[6px]"
+                      style={{
+                        fontFamily: "DM Sans",
+                        fontSize: "20px",
+                        fontWeight: 700,
+                        lineHeight: "11.17px",
+                      }}
+                    >
+                      Destination
+                    </label>
+                    <input
+                      type="text"
+                      name="destination"
+                      placeholder="Destination"
+                      value={formData.destination}
+                      onChange={handleInputChange}
+                      className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                    />
+                  </div>
+                </>
+              )}
 
-      {/* Name */}
-      <div className="flex flex-col">
-        <label
-          className="text-white mb-[6px]"
-          style={{
-            fontFamily: "DM Sans",
-            fontSize: "20px",
-            fontWeight: 700,
-            lineHeight: "11.17px",
-          }}
-        >
-          Name
-        </label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={handleInputChange}
-          className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-        />
-      </div>
+              {/* Date & Time */}
+              <div className="flex flex-col">
+                <label
+                  className="text-white mb-[6px]"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "11.17px",
+                  }}
+                >
+                  Date & Time
+                </label>
+                <input
+                  type="datetime-local"
+                  name="datetime"
+                  value={`${formData.date}T${formData.time}`}
+                  onChange={(e) => {
+                    const [date, time] = e.target.value.split("T");
+                    setFormData({ ...formData, date, time });
+                  }}
+                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
 
-      {/* Contact */}
-      <div className="flex flex-col">
-        <label
-          className="text-white mb-[6px]"
-          style={{
-            fontFamily: "DM Sans",
-            fontSize: "20px",
-            fontWeight: 700,
-            lineHeight: "11.17px",
-          }}
-        >
-          Contact No.
-        </label>
-        <input
-          type="tel"
-          name="contact"
-          placeholder="+91 1234567890"
-          value={formData.contact}
-          onChange={handleInputChange}
-          className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-        />
-      </div>
+              {/* Name */}
+              <div className="flex flex-col">
+                <label
+                  className="text-white mb-[6px]"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "11.17px",
+                  }}
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
 
-      {/* Search Button */}
-      <div className="flex flex-col justify-end mt-auto">
-        <button
-          onClick={handleSearch}
-          className="w-[100px] h-[40px] bg-white text-[#3D3E98] font-semibold rounded-[8px] hover:bg-gray-100 transition"
-        >
-          Search
-        </button>
-      </div>
-          {/* {(isMobile && showOffers) || (!isMobile && showOffers) ? (
+              {/* Contact */}
+              <div className="flex flex-col">
+                <label
+                  className="text-white mb-[6px]"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "11.17px",
+                  }}
+                >
+                  Contact No.
+                </label>
+                <input
+                  type="tel"
+                  name="contact"
+                  placeholder="+91 1234567890"
+                  value={formData.contact}
+                  onChange={handleInputChange}
+                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
+
+              {/* Search Button */}
+              <div className="flex flex-col justify-end mt-auto">
+                <button
+                  onClick={handleSearch}
+                  className="w-[100px] h-[40px] bg-white text-[#3D3E98] font-semibold rounded-[8px] hover:bg-gray-100 transition"
+                >
+                  Search
+                </button>
+              </div>
+              {/* {(isMobile && showOffers) || (!isMobile && showOffers) ? (
             <div className="w-full md:w-auto mt-8 md:mt-0 md:ml-6">
               <CarOffersSection
                 isVisible={showOffers}
@@ -619,11 +618,11 @@ journey every time`,
               />
             </div>
           ) : null} */}
-    </div>
-  </div>
-</div>
+            </div>
+          </div>
+        </div>
 
-       <div className="block md:hidden relative z-10 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-start md:pl-[75px]">
+        <div className="block md:hidden relative z-10 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-start md:pl-[75px]">
           {/* Pick Your Ride Form */}
           {!isMobile || !showOffers ? (
             <div className="bg-[#3D3E98] text-white shadow-2xl w-[334.04px] md:w-[450px] rounded-[7.42px] md:rounded-[8px] pt-[20.78px] md:pt-[32px] pr-[23.75px] md:pr-[32px] pb-[20.78px] md:pb-[32px] pl-[23.75px] md:pl-[32px] mb-10 md:mb-0 ">
@@ -774,7 +773,6 @@ journey every time`,
             </div>
           ) : null}
         </div>
-
       </section>
 
       {/* Animated Statistics Section */}
@@ -877,8 +875,8 @@ journey every time`,
         </div>
       </section>
 
-      <WhyRideSection isHome={true} />
-
+      {/* <WhyRideSection isHome={true} /> */}
+      {true && <StepsSectionDesktop />}
       <BookYourRideMobile />
 
       {
@@ -890,7 +888,7 @@ journey every time`,
             "luxury-cars": "/ourFleet/Luxury/BMW.jpg",
             "suv-muv": "/ourFleet/SUV-MUV/invicto.jpg",
             "tempo-travellers": "/ourFleet/TT/Urbania.jpg",
-            "sedans": "/ourFleet/Sedan/Amaze.jpg",
+            sedans: "/ourFleet/Sedan/Amaze.jpg",
             "luxury-buses": "/ourFleet/Buses/volvo/1.jpg",
             "ev-cars": "/ourFleet/EV/MG EV.jpg",
           }}
@@ -912,6 +910,8 @@ journey every time`,
           }}
         />
       }
+      <WhyRideSection isHome={true} />
+      {/* <BookYourRideMobile /> */}
 
       <div className="py-8 md:py-16">
         <WhatWeOffer />

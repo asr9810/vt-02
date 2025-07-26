@@ -207,23 +207,23 @@ const scrollRef = useRef(null);
 const mobileCardWidth = 290 + 20; // card width + gap
 let mobileIndex = 0;
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    if (!scrollRef.current) return;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!scrollRef.current) return;
 
-    mobileIndex++;
-    if (mobileIndex >= features.length) {
-      mobileIndex = 0;
-    }
+      mobileIndex++;
+      if (mobileIndex >= features.length) {
+        mobileIndex = 0;
+      }
 
-    scrollRef.current.scrollTo({
-      left: mobileIndex * mobileCardWidth,
-      behavior: "smooth",
-    });
-  }, 3000); // Every 3 seconds
+      scrollRef.current.scrollTo({
+        left: mobileIndex * mobileCardWidth,
+        behavior: "smooth",
+      });
+    }, 3000); // Every 3 seconds
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
 
   const features = [
@@ -277,7 +277,7 @@ should be.`,
     <>
       <section
         className="py-8 bg-gray-50 hidden md:block"
-        style={{ paddingTop: "60px", paddingBottom: "125px" }}
+        style={{ paddingTop: "60px", }}
       >
         <div
           className="mx-auto"
@@ -481,7 +481,7 @@ should be.`,
               ))}
             </div>
           </div>
-        { isHome &&  <StepsSection /> } 
+        {/* { isHome &&  <StepsSection /> }  */}
         </div>
       </section>
 

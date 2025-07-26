@@ -264,7 +264,7 @@ export default function VendorApplication() {
           className=" hidden md:flex justify-center items-center rounded-[10px]"
           style={{
             width: "644px",
-            height: "1043px",
+            height: "840px",
             padding: "60px 32px",
           }}
         >

@@ -9,22 +9,22 @@ const CarOffer = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  const [currentHeroImg, setCurrentHeroImg] = useState(0);
-  const [fade, setFade] = useState(true);
+  // const [currentHeroImg, setCurrentHeroImg] = useState(0);
+  // const [fade, setFade] = useState(true);
 
   const heroImages = [banner1, banner2, banner3];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentHeroImg((prev) => (prev + 1) % heroImages.length);
-        setFade(true);
-      }, 1000);
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setFade(false);
+  //     setTimeout(() => {
+  //       setCurrentHeroImg((prev) => (prev + 1) % heroImages.length);
+  //       setFade(true);
+  //     }, 1000);
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const searchData = {
     location: queryParams.get("location"),
@@ -40,7 +40,7 @@ const CarOffer = () => {
     <div className="relative min-h-screen">
       {/* Background Image Slideshow */}
       <div className="absolute inset-0 w-full h-full -z-10">
-        {heroImages.map((img, idx) => (
+        {/* {heroImages.map((img, idx) => (
           <img
             key={idx}
             src={img}
@@ -49,7 +49,12 @@ const CarOffer = () => {
               currentHeroImg === idx && fade ? "opacity-100" : "opacity-0"
             }`}
           />
-        ))}
+        ))} */}
+        <img
+          src={banner1}
+          alt="fixed-bg"
+          className="absolute w-full h-full object-cover"
+        />
       </div>
 
       {/* Main Page Content */}
