@@ -42,7 +42,7 @@ import EnquiryModal from "../components/EnquiryModal";
 
 const services = [
   {
-    title: "Car Rental Services",
+    title: "Chauffeured Vehicle Rentals",
     image: "/suv.png",
     description:
       "Whether you need a vehicle for a few hours, a full day, or long-term use — our car rental services are designed for comfort, convenience, and affordability. With a wide variety of cars, you can choose amongst hourly, daily and monthly rental option. Our 24x7 support team and GPS enabled cabs are ready to take you places. With operational fleet size of over 1200 Cars, you can choose you ride from:\n• Hatchbacks: WagonR, i10, Swift, i20\n• Sedans: Dzire, Etios, Ciaz, City, Verna\n• SUVs/MUVs: Ertiga, Innova Crysta, Fortuner\n• Luxury Cars: BMW and Mercedes.",
@@ -69,13 +69,20 @@ const services = [
       "We have immense experience in handling international delegations and are trusted by top Government officials and international delegates. We are proud service providers in the events like G-20 Summit, South African Summit, Annual Functions of many Government Ministries and PSUs. Our protocol-trained drivers for high-security travel have always kept the trust and safety of the passengers as their top priority.",
     reverse: true,
   },
-  {
-    title: "Corporate Transport Solutions",
-    image: "/merc.png",
-    description:
-      "Trusted by top corporations for reliable and cost-effective employee transportation.\n• Dedicated Fleet Management\n• Daily Pick-Up & Drop Services\n• Real-Time Tracking & Driver Monitoring\n• Custom Routes & Scheduling\n• Compliance with Safety & Hygiene Protocols",
-    reverse: false,
-  },
+{
+  title: "MICE Transport Services",
+  image: "/merc.png",
+  description:
+    "Vivek Travels provides reliable transportation solutions for Meetings, Incentives, Conferences, and Exhibitions (MICE) across Delhi NCR and throughout India.\n" +
+    "• We offer daily office commute services tailored for corporate professionals.\n" +
+    "• Our diverse fleet includes executive sedans, buses, and coaches to accommodate varying group sizes and requirements.\n" +
+    "• Committed to ensuring safe, punctual, and comfortable travel throughout Delhi NCR.\n" +
+    "• Flexible packages and special corporate offers are available for rentals, events, offsites, and business travel.\n" +
+    "• We specialize in managing professional transportation needs to facilitate seamless business operations.\n" +
+    "• Contact us today to discuss customized MICE travel solutions designed to meet your corporate objectives.",
+  reverse: false,
+}
+
 ];
 
 const ServiceCard = ({

@@ -15,14 +15,14 @@ export default function VehicleDetailInfoSection({
   return (
     <div className="w-full max-w-[1228px] mx-auto px-4 py-12 flex flex-col gap-[56px] font-['DM_Sans']">
       {/* Header */}
-      <div className="w-full">
+      {/* <div className="w-full">
         <h2 className="text-[#3D3E98] font-semibold text-[26px] sm:text-[30px] leading-[1.1]">
           {vehicleName}
         </h2>
         <p className="text-black text-[16px] sm:text-[20px] leading-[1.3] mt-6">
           {introText}
         </p>
-      </div>
+      </div> */}
 
       {/* Tabs */}
       <div className="flex flex-col sm:flex-row gap-4 border-b-2 border-[#3D3E98] pb-4">

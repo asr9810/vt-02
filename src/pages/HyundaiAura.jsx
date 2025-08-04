@@ -10,7 +10,8 @@ import ReservationBanner from "../components/ReservationBanner";
 const hyundaiAuraConfig = {
   vehicleName: `Hyundai Aura Rental Service`,
   introText: `We offer clean top-notch Hyundai Aura cars for rent—ideal for out-of-town trips getting to and from the airport, city-to-city travel, group outings, or basic pick-up and drop-off services. If you're planning a quick getaway or need a smooth ride around town, we've got your back. Based is Delhi, and we make sure every journey with us is cozy, stress-free, and won't break the bank.`,
-  rentalIntroText: `Stylish yet simple, the Hyundai Aura suits people who like understated class and daily ease. Its sleek shape roomy inside, and great gas mileage give you a polished ride — whether you're going to work getting family from the airport, or taking off for a weekend trip. At Vivek Travels, we provide Hyundai Aura rentals with drivers so you can relax . From the time you get in, it's all about ease, attention, and a pleasant trip — how travel should be.`,
+  rentalIntroText: ` 
+Stylish yet simple, the Hyundai Aura suits people who like understated class and daily ease. Its sleek shape roomy inside, and great gas mileage give you a polished ride; whether you're going to work getting family from the airport, or taking off for a weekend trip. At Vivek Travels, we provide Hyundai Aura rentals with drivers so you can relax . From the time you get in, it's all about ease, attention, and a pleasant trip; how travel should be.`,
 
   rentalDetails: [
     {
@@ -41,7 +42,8 @@ const hyundaiAuraConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Book Hyundai Aura from Delhi NCR for your in-city transportation or for traveling all over India with Rated . Our courteous chauffeurs make every effort to make your trip enjoyable, safe, and timely. You may also call us for more information. Our car services are equipped with all of the conveniences for your ride. 
+  rentalClosingParagraph: ` 
+Book Hyundai Aura from Delhi NCR for your in-city transportation or for traveling all over India with Rated . Our courteous chauffeurs make every effort to make your trip enjoyable, safe, and timely. You may also call us for more information. Our car services are equipped with all of the conveniences for your ride. 
 Book Hyundai Aura with Vivek Travels to make your travel enjoyable, trustworthy, and comfortable. Contact us for more information or to make a reservation.`,
 
   vehicleSpecs: [
@@ -121,17 +123,16 @@ export default function HyundaiAura() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                // className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
-                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -144,17 +145,17 @@ export default function HyundaiAura() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)} // ← update image on click
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                     className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
-
+{/* 
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

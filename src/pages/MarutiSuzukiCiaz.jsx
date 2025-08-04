@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const marutiSuzukiCiazConfig = {
   vehicleName: `Maruti Suzuki Ciaz Rental Service`,
   introText: `Choose our well-kept Maruti Suzuki Ciaz for every trip - whether it's a weekend getaway, an airport trip, a work trip, or just a simple drive through the town. Located in Delhi, we are your local travel partner dedicated to making every journey comfortable, hassle-free and cost-effective. `,
-  rentalIntroText: `The Maruti Suzuki Ciaz is the epitome of effortless luxury - large enough for real comfort and tasteful enough to make an impression. With its posh interiors, elegant design and incredible fuel efficiency, every ride is made to be as seamless as possible. This car is perfect for family outings and airport pick-ups, any local travel or inter-city the Ciaz becomes your traveling partner. When you are with Vivek Travels, you leave everything to the professional drivers and you simply sit back and enjoy!`,
+  rentalIntroText: ` 
+ 	
+The Maruti Suzuki Ciaz is the epitome of effortless luxury; large enough for real comfort and tasteful enough to make an impression. With its posh interiors, elegant design and incredible fuel efficiency, every ride is made to be as seamless as possible. This car is perfect for family outings and airport pick-ups, any local travel or inter-city the Ciaz becomes your traveling partner. When you are with Vivek Travels, you leave everything to the professional drivers and you simply sit back and enjoy!`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const marutiSuzukiCiazConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Rent a Maruti Suzuki Ciaz with Vivek Travels for stress free journeys from Delhi NCR across the cars land of India. Every booking with us includes a pleasant, professionally trained driver who genuinely strives to make your trip smooth, timely and safe. Our fleet of Ciaz cars are each kept spotless and offer practical comfort, thoughtful amenities that give you just a little more comfort, attention to detail. Vivek Travels is your option time and time again for dependable, comfortable, first-class travel in the Maruti Suzuki Ciaz. Interested in booking your rental today? Contact us directly. `,
+  rentalClosingParagraph: ` 
+ 	
+Rent a Maruti Suzuki Ciaz with Vivek Travels for stress free journeys from Delhi NCR across the cars land of India. Every booking with us includes a pleasant, professionally trained driver who genuinely strives to make your trip smooth, timely and safe. Our fleet of Ciaz cars are each kept spotless and offer practical comfort, thoughtful amenities that give you just a little more comfort, attention to detail. Vivek Travels is your option time and time again for dependable, comfortable, first-class travel in the Maruti Suzuki Ciaz. Interested in booking your rental today? Contact us directly.  `,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -120,16 +124,15 @@ export default function MarutiSuzukiCiaz() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
-
+              </button> */}
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer "
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +145,17 @@ export default function MarutiSuzukiCiaz() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                 className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

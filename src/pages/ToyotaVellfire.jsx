@@ -10,7 +10,8 @@ import ReservationBanner from "../components/ReservationBanner";
 const ToyotaVellfireConfig = {
   vehicleName: `Toyota Vellfire Rental Service`,
   introText: `The fleet of Toyota Vellfire vehicles is designed for anyone wanting the best in luxury, comfort, and privacy while travelling. The Vellfire will ensure you arrive feeling relaxed, no matter if it's a high-profile airport transfer, corporate movement, or a special family event. `,
-  rentalIntroText: `The luxurious captain seats, ambient lighting, and whisper-quiet drive means every travel day becomes a world-class experience. It’s perfect for VIP guests, corporate company decision-makers, or families where space is a priority.
+  rentalIntroText: ` 
+The luxurious captain seats, ambient lighting, and whisper-quiet drive means every travel day becomes a world-class experience. It’s perfect for VIP guests, corporate company decision-makers, or families where space is a priority.
 Every Vellfire ride with Vivek Travels includes a trained, professional chauffeur who respects your time and travel experience. `,
 
   rentalDetails: [
@@ -42,7 +43,8 @@ Every Vellfire ride with Vivek Travels includes a trained, professional chauffeu
     },
   ],
 
-  rentalClosingParagraph: `If you're looking for high-end travel in the Delhi NCR or anywhere else - then the Toyota Vellfire is the ideal option. Book with Vivek Travels for chauffeur-driven travel where you clearly get comfort and class. Every booking includes a spotless and well-maintained vehicle and a driver who is dedicated to providing you with a top-tier experience.`,
+  rentalClosingParagraph: ` 
+If you're looking for high-end travel in the Delhi NCR or anywhere else - then the Toyota Vellfire is the ideal option. Book with Vivek Travels for chauffeur-driven travel where you clearly get comfort and class. Every booking includes a spotless and well-maintained vehicle and a driver who is dedicated to providing you with a top-tier experience.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -121,16 +123,16 @@ export default function ToyotaVellfire() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -143,17 +145,17 @@ export default function ToyotaVellfire() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

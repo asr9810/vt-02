@@ -9,7 +9,6 @@ export default function CustomerTestimonials() {
   const slideTransitionDuration = 800;
 
   const testimonials = [
-   
     {
       name: "Priya S.",
       location: "New Delhi",
@@ -167,7 +166,7 @@ export default function CustomerTestimonials() {
   }, [isHovering, testimonials.length]);
 
   return (
-    <section className="gap-[72px] flex flex-col margin-0 auto ">
+    <section className="gap-[22px] flex flex-col margin-0 auto ">
       {/* From Our Customers Section */}
       <div className="mx-auto ">
         {/* Desktop Header */}
@@ -530,7 +529,7 @@ export default function CustomerTestimonials() {
       </div>
 
       {/* Our Corporate Clients Section */}
-      <div className="mx-auto">
+      <div className="py-12  bg-[#3D3E98]">
         {/* Desktop Header */}
         <div className="hidden md:block text-center mb-12">
           <h2
@@ -544,7 +543,7 @@ export default function CustomerTestimonials() {
               letterSpacing: "2%",
               textAlign: "center",
               verticalAlign: "middle",
-              color: "#000000",
+              color: "#ffff",
               margin: "0 auto",
             }}
           >
@@ -553,10 +552,10 @@ export default function CustomerTestimonials() {
         </div>
 
         {/* Mobile Header */}
-        {/* <div className="block md:hidden text-center mb-6">
+        <div className="block md:hidden text-center mb-6">
           <h2
             style={{
-              width: "518.52px",
+              // width: "518.52px",
               height: "15px",
               fontFamily: "DM Sans",
               fontWeight: 700,
@@ -565,13 +564,13 @@ export default function CustomerTestimonials() {
               letterSpacing: "2%",
               textAlign: "center",
               verticalAlign: "middle",
-              color: "#000000",
+              color: "white",
               margin: "0 auto",
             }}
           >
             Our Corporate Clients
           </h2>
-        </div> */}
+        </div>
 
         {/* Desktop Corporate Clients */}
         <div className="hidden md:block">
@@ -662,10 +661,8 @@ export default function CustomerTestimonials() {
                             width: "140px",
                             height: "90px",
                             objectFit: "contain",
-
                           }}
                         />
-
                       </div>
                     ))}
                   </div>
@@ -721,7 +718,6 @@ export default function CustomerTestimonials() {
                               width: "140px",
                               height: "90px",
                               objectFit: "contain",
-                             
                             }}
                           />
                         </div>
@@ -732,24 +728,25 @@ export default function CustomerTestimonials() {
             </div>
 
             <a
-  href="/clients"
-  className="px-6 flex justify-center items-center"
-  style={{
-    height: "43px",
-    borderRadius: "8px",
-    background: "#3D3E98",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 700,
-    fontSize: "16px",
-    lineHeight: "20px",
-    letterSpacing: "0.3em",
-    color: "#FFFFFF",
-    textDecoration: "none",
-  }}
->
-  VIEW MORE
-</a>
-
+              href="/clients"
+              className="px-6 flex justify-center items-center "
+              style={{
+                height: "43px",
+                borderRadius: "8px",
+                background: "#3D3E98",
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 800,
+                fontSize: "16px",
+                lineHeight: "20px",
+                letterSpacing: "0.2em",
+                // color: "#FFFFFF",
+                color: "#3D3E98",
+                backgroundColor:'white',
+                textDecoration: "none",
+              }}
+            >
+              VIEW MORE
+            </a>
           </div>
         </div>
 
@@ -780,7 +777,7 @@ export default function CustomerTestimonials() {
 
             {/* View More button */}
             <button
-              className="flex justify-center items-center mx-auto bg-[#3D3E98] text-white py-2 px-4 rounded font-bold text-sm w-1/2"
+              className="flex justify-center items-center mx-auto bg-white text-[#3D3E98] py-2 px-4 rounded font-bold text-sm w-1/2 "
               style={{ borderRadius: "8px" }}
             >
               VIEW MORE

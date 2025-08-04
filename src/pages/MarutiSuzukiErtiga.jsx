@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const MarutiSuzukiErtigaConfig = {
   vehicleName: `Maruti Suzuki Ertiga Rental Service`,
   introText: `You will find a fleet of clean, roomy Maruti Suzuki Ertiga vehicles that are available for any travel occasion - family outings, air travel, group outings, or just in the city. Based in Delhi, we know all too well that traveling with loved ones does not mean that comfort and reliability should be compromised - they are necessities. Every time we travel together, you can expect to enjoy a relaxed, comfortable and affordable journey.`,
-  rentalIntroText: `Roomy, flexible, and really comfortable - the Maruti Suzuki Ertiga is the vehicle of choice for family and groups that won't sacrifice when they travel. Its spacious, roomy 7-seater seating arrangement, thoughtful interior layouts and overall fuel efficiency.  At Vivek Travels, we know that our friendly drivers will help make it possible for you to focus on what really matters - spending quality time with the people you are traveling with!`,
+  rentalIntroText: `
+ 	
+Roomy, flexible, and really comfortable. The Maruti Suzuki Ertiga is the vehicle of choice for family and groups that won't sacrifice when they travel. Its spacious, roomy 7-seater seating arrangement, thoughtful interior layouts and overall fuel efficiency.  At Vivek Travels, we know that our friendly drivers will help make it possible for you to focus on what really matters - spending quality time with the people you are traveling with!`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const MarutiSuzukiErtigaConfig = {
     },
   ],
 
-  rentalClosingParagraph: `If you're searching for group transportation in Delhi NCR, you've come to the right place! Reserve a Maruti Suzuki Ertiga with Vivek Travels for comfortable group travel across India. Every trip includes a polite and experienced chauffeur. Our Ertiga 7-seater has spotless, comfortable seating and well-planned amenities to make every member of your group content throughout the ride. Reach out us now – we would love to help.`,
+  rentalClosingParagraph: ` 
+ 	
+If you're searching for group transportation in Delhi NCR, you've come to the right place! Reserve a Maruti Suzuki Ertiga with Vivek Travels for comfortable group travel across India. Every trip includes a polite and experienced chauffeur. Our Ertiga 7-seater has spotless, comfortable seating and well-planned amenities to make every member of your group content throughout the ride. Reach out us now, we would love to help.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -122,16 +126,16 @@ export default function MarutiSuzukiErtiga() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -144,17 +148,17 @@ export default function MarutiSuzukiErtiga() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
-
+{/* 
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

@@ -11,7 +11,9 @@ const InnovaCrystaConfig = {
   vehicleName: `Innova Crysta Rental Service`,
   introText: `We provide a well-kept fleet of Toyota Innova Crysta to meet your every travel need. Whether you are going on a family road trip, requiring an airport transfer, going on a corporate travel schedule or seeking comfort when travelling in the city, we have you covered. Based in Delhi, we appreciate that space and comfort are not luxuries when employed with loved ones or colleagues; they are a necessity.
 `,
-  rentalIntroText: `The Toyota Innova Crysta closes the gap between people who like space and people who want a refined experience. Spacious enough for the whole family, refined enough for business clients. Great for family events, business meetings or group trips, the Crysta just becomes your car to return home in. Our drivers at Vivek travels are trained to get you from point A to point B relaxed and ready, no matter the distance.`,
+  rentalIntroText: ` 
+ 	
+The Toyota Innova Crysta closes the gap between people who like space and people who want a refined experience. Spacious enough for the whole family, refined enough for business clients. Great for family events, business meetings or group trips, the Crysta just becomes your car to return home in. Our drivers at Vivek travels are trained to get you from point A to point B relaxed and ready, no matter the distance.`,
 
   rentalDetails: [
     {
@@ -42,7 +44,9 @@ const InnovaCrystaConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Vivek Travels is the best way to experience travel from Delhi NCR, and anywhere in India, on a Toyota Innova Crysta. When you book from us, you will always have a friendly, experienced driver who has your travel experience at heart, ensuring that your travel is pleasant, on-time, and safe. Travel together with ViveK Travels and enjoy comfortable, reliable group travel with Toyota Innova Crysta. Are you ready to book your trip? Get in touch with us today.`,
+  rentalClosingParagraph: ` 
+ 	
+Vivek Travels is the best way to experience travel from Delhi NCR, and anywhere in India, on a Toyota Innova Crysta. When you book from us, you will always have a friendly, experienced driver who has your travel experience at heart, ensuring that your travel is pleasant, on-time, and safe. Travel together with ViveK Travels and enjoy comfortable, reliable group travel with Toyota Innova Crysta. Are you ready to book your trip? Get in touch with us today.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -122,16 +126,16 @@ export default function InnovaCrysta() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -144,17 +148,17 @@ export default function InnovaCrysta() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

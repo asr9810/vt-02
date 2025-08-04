@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const MercedesSClassConfig = {
   vehicleName: `Mercedes S-Class Rental Service`,
   introText: `You'll find a fleet of luxurious, impeccably maintained Mercedes S-Class vehicles awaiting every special journey — whether that's a high-profile meeting, airport transfer, city travel, or outstation drive. We operate out of Delhi, and we know that premium travel is about more than getting from point A to B; it's also about how you feel along the way. We'll guarantee every ride is smooth, dignified, and memorable.`,
-  rentalIntroText: `The Mercedes S-Class is sophisticated, spacious, and drives like a dream — it's a vehicle for those who expect the very best. The ultra-luxurious interiors, whisper-quiet drive, and luxurious features all contribute to a level of comfort and prestige that is unmatched. At Vivek Travels, our professional chauffeurs are trained to mirror the vehicle's standard, and they provide courteous, discreet service along the way.`,
+  rentalIntroText: ` 
+ 	
+The Mercedes S-Class is sophisticated, spacious, and drives like a dream — it's a vehicle for those who expect the very best. The ultra-luxurious interiors, whisper-quiet drive, and luxurious features all contribute to a level of comfort and prestige that is unmatched. At Vivek Travels, our professional chauffeurs are trained to mirror the vehicle's standard, and they provide courteous, discreet service along the way.`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const MercedesSClassConfig = {
     },
   ],
 
-  rentalClosingParagraph: `You’ve found luxury travel in Delhi NCR if you are looking for it! Book a Mercedes S Class on Vivek Travels for high-end chauffeur-driven travel anywhere in India. Each journey comes with a perfect, premium vehicle and an experienced and polite driver. The S-Class ensures that every moment you are in the car feels special, from the minute you get in to the drop off.`,
+  rentalClosingParagraph: ` 
+ 	
+You’ve found luxury travel in Delhi NCR if you are looking for it! Book a Mercedes S Class on Vivek Travels for high-end chauffeur-driven travel anywhere in India. Each journey comes with a perfect, premium vehicle and an experienced and polite driver. The S-Class ensures that every moment you are in the car feels special, from the minute you get in to the drop off.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -120,16 +124,16 @@ export default function MercedesSClass() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +146,17 @@ export default function MercedesSClass() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

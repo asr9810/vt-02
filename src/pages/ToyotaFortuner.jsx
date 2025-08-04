@@ -10,7 +10,8 @@ import ReservationBanner from "../components/ReservationBanner";
 const ToyotaFortunerConfig = {
   vehicleName: `Toyota Fortuner Rental Service`,
   introText: `We provide well-maintained Toyota Fortuner SUVs that have been built for every type of adventure - mountain trips, airport shuttles, group trips, or city driving. As a company based in Delhi, we know that when you book a Fortuner, you are signing up for power, comfort, and reliability in travel that matters. `,
-  rentalIntroText: `The Toyota Fortuner has been designed to be bold and assertive, whilst maintaining comfort. Having a premium interior, unmatched road presence, and legendary reliability means that every trip feels like a first-class trip. Whether you are on a family long trip, for work travels, or just conquering any terrain, the Fortuner feels like your best partner for the bigger adventures in life. At Vivek Travels, all you have to do is sit back and let our skilled drivers navigate while enjoying the elevated view and comforts.`,
+  rentalIntroText: ` 
+The Toyota Fortuner has been designed to be bold and assertive, whilst maintaining comfort. Having a premium interior, unmatched road presence, and legendary reliability means that every trip feels like a first-class trip. Whether you are on a family long trip, for work travels, or just conquering any terrain, the Fortuner feels like your best partner for the bigger adventures in life. At Vivek Travels, all you have to do is sit back and let our skilled drivers navigate while enjoying the elevated view and comforts.`,
 
   rentalDetails: [
     {
@@ -41,7 +42,9 @@ const ToyotaFortunerConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Vivek Travels has made it possible to rent a Toyota Fortuner for your powerful and comfortable travels throughout India, from Delhi NCR. Each booking comes with a chauffeur. Our drivers will make sure your journey is memorable! Our Fortuner fleet includes completely clean SUVs with seating for 7 and all the luxury amenities you'd want. We transform your travels from just a trip to an experience. Trust Vivek Travels to provide you premium adventures with the Toyoto Fortuner, dependable and unforgettable. Are you ready? Contact us today.`,
+  rentalClosingParagraph: ` 
+ 	
+Vivek Travels has made it possible to rent a Toyota Fortuner for your powerful and comfortable travels throughout India, from Delhi NCR. Each booking comes with a chauffeur. Our drivers will make sure your journey is memorable! Our Fortuner fleet includes completely clean SUVs with seating for 7 and all the luxury amenities you'd want. We transform your travels from just a trip to an experience. Trust Vivek Travels to provide you premium adventures with the Toyoto Fortuner, dependable and unforgettable. Are you ready? Contact us today.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -121,16 +124,16 @@ export default function ToyotaFortuner() {
               />
             </div>
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
-              <div
+             <div
                 ref={carouselRef}
-               className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -143,17 +146,17 @@ export default function ToyotaFortuner() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
-
+{/* 
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

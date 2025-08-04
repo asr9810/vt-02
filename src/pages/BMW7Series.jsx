@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const BMW7SeriesConfig = {
   vehicleName: `BMW 7-Series Rental Service`,
   introText: `A fleet of pristine BMW 7 series sedans is available for every situation on your travels - from business trips, to VIP airport transfers, to city rides, and outstation trips. We are based in Delhi, and we know that when you travel in luxury, you do so to maintain comfort and class. With each trip, we strive to provide an effortless, refined, and memorable experience.`,
-  rentalIntroText: `Refined, spacious, and unbelievably smooth, our BMW 7 Series sedans are for those who desire the very best. With their stunning interiors, sophisticated features, and commanding presence - the BMW 7 Series sedans do not just offer a ride, but an experience. At Vivek Travels, we pair this luxury sedan with professional, articulate, and discreet chauffeurs who prioritize punctuality and service - so you can focus on what is truly important.
+  rentalIntroText: ` 
+ 	
+Refined, spacious, and unbelievably smooth, our BMW 7 Series sedans are for those who desire the very best. With their stunning interiors, sophisticated features, and commanding presence - the BMW 7 Series sedans do not just offer a ride, but an experience. At Vivek Travels, we pair this luxury sedan with professional, articulate, and discreet chauffeurs who prioritize punctuality and service - so you can focus on what is truly important.
 `,
 
   rentalDetails: [
@@ -42,7 +44,9 @@ const BMW7SeriesConfig = {
     },
   ],
 
-  rentalClosingParagraph: `If you need executive-style travel in Delhi NCR, you’ve come to the right place. Book a BMW 7 Series with Vivek Travels for professional chauffeur-driven experiences throughout India. Each experience consists of a luxury, clean vehicle and trained chauffeur to ensure you travel in total comfort.`,
+  rentalClosingParagraph: ` 
+ 	
+If you need executive-style travel in Delhi NCR, you’ve come to the right place. Book a BMW 7 Series with Vivek Travels for professional chauffeur-driven experiences throughout India. Each experience consists of a luxury, clean vehicle and trained chauffeur to ensure you travel in total comfort.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -109,36 +113,38 @@ export default function BMW7Series() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                    className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
-                {[   "/ourFleet/Luxury/bmw/1.jpg",
-      "/ourFleet/Luxury/bmw/2.jpg",
-      "/ourFleet/Luxury/bmw/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/Luxury/bmw/1.jpg",
+                  "/ourFleet/Luxury/bmw/2.jpg",
+                  "/ourFleet/Luxury/bmw/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
-                   className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

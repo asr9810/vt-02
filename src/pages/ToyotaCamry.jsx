@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const ToyotaCamryConfig = {
   vehicleName: `Toyota Camry Rental Service`,
   introText: `We have a fleet of clean and comfortable Toyota Camry cars that are available for any kind of travel— whether it is a business meeting, an airport transfer, a city drive, or a long outstation journey.  Located in Delhi, we understand that when you are travelling— especially for work or for any specialized occasions— there is no option for comfort or reliability, only necessity.  We are committed to making each of your rides smooth, stress-free, and memorable. `,
-  rentalIntroText: `There is elegant, spacious, extraordinary smoothness. The Toyota Camry is the best option for someone who expects the best for their travel experience. Plush interiors, premium seating, and incomparable performance are capitalist's best friend. It's all for the sake of getting there with class and complete comfort. The staff of Vivek Travels are professional drivers, intended to support you, while appreciating what is most important in the end is simply the ride; and that you get to your final destination without worry and on-time.`,
+  rentalIntroText: `
+ 	
+There is elegant, spacious, extraordinary smoothness. The Toyota Camry is the best option for someone who expects the best for their travel experience. Plush interiors, premium seating, and incomparable performance are capitalist's best friend. It's all for the sake of getting there with class and complete comfort. The staff of Vivek Travels are professional drivers, intended to support you, while appreciating what is most important in the end is simply the ride; and that you get to your final destination without worry and on-time.`,
 
   rentalDetails: [
     {
@@ -41,8 +43,9 @@ const ToyotaCamryConfig = {
     },
   ],
 
-  rentalClosingParagraph: `If you're seeking luxury transportation in Delhi NCR, you have come to the right place. Reserve a Toyota Camry with Vivek Travels for comfortable, chauffeur-driven travel around India. Even though the Camry will make the journey smoother, you will always arrive in a clean, well-kept vehicle, with a courteous and experienced chauffeur. 
-The deluxe cabin of the Camry and its thoughtful features create a pleasant travelling experience, regardless of the distance of travelling you have undertaken. `,
+  rentalClosingParagraph: ` 
+If you're seeking luxury transportation in Delhi NCR, you have come to the right place. Reserve a Toyota Camry with Vivek Travels for comfortable, chauffeur-driven travel around India. Even though the Camry will make the journey smoother, you will always arrive in a clean, well-kept vehicle, with a courteous and experienced chauffeur. 
+The deluxe cabin of the Camry and its thoughtful features create a pleasant travelling experience, regardless of the distance of travelling you have undertaken.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -121,16 +124,16 @@ export default function ToyotaCamry() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-              className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -143,17 +146,17 @@ export default function ToyotaCamry() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                   className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                     className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

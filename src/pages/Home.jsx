@@ -878,6 +878,7 @@ journey every time`,
       {/* <WhyRideSection isHome={true} /> */}
       {true && <StepsSectionDesktop />}
       <BookYourRideMobile />
+      
 
       {
         <OurFleetsSection

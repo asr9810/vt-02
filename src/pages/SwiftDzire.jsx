@@ -20,7 +20,6 @@ export default function SwiftDzire() {
   const [activeTab, setActiveTab] = useState("local");
   const [mainImage, setMainImage] = useState("/ourFleet/Sedan/dzire/1.jpg");
 
-
   const carouselRef = useRef(null);
 
   const scrollCarousel = (direction) => {
@@ -38,18 +37,14 @@ export default function SwiftDzire() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-
-
-
-
   const config = {
     vehicleName: `Swift Dzire Rental Service`,
     introText: `We provide well-maintained, high-quality Swift Dzire cars on rent—ideal for outstation trips, airport pickup and drop, intercity travel, group travel, or just pick-up and drop services. Whether you're on a weekend trip or just require a safe drive around the city, we've got you covered.
 
 We are based in Delhi and ensuring each trip with us is a comfortable, hassle-free, and economical experience.`,
-    rentalIntroText: `Elegant, efficient, and simply comfortable — the Swift Dzire is the ideal sedan for those who value convenience alongside class. Oozing luxury in its plush interiors, sophisticated exterior design, and excellent mileage, the car provides a smooth travel experience. Best suited for business travel, family excursions, or airport runs, the Dzire is the trusted companion.
-
-At Vivek Travles, we provide chauffeur-driven cars so that you can sit back, relax, and enjoy a hassle-free ride from beginning to end.`,
+    rentalIntroText: ` 
+ 	
+Bold, luxurious, and strong; the Land Rover Defender provides rugged performance with a sophisticated interior, resulting in a driving experience that has no comparison. At Vivek Travels, every booking of a Defender includes an excellent trained chauffeur who will provide a smooth, safe, and stress-free journey.`,
 
     rentalDetails: [
       {
@@ -82,9 +77,9 @@ At Vivek Travles, we provide chauffeur-driven cars so that you can sit back, rel
       },
     ],
 
-    rentalClosingParagraph: `Vivek Travels offers Swift Dzire on rent from Delhi NCR for local and intercity travel across India. Each booking comes with a courteous, experienced chauffeur who ensures your journey is smooth, timely, and safe.
-Our Dzire fleet is equipped with well-maintained, top-of-the-line cars with comfortable seating and considerate amenities to provide extra comfort. 
-Select Vivek travels for a dependable, easy-going, and high-end travel with Maruti Swift Dzire. For bookings and availability, contact our us today.`,
+    rentalClosingParagraph: `  
+ 	
+Are you looking to experience India in a manner that is both an adventure and luxurious? In that case, you will want the Land Rover Defender. Only with Vivek Travels will you have the opportunity to chauffeur-driven travel that is not so traditional.`,
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
@@ -132,18 +127,22 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
               />
             </div>
 
-
             <div className="flex items-center justify-between w-full ">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
-
+              </button> */}
+              {/* 
               <div
                 ref={carouselRef}
                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[251px] cursor-pointer "
+                style={{ scrollbarWidth: "none" }}
+              > */}
+              <div
+                ref={carouselRef}
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -156,18 +155,17 @@ Select Vivek travels for a dependable, easy-going, and high-end travel with Maru
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
-
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="w-full lg:w-[460px]  h-[80%] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">

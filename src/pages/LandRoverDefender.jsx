@@ -10,7 +10,7 @@ import ReservationBanner from "../components/ReservationBanner";
 const LandRoverDefenderConfig = {
   vehicleName: `Land Rover Defender Rental Service`,
   introText: `The Land Rover Defender line of SUVs offers power and presence for all people seeking to be seen and heard, whether off-roading or on a scenic trip in the city. Ideal for outstation trips, luxury escapes, or high-profile events, the Defender provides capabilities without sacrificing style. `,
-  rentalIntroText: `Bold, luxurious, and strong — the Land Rover Defender provides rugged performance with a sophisticated interior, resulting in a driving experience that has no comparison. At Vivek Travels, every booking of a Defender includes an excellent trained chauffeur who will provide a smooth, safe, and stress-free journey.`,
+  rentalIntroText: `Bold, luxurious, and strong; the Land Rover Defender provides rugged performance with a sophisticated interior, resulting in a driving experience that has no comparison. At Vivek Travels, every booking of a Defender includes an excellent trained chauffeur who will provide a smooth, safe, and stress-free journey.`,
 
   rentalDetails: [
     {
@@ -41,7 +41,8 @@ const LandRoverDefenderConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Are you looking to experience India in a manner that is both an adventure and luxurious? In that case, you will want the Land Rover Defender. Only with Vivek Travels will you have the opportunity to chauffeur-driven travel that is not so traditional.`,
+  rentalClosingParagraph: ` 
+Are you looking to experience India in a manner that is both an adventure and luxurious? In that case, you will want the Land Rover Defender. Only with Vivek Travels will you have the opportunity to chauffeur-driven travel that is not so traditional.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -120,16 +121,16 @@ export default function LandRoverDefender() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +143,17 @@ export default function LandRoverDefender() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

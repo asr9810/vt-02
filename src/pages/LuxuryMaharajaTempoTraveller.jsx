@@ -35,19 +35,58 @@ export default function LuxuryMaharajaTempoTraveller() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-    const KiaCarnivalConfig = {
-  vehicleName: `Luxury Maharaja Tempo Traveller rentals in Delhi NCR`,
-  introText: `When comfort meets opulence on the road, that's the Luxury Maharaja Tempo Traveller - ideal for groups traveling without sacrificing space, style or experience. At Vivek Travels, you can rent a chauffeur-driven Maharaja Tempo Traveller from Delhi NCR for a family trip, wedding functions, outstation tours, and corporate group travel throughout India. `,
-  rentalIntroText: `With luxurious, stand-alone recliner chairs, individual mood lights and plenty of leg room, you passengers won't feel bad about traveling as if it's in a mobile lounge. Whether it is a weekend getaway, or a road trip for a couple of hours long, this will ensure comfort and class for everyone.`,
+  const KiaCarnivalConfig = {
+    vehicleName: `Luxury Maharaja Tempo Traveller rentals in Delhi NCR`,
+    introText: `When comfort meets opulence on the road, that's the Luxury Maharaja Tempo Traveller - ideal for groups traveling without sacrificing space, style or experience. At Vivek Travels, you can rent a chauffeur-driven Maharaja Tempo Traveller from Delhi NCR for a family trip, wedding functions, outstation tours, and corporate group travel throughout India. `,
+    rentalIntroText: ` 
+ 	
+With luxurious, stand-alone recliner chairs, individual mood lights and plenty of leg room, you passengers won't feel bad about traveling as if it's in a mobile lounge. Whether it is a weekend getaway, or a road trip for a couple of hours long, this will ensure comfort and class for everyone.`,
 
-  rentalDetails: [{'title': 'Travel Inclusions', 'items': ['Charges applicable from garage to garage', 'Night charges applicable after 11:00 PM IST', 'Fuel, toll, state tax, and driver charges included', 'Parking and GST charges extra']}, {'title': 'Amenities', 'items': ['Water Bottle','Air conditioned', 'Blanket', 'GPS Charging point', 'Chauffeur', 'Reading light','Luggage space','Vomiting bag']}, {'title': 'Features', 'items': ['Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.', 'The spacious cabin to make every journey feel effortless. ', 'The SmartPlay infotainment system to keep entertained.']}],
+    rentalDetails: [
+      {
+        title: "Travel Inclusions",
+        items: [
+          "Charges applicable from garage to garage",
+          "Night charges applicable after 11:00 PM IST",
+          "Fuel, toll, state tax, and driver charges included",
+          "Parking and GST charges extra",
+        ],
+      },
+      {
+        title: "Amenities",
+        items: [
+          "Water Bottle",
+          "Air conditioned",
+          "Blanket",
+          "GPS Charging point",
+          "Chauffeur",
+          "Reading light",
+          "Luggage space",
+          "Vomiting bag",
+        ],
+      },
+      {
+        title: "Features",
+        items: [
+          "Safety features like seatbelt reminders, high-speed alerts, and rear parking sensors.",
+          "The spacious cabin to make every journey feel effortless. ",
+          "The SmartPlay infotainment system to keep entertained.",
+        ],
+      },
+    ],
 
-  rentalClosingParagraph: `Our trained chauffeurs are polite, on-time, and know how to manage everything about group travel so you can concentrate on having fun with your people.`,
+    rentalClosingParagraph: ` 
+Our trained chauffeurs are polite, on-time, and know how to manage everything about group travel so you can concentrate on having fun with your people.`,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '17 kmpl'], ['Seats', '12 passengers+ driver'], ['Engine', '2596 cc']],
+    vehicleSpecs: [
+      ["Air conditioning", "yes"],
+      ["Mileage", "17 kmpl"],
+      ["Seats", "12 passengers+ driver"],
+      ["Engine", "2596 cc"],
+    ],
 
-  vehicleParagraph: `Book your Luxury Maharaja Tempo Traveller with Vivek Travels, and make your next group trip an event to remember! This is a well-maintained, immaculate vehicle made for a smooth and luxurious travel experience.`
-};
+    vehicleParagraph: `Book your Luxury Maharaja Tempo Traveller with Vivek Travels, and make your next group trip an event to remember! This is a well-maintained, immaculate vehicle made for a smooth and luxurious travel experience.`,
+  };
 
   return (
     <>
@@ -76,9 +115,9 @@ export default function LuxuryMaharajaTempoTraveller() {
                 className="object-contain h-full "
               />
             </div> */}
-                        <div
+            <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%",  }}
+              style={{ width: "100%" }}
             >
               <img
                 src={mainImage}
@@ -88,37 +127,39 @@ export default function LuxuryMaharajaTempoTraveller() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
-                style={{ scrollbarWidth: "none"}}
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
+                style={{ scrollbarWidth: "none" }}
               >
-                {["/ourFleet/TT/TT/1.jpg",
-      "/ourFleet/TT/TT/2.jpg",
-      "/ourFleet/TT/TT/3.jpg",].map((img, idx) => (
+                {[
+                  "/ourFleet/TT/TT/1.jpg",
+                  "/ourFleet/TT/TT/2.jpg",
+                  "/ourFleet/TT/TT/3.jpg",
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-coveborder p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
-
+              {/* 
               <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -126,34 +167,55 @@ export default function LuxuryMaharajaTempoTraveller() {
             <div className="flex mb-4">
               <button
                 onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "local" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "local"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Local / Airport
               </button>
               <button
                 onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${activeTab === "outstation" ? "bg-white text-[#3D3E98]" : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"}`}
+                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
+                  activeTab === "outstation"
+                    ? "bg-white text-[#3D3E98]"
+                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
+                }`}
               >
                 Outstation
               </button>
             </div>
 
             <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map((field, idx) => (
-                <div key={idx}>
-                  <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    {field.charAt(0).toUpperCase() + field.slice(1).replace("Time", " & Time")}
-                  </label>
-                  <input
-                    type={field === "dateTime" ? "datetime-local" : field === "contact" ? "tel" : "text"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={field === "contact" ? "+91 1234567890" : `Enter ${field}`}
-                    className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                  />
-                </div>
-              ))}
+              {["from", "destination", "dateTime", "name", "contact"].map(
+                (field, idx) => (
+                  <div key={idx}>
+                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
+                      {field.charAt(0).toUpperCase() +
+                        field.slice(1).replace("Time", " & Time")}
+                    </label>
+                    <input
+                      type={
+                        field === "dateTime"
+                          ? "datetime-local"
+                          : field === "contact"
+                          ? "tel"
+                          : "text"
+                      }
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      placeholder={
+                        field === "contact"
+                          ? "+91 1234567890"
+                          : `Enter ${field}`
+                      }
+                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
+                    />
+                  </div>
+                )
+              )}
               <button
                 type="submit"
                 className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"
@@ -164,7 +226,7 @@ export default function LuxuryMaharajaTempoTraveller() {
           </div>
         </div>
       </div>
-      <VehicleDetailInfoSection {...KiaCarnivalConfig}/>
+      <VehicleDetailInfoSection {...KiaCarnivalConfig} />
       <WhyRideSection />
       <br className="block md:hidden" />
       <ReservationBanner />

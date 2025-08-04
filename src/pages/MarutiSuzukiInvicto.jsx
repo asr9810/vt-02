@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const MarutiSuzukiInvictoConfig = {
   vehicleName: `Maruti Suzuki Invicto Rental Service`,
   introText: `We offer a fleet of excellent condition Maruti Suzuki Invicto automobiles that represent the highest standard of comfort, for any weekend getaway, an airport transfer, business travel or first-class city travel. Based in Delhi, we know that welcoming the passenger class of the Maruti Suzuki Invicto means you mean business, we believe these requests work together for an enjoyable, hassle-free, value-based experience.`,
-  rentalIntroText: `The Maruti Suzuki Invicto is the intersection of luxury and practicality - the quality and size to accommodate your full family, while still being sophisticated enough for executive travel. With impressive quality, every expedition is memorable for the river and the passengers. Use it for important business meetings, family celebrations, airport transportation - whatever the case, the Invicto improves every situation. At Vivek Travels, our talented professional drivers have been trained for Timeliness – and as a result, they assure you will arrive comfortably, recharged and ready for what's next.`,
+  rentalIntroText: ` 
+ 	
+The Maruti Suzuki Invicto is the intersection of luxury and practicality - the quality and size to accommodate your full family, while still being sophisticated enough for executive travel. With impressive quality, every expedition is memorable for the river and the passengers. Use it for important business meetings, family celebrations, airport transportation - whatever the case, the Invicto improves every situation. At Vivek Travels, our talented professional drivers have been trained for Timeliness – and as a result, they assure you will arrive comfortably, recharged and ready for what's next.`,
 
   rentalDetails: [
     {
@@ -120,16 +122,16 @@ export default function MarutiSuzukiInvicto() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +144,17 @@ export default function MarutiSuzukiInvicto() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                     className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

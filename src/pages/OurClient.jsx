@@ -42,7 +42,7 @@ const sectors = {
 
 // Section title
 const SectionTitle = ({ title }) => (
-  <h2 className="text-[36px] font-semibold text-black leading-none h-[25px] mb-[30px]">
+  <h2 className="text-[36px] font-semibold text-black leading-none h-[25px] mb-[30px]  text-center">
     {title}
   </h2>
 );
@@ -67,11 +67,19 @@ const ImageCard = ({ src, alt }) => (
 // Main component
 const OurClient = () => {
   return (
-    <div className="w-full max-w-[1084.43px] px-4 sm:px-0 flex flex-col gap-[64px] py-[60px] mx-auto bg-white">
+    <div className="w-full max-w-[1084.43px] px-4 sm:px-0 flex flex-col gap-[64px] py-[40px] justify-center mx-auto bg-white ">
+      <div className="text-center">
+        <h1
+          className="font-['DM Sans'] font-bold text-[24px] md:text-[48px] leading-[110%] tracking-[1%] text-[#3D3E98] text-center"
+          style={{ fontFamily: "DM Sans, sans-serif" }}
+        >
+          Our Corporate Clients
+        </h1>
+      </div>
       {Object.entries(sectors).map(([sector, clients]) => (
         <div key={sector}>
           <SectionTitle title={sector === "PSU" ? "PSU’s" : sector} />
-          <div className="grid grid-cols-2 gap-[13px] sm:flex sm:flex-wrap sm:justify-start sm:gap-[13px] sm:grid-cols-none">
+          <div className="grid grid-cols-2 gap-[13px] sm:flex sm:flex-wrap sm:justify-center sm:gap-[13px] sm:grid-cols-none ">
             {clients.map(({ id, src }) => (
               <ImageCard key={id} src={src} alt={id} />
             ))}

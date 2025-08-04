@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const JaguarXFConfig = {
   vehicleName: `Jaguar XF Rental Service`,
   introText: `Our fleet of Jaguar XF sedans will always be appropriate for moments that require elegance, comfort and presence — be it a corporate meeting, airport transfer, a drive across the city, or an outstation trip. Being based in Delhi, we understand that luxury travel is about more than just the destination — it’s about how you get there. We want every ride to leave you with an elegant and unforgettable experience as you travel smooth, stylish, and with presence.`,
-  rentalIntroText: `Sleek, powerful, and undeniably sophisticated — the Jaguar XF is made for individuals who recognize the attention to detail. The luxurious interior, sharp exterior lines, and seamless performance will provide a type of experience that is easily recognized. At Vivek Travels, our well-groomed and professional chauffeurs will make sure you enjoy your ride step-by-step so you can enjoy the ride without worry.`,
+  rentalIntroText: ` 
+ 	
+Sleek, powerful, and undeniably sophisticated — the Jaguar XF is made for individuals who recognize the attention to detail. The luxurious interior, sharp exterior lines, and seamless performance will provide a type of experience that is easily recognized. At Vivek Travels, our well-groomed and professional chauffeurs will make sure you enjoy your ride step-by-step so you can enjoy the ride without worry.`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const JaguarXFConfig = {
     },
   ],
 
-  rentalClosingParagraph: `If you are looking for a premium travel experience in the Delhi NCR region, look no further. Book a Jaguar XF with Vivek Travels for a chauffeur-driven travel experience that’s a class above the rest. Every trip includes a well-maintained, beautiful vehicle with an amiable, experienced chauffeur with one purpose - to make you completely comfortable. `,
+  rentalClosingParagraph: ` 
+ 	
+If you are looking for a premium travel experience in the Delhi NCR region, look no further. Book a Jaguar XF with Vivek Travels for a chauffeur-driven travel experience that’s a class above the rest. Every trip includes a well-maintained, beautiful vehicle with an amiable, experienced chauffeur with one purpose - to make you completely comfortable. `,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -110,16 +114,16 @@ export default function JaguarXF() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                    className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -132,17 +136,17 @@ export default function JaguarXF() {
                     src={img}
                     alt={`Car ${idx}`}
                      onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                      className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

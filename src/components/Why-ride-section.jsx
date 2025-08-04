@@ -197,7 +197,7 @@ import frame923Img from "../assets/24by7.svg";
 export default function WhyRideSection({isHome=false}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
-  const slideInterval = 2000;
+  const slideInterval = 5000;
   const slideTransitionDuration = 800;
   const cardWidth = 250;
   const gap = 20;

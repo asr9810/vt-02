@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const ToyotaRumionConfig = {
   vehicleName: `Toyota Rumion Rental Service`,
   introText: `We offer well-maintained, reliable Toyota Rumion cars ready for your next adventure – weekend trips, airport runs, business travel, or general transportation. We are based in Delhi and are local residents who are aware of a comfortable, reliable and affordable experience.`,
-  rentalIntroText: `The Toyota Rumion is practical, stylish and spacious enough for your whole crew, also economical for your wallet. The interior is versatile, has a modern feel and is great on fuel so you will feel like you are going the distance. Whether you are taking your family on an outing, fulfilling your job requirements or airport pickups, the Rumion will transport you safely and comfortably. At Vivek Travels, our professional drivers will take care of everything, while you focus on the important things.`,
+  rentalIntroText: ` 
+ 	
+The Toyota Rumion is practical, stylish and spacious enough for your whole crew, also economical for your wallet. The interior is versatile, has a modern feel and is great on fuel so you will feel like you are going the distance. Whether you are taking your family on an outing, fulfilling your job requirements or airport pickups, the Rumion will transport you safely and comfortably. At Vivek Travels, our professional drivers will take care of everything, while you focus on the important things.`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const ToyotaRumionConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Book your Toyota Rumion with Vivek Travels for effortless travelling from Delhi NCR to destinations throughout India. Every reservation comes with an experienced and friendly driver who genuinely cares about getting you there and back safely and on time. In addition to that, our fleet of Rumions is exceptionally clean, with vehicles that feel spacious and comfortable and little enhancements that make every mile enjoyable. With Vivek Travels, you can expect reliable, relaxing and quality travel with our offered Toyota Rumion. Want to make your reservation? Just call us and we will be happy to assist.`,
+  rentalClosingParagraph: ` 
+ 	
+Book your Toyota Rumion with Vivek Travels for effortless travelling from Delhi NCR to destinations throughout India. Every reservation comes with an experienced and friendly driver who genuinely cares about getting you there and back safely and on time. In addition to that, our fleet of Rumions is exceptionally clean, with vehicles that feel spacious and comfortable and little enhancements that make every mile enjoyable. With Vivek Travels, you can expect reliable, relaxing and quality travel with our offered Toyota Rumion. Want to make your reservation? Just call us and we`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -120,16 +124,16 @@ export default function ToyotaRumion() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +146,17 @@ export default function ToyotaRumion() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                     className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

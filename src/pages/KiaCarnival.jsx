@@ -10,7 +10,9 @@ import ReservationBanner from "../components/ReservationBanner";
 const KiaCarnivalConfig = {
   vehicleName: `Kia Carnival Rental Service`,
   introText: `We provide clean, reputable Kia Carnival cars that are ideal for all forms of travel - as a family, airport transfer, group trip, or corporate travel throughout Delhi. We understand that when traveling with more people, comfort and space become even more important. This is why we make sure your travel experience is comfortable, stress-free and incredibly affordable. `,
-  rentalIntroText: `Where luxury meets practicality is in the Kia Carnival - enough space for you and your entire crew, which is luxury enough to turn heads as you traverse through Delhi. With luxurious interiors, the bold presence of the Kia Carnival and careful design, every new journey feels like the first time. Whether travelling for a special family celebration, business delegation, or heading off on a group trip away, the Kia Carnival quickly becomes your next new adventure and favorite travel vehicle. Seeing as our professional drivers care for everything, it makes it easier for you`,
+  rentalIntroText: ` 
+ 	
+Where luxury meets practicality is in the Kia Carnival - enough space for you and your entire crew, which is luxury enough to turn heads as you traverse through Delhi. With luxurious interiors, the bold presence of the Kia Carnival and careful design, every new journey feels like the first time. Whether travelling for a special family celebration, business delegation, or heading off on a group trip away, the Kia Carnival quickly becomes your next new adventure and favorite travel vehicle. Seeing as our professional drivers care for everything, it makes it easier for you.`,
 
   rentalDetails: [
     {
@@ -41,7 +43,9 @@ const KiaCarnivalConfig = {
     },
   ],
 
-  rentalClosingParagraph: `Rent a Kia Carnival from Vivek Travels for premium group travel in Delhi NCR and anywhere in India. Each booking includes a courteous, experienced driver who considers the safety and comfort of your group his main task. Our fleet of Carnivals is spotless, well-equipped, spacious, and outfitted with amenities that make the ride enjoyable for everyone. Choose Vivek Travels for dependable, comfortable and premium group travels. Ready to plan your group trip? Contact us today.`,
+  rentalClosingParagraph: ` 
+ 	
+Rent a Kia Carnival from Vivek Travels for premium group travel in Delhi NCR and anywhere in India. Each booking includes a courteous, experienced driver who considers the safety and comfort of your group his main task. Our fleet of Carnivals is spotless, well-equipped, spacious, and outfitted with amenities that make the ride enjoyable for everyone. Choose Vivek Travels for dependable, comfortable and premium group travels. Ready to plan your group trip? Contact us today.`,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
@@ -122,16 +126,16 @@ export default function KiaCarnival() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide  sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -144,17 +148,17 @@ export default function KiaCarnival() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 
