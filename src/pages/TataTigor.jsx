@@ -38,7 +38,8 @@ export default function TataTigor() {
   const KiaCarnivalConfig = {
     vehicleName: `Tata Tigor rentals in Delhi NCR`,
     introText: `Searching for a smart, eco-friendly transportation solution? Our fleet of Tata Tigor EV cars delivers comfort, efficiency, and sustainability for urban travelers, from tourist destinations and airport transportation, to interor city journeys away from Delhi NCR.`,
-    rentalIntroText: `The Tigor EV is comfortable, quiet, and clean, making it well-suited for a solo traveller, business professional, or small family unit. You can drive it without emissions and without the noise you may expect from a traditional gas vehicle, and benefit from the ability of an electric car. At Vivek Travels, we provide a well-trained, polite chauffeur so you can enjoy travelling, all risk free.`,
+    rentalIntroText: `
+The Tigor EV is comfortable, quiet, and clean, making it well-suited for a solo traveller, business professional, or small family unit. You can drive it without emissions and without the noise you may expect from a traditional gas vehicle, and benefit from the ability of an electric car. At Vivek Travels, we provide a well-trained, polite chauffeur so you can enjoy travelling, all risk free.`,
 
     rentalDetails: [
       {
@@ -120,16 +121,15 @@ export default function TataTigor() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
-
+              </button> */}
               <div
                 ref={carouselRef}
-                 className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +142,17 @@ export default function TataTigor() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

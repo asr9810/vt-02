@@ -103,12 +103,12 @@ export default function MercedesViano() {
           <div className="w-full lg:w-[738px] flex flex-col gap-[14px]">
             <div
               className="border rounded-md flex justify-center items-center"
-              style={{ width: "100%" }}
+              // style={{ width: "100%" }}
             >
               <img
-                src={carImage}
+                src={'ourFleet/Luxury/merc_viano/2.jpg'}
                 alt="Main Car"
-                className="object-contain h-full "
+                className="object-contain "
               />
             </div>
 
@@ -125,7 +125,11 @@ export default function MercedesViano() {
                 className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
-                {[dummy1, dummy2, dummy2].map((img, idx) => (
+                {[
+                  'ourFleet/Luxury/merc_viano/2.jpg',
+                  'ourFleet/Luxury/merc_viano/1.jpg',
+                  'ourFleet/Luxury/merc_viano/3.jpg',
+                ].map((img, idx) => (
                   <img
                     key={idx}
                     src={img}

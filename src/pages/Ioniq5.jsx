@@ -38,7 +38,9 @@ export default function Ioniq5() {
   const KiaCarnivalConfig = {
     vehicleName: `Ioniq 5 rentals in Delhi NCR`,
     introText: `With sleek lines and futuristic elegance, the all-electric Hyundai Ioniq 5 is not just a vehicle, but a showpiece. Vivek Travels offers chauffeur-driven rentals of the Ioniq 5 from the Delhi NCR for those seeking a silky-smooth and sustainable level of travel. `,
-    rentalIntroText: `With a lounge-like interior, ultra-modern exterior styling, and whisper-quiet performance, the Ioniq 5 provides comfort, space, and technology in perfect synergy. Wait until you go for a corporate meeting, want to do an airport transfer, or show up stylish to a special event and enjoy the ride of this auto that far surpasses what you might have imagined.`,
+    rentalIntroText: ` 
+ 	
+With a lounge-like interior, ultra-modern exterior styling, and whisper-quiet performance, the Ioniq 5 provides comfort, space, and technology in perfect synergy. Wait until you go for a corporate meeting, want to do an airport transfer, or show up stylish to a special event and enjoy the ride of this auto that far surpasses what you might have imagined.`,
 
     rentalDetails: [
       {
@@ -110,16 +112,16 @@ export default function Ioniq5() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -132,17 +134,17 @@ export default function Ioniq5() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

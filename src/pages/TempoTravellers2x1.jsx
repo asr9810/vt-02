@@ -35,7 +35,9 @@ export default function TempoTravellers2x1() {
   const KiaCarnivalConfig = {
     vehicleName: `Tempo Travellers 2x1 rentals in Delhi NCR`,
     introText: `Going with a group? Our Tempo Traveller 2x1 is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 2x1 Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
-    rentalIntroText: `With plenty of space set out in a 2x1 configuration, you do not have to worry about a middle seat or bumping knees, everyone has enough space to relax and spread out!! The interiors are clean, spacious and ventilated and well looked after so that you can enjoy a comfortable journey.`,
+    rentalIntroText: ` 
+ 	
+With plenty of space set out in a 2x1 configuration, you do not have to worry about a middle seat or bumping knees, everyone has enough space to relax and spread out!! The interiors are clean, spacious and ventilated and well looked after so that you can enjoy a comfortable journey.`,
 
     rentalDetails: [
       {
@@ -70,7 +72,7 @@ export default function TempoTravellers2x1() {
       },
     ],
 
-    rentalClosingParagraph: `You can book your Tempo Traveller 2x1 with Vivek Travels they will take your group to their destination, without sacrificing comfort for reliability. Whether it's a long or a short trip, we will ensure your group gets to where they need to, the right way.`,
+    rentalClosingParagraph: `With our experienced drivers, you can rest assured that you will have a safe, timely, and hassle-free ride, allowing your group to travel together in comfort without any logistic concerns.`,
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
@@ -120,16 +122,16 @@ export default function TempoTravellers2x1() {
               />
             </div>
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +144,17 @@ export default function TempoTravellers2x1() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 

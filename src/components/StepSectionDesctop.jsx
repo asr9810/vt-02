@@ -58,7 +58,7 @@ const StepBlock = ({ iconSrc, title, description }) => (
         style={{ width: "100%", height: "100%" }}
       />
     </div>
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center"  ,     width: "267px", }}>
       <div
         style={{
           fontFamily: "'DM Sans', sans-serif",
@@ -68,21 +68,23 @@ const StepBlock = ({ iconSrc, title, description }) => (
           textAlign: "center",
           color: "#3D3E98",
           marginBottom: "13px",
+                  //  border:'1px solid black'
         }}
       >
         {title}
       </div>
       <div
         style={{
-          width: "267px",
+          // width: "267px",
           fontFamily: "'DM Sans', sans-serif",
           fontWeight: 500,
           fontSize: "14px",
           lineHeight: "14px",
           textAlign: "center",
           color: "rgba(0, 0, 0, 0.7)",
-          marginLeft: "-20px",
+          // marginLeft: "-20px",
           minHeight: "30px",
+          // border:'1px solid black'
         }}
       >
         {description}
@@ -103,7 +105,7 @@ export default function StepsSectionDesktop() {
         position: "relative",
         margin: "0 auto",
         paddingTop: "100px",
-        border:'1px solid black',
+        // border:'1px solid black',
         paddingBottom:'135px'
       }}
     >
@@ -142,9 +144,9 @@ export default function StepsSectionDesktop() {
           title="Select Your Vehicle"
           description={
             <>
-              Select the ideal vehicle
+             Select the ideal vehicle
               <br />
-              for your travel needs
+              for your travel needs.
             </>
           }
         />
@@ -165,7 +167,7 @@ export default function StepsSectionDesktop() {
           title="Enjoy Your Trip"
           description={
             <>
-              Enjoy a smooth and
+             Enjoy a smooth and
               <br /> hassle-free journey.
             </>
           }

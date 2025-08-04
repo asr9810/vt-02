@@ -407,9 +407,9 @@ journey every time`,
   }}
 > */}
         <div
-          className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1250px] mx-auto left-1/2 transform -translate-x-1/2"
+          className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1300px] mx-auto left-1/2 transform -translate-x-1/2"
           style={{
-            top: "-50px",
+            // top: "-50px",
             height: "302px",
           }}
         >
@@ -459,7 +459,7 @@ journey every time`,
 
             {/* Fields with Labels */}
             {/* <div className="flex items-start mt-6 gap-4"> */}
-            <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
+            <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4 ">
               {/* Location or From + Destination */}
               {activeTab === "local" ? (
                 <div className="flex flex-col">
@@ -503,7 +503,7 @@ journey every time`,
                       placeholder="From"
                       value={formData.from}
                       onChange={handleInputChange}
-                      className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                      className="w-[180px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -524,14 +524,14 @@ journey every time`,
                       placeholder="Destination"
                       value={formData.destination}
                       onChange={handleInputChange}
-                      className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                      className="w-[180px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                     />
                   </div>
                 </>
               )}
 
               {/* Date & Time */}
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label
                   className="text-white mb-[6px]"
                   style={{
@@ -552,6 +552,50 @@ journey every time`,
                     setFormData({ ...formData, date, time });
                   }}
                   className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div> */}
+              <div className="flex flex-col">
+                <label
+                  className="text-white mb-[6px]"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "11.17px",
+                  }}
+                >
+                  Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={(e) =>
+                    setFormData({ ...formData, date: e.target.value })
+                  }
+                  className="w-[170px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label
+                  className="text-white mb-[6px]"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "11.17px",
+                  }}
+                >
+                  Time
+                </label>
+                <input
+                  type="time"
+                  name="time"
+                  value={formData.time}
+                  onChange={(e) =>
+                    setFormData({ ...formData, time: e.target.value })
+                  }
+                  className="w-[130px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
 
@@ -597,7 +641,7 @@ journey every time`,
                   placeholder="+91 1234567890"
                   value={formData.contact}
                   onChange={handleInputChange}
-                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  className="w-[150px] h-[40px] px-[8px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
 
@@ -878,7 +922,6 @@ journey every time`,
       {/* <WhyRideSection isHome={true} /> */}
       {true && <StepsSectionDesktop />}
       <BookYourRideMobile />
-      
 
       {
         <OurFleetsSection

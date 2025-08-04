@@ -8,7 +8,7 @@ const sectors = {
     { id: "eil", src: "/eil.jpg" },
     { id: "aadhaar", src: "/aadhaar.jpg" },
     { id: "iocl", src: "/iocl.jpg" },
-    { id: "rites", src: "/rites.jpg" },
+    // { id: "rites", src: "/rites.jpg" },
   ],
   Private: [
     { id: "samsung", src: "/samsung.jpg" },
@@ -27,7 +27,7 @@ const sectors = {
     { id: "rural", src: "/rural.jpg" },
     { id: "communications", src: "/communications.jpg" },
     { id: "railway", src: "/railway.jpg" },
-    { id: "ntpc", src: "/ntpc.jpg" },
+    // { id: "ntpc", src: "/ntpc.jpg" },
     { id: "obc", src: "/obc.jpg" },
   ],
   "Education Institute": [

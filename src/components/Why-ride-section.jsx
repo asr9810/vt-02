@@ -262,6 +262,7 @@ should be.`,
       icon: "/handshake.svg",
       title: `Trusted by Fortune 500 & Govt bodies`,
       description: `From Fortune 500 companies, to government bodies, we’re their travel partner because they know we’ll show up!`,
+      sizes:true
     },
   ];
 
@@ -417,7 +418,7 @@ should be.`,
                         <img
                           src={feature.icon || "/placeholder.svg"}
                           alt={feature.title}
-                          style={{ width: "67px", height: "80px" }}
+                          style={{ width: feature?.sizes == true? '90px':'67px', height: "80px",}}
                         />
                       ) : (
                         <div>{feature.icon}</div>

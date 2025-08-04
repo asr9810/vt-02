@@ -145,7 +145,7 @@ const mobileSteps = [
   {
     step: "STEP 1",
     title: "Your Journey, Your Way",
-    description: "Customize your trip: pick-up, drop-off, and vehicle, your way!",
+    description: "Set your pick-up, drop-off, and ride. Just the way you want.",
     icon: "/calender.svg",
   },
   {
@@ -272,6 +272,7 @@ export default function BookYourRideMobile() {
                   fontWeight: 500,
                   lineHeight: "10.6px",
                   color: "#000000B2",
+                  // border:'1px solid black'
                 }}
               >
                 {step.description}

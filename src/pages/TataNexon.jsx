@@ -38,7 +38,8 @@ export default function TataNexon() {
   const KiaCarnivalConfig = {
     vehicleName: `Tata Nexon rentals in Delhi NCR`,
     introText: `Searching for a stylish, secure, and comfortable vehicle for your next road trip? Our Tata Nexon hire is a great option for a city drive, a short weekend getting away, an airport transfer, and travelling outstation from Delhi NCR.`,
-    rentalIntroText: `With a bold design, ample on board space and effortless driving, the Tata Nexon delivers a premium SUV experience without overwhelming bulk. This SUV is ideal for independent travellers, couples, or small families looking for a reliable car, that is also practical and mode of transport. A qualified driver will be included on every trip with Vivek Travels ensuring every driver is safe, punctual, and stress-free. `,
+    rentalIntroText: `
+With a bold design, ample on board space and effortless driving, the Tata Nexon delivers a premium SUV experience without overwhelming bulk. This SUV is ideal for independent travellers, couples, or small families looking for a reliable car, that is also practical and mode of transport. A qualified driver will be included on every trip with Vivek Travels ensuring every driver is safe, punctual, and stress-free.  `,
 
     rentalDetails: [
       {
@@ -120,16 +121,16 @@ export default function TataNexon() {
             </div>
 
             <div className="flex items-center justify-between w-full">
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center rotate-180 text-[#3D3E98]"
                 onClick={() => scrollCarousel("left")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
 
               <div
                 ref={carouselRef}
-                className="flex gap-4 overflow-x-auto flex-nowrap max-w-[680px] px-2 scrollbar-hide sm:h-[220px] cursor-pointer"
+                className="flex gap-2 overflow-x-auto flex-nowrap w-full justify-center sm:h-[160px] cursor-pointer "
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
@@ -142,17 +143,17 @@ export default function TataNexon() {
                     src={img}
                     alt={`Car ${idx}`}
                     onClick={() => setMainImage(img)}
-                    className="w-[120px] h-[80px] sm:w-[200px] sm:h-[140px] md:w-[320px] md:h-[200px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                    className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}
               </div>
 
-              <button
+              {/* <button
                 className="cursor-pointer w-6 h-6 flex items-center justify-center text-[#3D3E98]"
                 onClick={() => scrollCarousel("right")}
               >
                 <TfiArrowCircleRight size={24} />
-              </button>
+              </button> */}
             </div>
           </div>
 
