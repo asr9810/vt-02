@@ -530,30 +530,7 @@ journey every time`,
                 </>
               )}
 
-              {/* Date & Time */}
-              {/* <div className="flex flex-col">
-                <label
-                  className="text-white mb-[6px]"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontSize: "20px",
-                    fontWeight: 700,
-                    lineHeight: "11.17px",
-                  }}
-                >
-                  Date & Time
-                </label>
-                <input
-                  type="datetime-local"
-                  name="datetime"
-                  value={`${formData.date}T${formData.time}`}
-                  onChange={(e) => {
-                    const [date, time] = e.target.value.split("T");
-                    setFormData({ ...formData, date, time });
-                  }}
-                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-                />
-              </div> */}
+             
               <div className="flex flex-col">
                 <label
                   className="text-white mb-[6px]"
@@ -666,7 +643,7 @@ journey every time`,
           </div>
         </div>
 
-        <div className="block md:hidden relative z-10 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-start md:pl-[75px]">
+        <div className=" md:hidden relative z-10 w-full flex flex-col items-center justify-center md:flex-row md:items-start md:justify-start md:pl-[75px]">
           {/* Pick Your Ride Form */}
           {!isMobile || !showOffers ? (
             <div className="bg-[#3D3E98] text-white shadow-2xl w-[334.04px] md:w-[450px] rounded-[7.42px] md:rounded-[8px] pt-[20.78px] md:pt-[32px] pr-[23.75px] md:pr-[32px] pb-[20.78px] md:pb-[32px] pl-[23.75px] md:pl-[32px] mb-10 md:mb-0 ">

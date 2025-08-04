@@ -590,16 +590,16 @@ export default function CarOffersSection({ isVisible, onClose }) {
         </div>
       </div>
 {modalOpen && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
-    onClick={() => {
-      setModalOpen(false);
-      document.body.style.overflow = "auto";
-    }}
-  >
+<div
+  className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/40 backdrop-blur-sm "
+  onClick={() => {
+    setModalOpen(false);
+    document.body.style.overflow = "auto";
+  }}
+>
     <div
       onClick={(e) => e.stopPropagation()}
-      className="relative bg-white rounded-xl w-[90%] max-w-[800px] sm:max-w-[60%] max-h-[40vh]  overflow-hidden shadow-lg flex flex-col"
+      className="relative bg-white rounded-xl w-[90%] max-w-[800px] sm:max-w-[60%] max-h-[80vh] sm:mt-[60px]  overflow-hidden shadow-lg flex flex-col"
     >
       {/* Close Button */}
       <button
@@ -613,8 +613,8 @@ export default function CarOffersSection({ isVisible, onClose }) {
       </button>
 
       {/* Scrollable Content */}
-      <div className="overflow-y-auto px-4 pt-10 pb-4 h-full">
-        <div className="flex flex-col sm:flex-col md:flex-row gap-4 justify-center items-center">
+      <div className="overflow-y-auto px-4 pt-10 pb-4 h-full ">
+        <div className="flex flex-col sm:flex-col md:flex-row gap-4 justify-center items-center ">
           {modalImages.map((img, idx) => (
             <img
               key={idx}

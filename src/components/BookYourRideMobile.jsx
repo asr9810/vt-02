@@ -268,9 +268,9 @@ export default function BookYourRideMobile() {
               <div
                 style={{
                   fontFamily: "DM Sans",
-                  fontSize: "8.83px",
+                  fontSize: "11px",
                   fontWeight: 500,
-                  lineHeight: "10.6px",
+                  lineHeight: "11.6px",
                   color: "#000000B2",
                   // border:'1px solid black'
                 }}
