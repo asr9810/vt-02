@@ -145,14 +145,14 @@ const Navbar = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/gallery"
                 className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Gallery
               </Link>
-            </li>
+            </li> */}
 
             <li
               className="relative group"
@@ -252,14 +252,14 @@ const Navbar = () => {
                 Clients
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/blogs"
                 className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
                 Blogs
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/vendor-application"
@@ -341,7 +341,7 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/gallery"
               onClick={() => setIsMenuOpen(false)}
@@ -349,7 +349,7 @@ const Navbar = () => {
             >
               Gallery
             </Link>
-          </li>
+          </li> */}
           <li>
             <button
               onClick={() => setIsFleetMobileOpen(!isFleetMobileOpen)}
@@ -424,7 +424,7 @@ const Navbar = () => {
               Clients
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/blogs"
               onClick={() => setIsMenuOpen(false)}
@@ -432,7 +432,7 @@ const Navbar = () => {
             >
               Blogs
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/vendor-application"

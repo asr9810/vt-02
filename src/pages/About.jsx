@@ -381,9 +381,9 @@ Trusted by Generations`,
   return (
     <div className="min-h-screen bg-white ">
       {/* Heading */}
-      <section className="h-[80px] bg-white flex items-center justify-center ">
+      <section className="h-[55px] md:h-[80px] bg-white flex items-center justify-center ">
         <h1
-          className="text-[#3D3E98] font-semibold text-[36px] text-center m-0"
+          className="text-[#3D3E98] font-semibold text-[22px] md:text-[40px] text-center m-0"
           style={{ fontFamily: "DM Sans, sans-serif" }}
         >
           Get to Know Vivek-Travel
