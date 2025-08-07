@@ -10,7 +10,7 @@ const sectors = {
     { id: "iocl", src: "/iocl.jpg" },
     // { id: "rites", src: "/rites.jpg" },
   ],
-  Private: [
+  'Private Sector': [
     { id: "samsung", src: "/samsung.jpg" },
     { id: "rrkabel", src: "/rrkabel.jpg" },
     { id: "airindia", src: "/airindia.jpg" },
@@ -19,7 +19,7 @@ const sectors = {
     { id: "patanjali", src: "/patanjali.jpg" },
     { id: "avp", src: "/avp.jpg" },
   ],
-  Government: [
+  'Public Administration': [
     { id: "cabinet", src: "/cabinet.jpg" },
     { id: "home", src: "/home.jpg" },
     { id: "finance", src: "/finance.jpg" },
@@ -30,7 +30,7 @@ const sectors = {
     // { id: "ntpc", src: "/ntpc.jpg" },
     { id: "obc", src: "/obc.jpg" },
   ],
-  "Education Institute": [
+  "Education Institutes": [
     { id: "iitdelhi", src: "/education/iitdelhi.png" },
     { id: "heritage", src: "/education/heritage.png" },
     { id: "iilm", src: "/education/iilm.png" },

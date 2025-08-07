@@ -180,7 +180,6 @@ const Navbar = () => {
               >
                 Our Fleet <TiArrowSortedDown className="ml-1" />
               </span>
-
               {isFleetOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 z-50 w-[240px]">
                   <ul className="text-[#3D3E98] text-[15px] py-2">

@@ -42,3 +42,16 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes roadScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+.animate-road {
+  animation: roadScroll 10s linear infinite;
+}

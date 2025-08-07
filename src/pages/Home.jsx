@@ -430,8 +430,8 @@ journey every time`,
 
             {/* Tabs */}
             <div
-              className="flex space-x-2 mt-[12px]"
-              style={{ width: "396px", height: "53px" }}
+              className="flex space-x-4 mt-[12px] justify-center"
+              style={{ height: "53px" }}
             >
               <button
                 onClick={() => setActiveTab("local")}
