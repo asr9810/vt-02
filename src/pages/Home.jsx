@@ -421,8 +421,10 @@ journey every time`,
                 fontFamily: "DM Sans",
                 fontSize: "30px",
                 lineHeight: "11.17px",
-                height: "21px",
-                width: "207px",
+                // height: "21px",
+                // width: "207px",
+                // border:'1px solid black',
+                textAlign:'center'
               }}
             >
               Pick Your Ride

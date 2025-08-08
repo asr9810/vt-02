@@ -165,6 +165,16 @@ export default function CustomerTestimonials() {
     return () => clearInterval(timer);
   }, [isHovering, testimonials.length]);
 
+  // Auto-slide for mobile corporate clients
+  useEffect(() => {
+    if (isClientHovering) return;
+    const totalSlides = Math.ceil(corporateClients.length / 2);
+    const timer = setInterval(() => {
+      setCurrentClientSlide((prev) => (prev + 1) % totalSlides);
+    }, 3000); // 3 seconds per slide
+    return () => clearInterval(timer);
+  }, [isClientHovering, corporateClients.length]);
+
   return (
     <section className="gap-[22px] flex flex-col margin-0 auto ">
       {/* From Our Customers Section */}
@@ -644,16 +654,6 @@ export default function CustomerTestimonials() {
                           flexShrink: 0,
                         }}
                       >
-                        {/* <img
-                          src={client.logo || "/placeholder.svg"}
-                          alt={client.name}
-                          style={{
-                            width: "100%",
-                            // height: "120px",
-                            objectFit: "contain",
-                            border:'1px solid black'
-                          }}
-                        /> */}
                         <img
                           src={client.logo || "/placeholder.svg"}
                           alt={client.name}
@@ -741,7 +741,7 @@ export default function CustomerTestimonials() {
                 letterSpacing: "0.2em",
                 // color: "#FFFFFF",
                 color: "#3D3E98",
-                backgroundColor:'white',
+                backgroundColor: "white",
                 textDecoration: "none",
               }}
             >
@@ -749,39 +749,25 @@ export default function CustomerTestimonials() {
             </a>
           </div>
         </div>
-
         {/* Mobile Corporate Clients */}
-
         <div className="block md:hidden w-full px-4">
-          <div className="w-full  space-y-4">
-            {/* Grid of client logos */}
-            <div className="grid grid-cols-3 gap-2">
-              {corporateClients.slice(0, 6).map((client, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-black flex items-center justify-center"
-                  style={{
-                    height: "64px",
-                    padding: "8px",
-                    width: "120px",
-                  }}
-                >
-                  <img
-                    src={client.logo || "/placeholder.svg"}
-                    alt={client.name}
-                    className="w-[48px] h-[48px] object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* View More button */}
-            <button
-              className="flex justify-center items-center mx-auto bg-white text-[#3D3E98] py-2 px-4 rounded font-bold text-sm w-1/2 "
-              style={{ borderRadius: "8px" }}
-            >
-              VIEW MORE
-            </button>
+          <div className="grid grid-cols-2 gap-2">
+            {corporateClients.slice(0, 4).map((client, index) => (
+              <div
+                key={index}
+                className="bg-white border border-black flex items-center justify-center"
+                style={{
+                  height: "80px",
+                  padding: "8px",
+                }}
+              >
+                <img
+                  src={client.logo || "/placeholder.svg"}
+                  alt={client.name}
+                  className="w-[60px] h-[60px] object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

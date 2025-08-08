@@ -69,7 +69,7 @@ export default function VehicleDetailInfoSection({
 
           {/* Paragraph */}
           <div className="mt-12">
-            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3]">
+            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3] text-center">
               {vehicleParagraph}
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function VehicleDetailInfoSection({
             <h3 className="text-[#3D3E98] text-[26px] sm:text-[30px] font-semibold">
               {vehicleName}
             </h3>
-            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3]">
+            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3] text-center">
               {rentalIntroText}
             </p>
           </div>
@@ -106,7 +106,7 @@ export default function VehicleDetailInfoSection({
 
           {/* Final Paragraph */}
           <div className="mt-12">
-            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3]">
+            <p className="text-black text-[16px] sm:text-[20px] leading-[1.3] text-center">
               {rentalClosingParagraph}
             </p>
           </div>

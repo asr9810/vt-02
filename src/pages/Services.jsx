@@ -186,7 +186,7 @@ const Services = () => {
 
         {/* Intro Paragraph */}
         <p
-          className="font-['DM Sans'] font-normal text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] tracking-[2%] text-[#000000] text-justify max-w-[95vw] md:max-w-[1272px]"
+          className="font-['DM Sans'] font-normal text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] tracking-[2%] text-[#000000] text-center max-w-[95vw] md:max-w-[1272px]"
           style={{ 
             height: "auto",
             fontFamily: "DM Sans, sans-serif",

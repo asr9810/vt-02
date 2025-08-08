@@ -886,7 +886,6 @@
 //   );
 // }
 
-
 // import roadImage from "../assets/aboutImg4.png";
 import vivek from "../assets/vivekBhatiaImage.png";
 import vistrit from "../assets/vistritBhatiaImg.png";
@@ -911,7 +910,6 @@ export default function About() {
   const busRef = useRef(null);
   const sectionRef = useRef(null);
   const awardsScrollRef = useRef(null);
-  
 
   const scrollLeft = () => {
     if (awardsScrollRef.current) {
@@ -1067,15 +1065,7 @@ export default function About() {
     },
   ];
 
-  // const scrollRef = useRef(null);
-  // const scroll = (delta) => {
-  //   if (scrollRef.current) {
-  //     scrollRef.current.scrollBy({
-  //       left: delta,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
+
 
   const scrollRef = useRef(null);
   // const busRef = useRef(null);
@@ -1123,8 +1113,41 @@ export default function About() {
     bus.style.transform = `translateX(${leftPos}px)`;
   }, [scrollPercent]);
 
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
 
+    let scrollInterval;
 
+    const startAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        scrollContainer.scrollBy({ left: 2, behavior: "smooth" });
+
+        // Loop back to start when at the end
+        if (
+          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+          scrollContainer.scrollWidth
+        ) {
+          scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+        }
+      }, 3000); // speed (lower is faster)
+    };
+
+    const stopAutoScroll = () => clearInterval(scrollInterval);
+
+    // Start auto scroll
+    startAutoScroll();
+
+    // Pause on hover
+    scrollContainer.addEventListener("mouseenter", stopAutoScroll);
+    scrollContainer.addEventListener("mouseleave", startAutoScroll);
+
+    return () => {
+      stopAutoScroll();
+      scrollContainer.removeEventListener("mouseenter", stopAutoScroll);
+      scrollContainer.removeEventListener("mouseleave", startAutoScroll);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white ">
@@ -1169,7 +1192,7 @@ export default function About() {
                 fontSize: "15px",
                 lineHeight: "22px",
                 letterSpacing: "0",
-                textAlign: "justify",
+                textAlign: "center",
                 color: "#000000",
                 width: "100%",
                 maxWidth: "1262px",
@@ -1190,29 +1213,27 @@ export default function About() {
         </div>
       </section>
 
-     
-
-      <section className="w-full max-w-[1100px] mx-auto py-16 relative bg-white z-10">
+      <section className="w-full mx-auto py-16 relative bg-white mt-[15px] md:mt-0 ">
         <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        @keyframes moveRoad {
-          0% { background-position-x: 0px; }
-          100% { background-position-x: -200px; }
-        }
-        
-        .animate-road {
-          animation: moveRoad 3s linear infinite;
-        }
-      `}</style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes moveRoad {
+      0% { background-position-x: 0px; }
+      100% { background-position-x: -200px; }
+    }
+    
+    .animate-road {
+      animation: moveRoad 3s linear infinite;
+    }
+  `}</style>
 
         <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] text-center font-[DM Sans]">
           Our Journey
         </h2>
 
-        <div className="relative" ref={containerRef}>
-          {/* Carousel + arrows */}
+        <div className="relative max-w-[1240px] mx-auto" ref={containerRef}>
+          {/* Left Arrow */}
           <button
             aria-label="scroll left"
             onClick={() => scroll(-360)}
@@ -1222,9 +1243,10 @@ export default function About() {
             <FaChevronLeft className="w-4 h-4" />
           </button>
 
+          {/* Scrollable Journey */}
           <div
             ref={scrollRef}
-            className="flex gap-[5rem] overflow-x-auto no-scrollbar px-4 sm:px-8 py-2 snap-x snap-mandatory"
+            className="flex gap-[10rem] overflow-x-auto no-scrollbar px-4 sm:px-8 py-2 snap-x snap-mandatory"
             style={{
               scrollSnapType: "x mandatory",
               WebkitOverflowScrolling: "touch",
@@ -1266,6 +1288,7 @@ export default function About() {
             ))}
           </div>
 
+          {/* Right Arrow */}
           <button
             aria-label="scroll right"
             onClick={() => scroll(360)}
@@ -1275,25 +1298,22 @@ export default function About() {
             <FaChevronRight className="w-4 h-4" />
           </button>
 
-          {/* Track with moving road and stationary bus */}
+          {/* Track with moving road */}
           <div className="relative mt-10 pt-4 h-[90px] overflow-hidden ">
-            {/* Moving road background */}
             <div
               className="w-full h-full animate-road"
               style={{
                 backgroundImage: "url('/track.png')",
                 backgroundRepeat: "repeat-x",
-                // backgroundSize: "300px auto", // Slightly larger tiles
-                backgroundSize: "cover", // Slightly larger tiles
+                backgroundSize: "cover",
                 backgroundPosition: "0 center",
               }}
             />
-
-            {/* Centered bus */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[80%] z-10 pointer-events-none">
               <img src="/bus-icon.png" alt="bus" className="w-[190px] h-auto" />
             </div>
           </div>
+
         </div>
       </section>
 
@@ -1306,7 +1326,7 @@ export default function About() {
               <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] font-[DM Sans]">
                 Our Leadership
               </h2>
-              <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify max-w-full">
+              <p className="text-[15px] leading-[22px] text-black font-[Montserrat] max-w-full text-center">
                 At Vivek Travels, our leadership blends decades of experience
                 with forward-thinking vision. Committed to service excellence
                 and innovation, they've transformed a legacy brand into a

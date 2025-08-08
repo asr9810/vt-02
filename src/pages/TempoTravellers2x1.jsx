@@ -13,7 +13,7 @@ export default function TempoTravellers2x1() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("/ourFleet/TT/Urbania/1.jpg");
+  const [mainImage, setMainImage] = useState("/ourFleet/TT/Tempo Traveler2xl.png");
 
   const carouselRef = useRef(null);
 
@@ -135,9 +135,9 @@ With plenty of space set out in a 2x1 configuration, you do not have to worry ab
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
-                  "/ourFleet/TT/Urbania/1.jpg",
+                  "/ourFleet/TT/Tempo Traveler2xl.png",
                   "/ourFleet/TT/Urbania/2.jpg",
-                  "/ourFleet/TT/Urbania/3.jpg",
+                  "/ourFleet/TT/TT.jpg",
                 ].map((img, idx) => (
                   <img
                     key={idx}
