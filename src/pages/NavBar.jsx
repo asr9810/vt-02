@@ -13,7 +13,8 @@ const Navbar = () => {
 
   const [isFleetMobileOpen, setIsFleetMobileOpen] = useState(false); // Controls main Fleet toggle
   const [openFleetCategoryIndex, setOpenFleetCategoryIndex] = useState(null); // Controls subcategory open
-  
+
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -70,7 +71,7 @@ const Navbar = () => {
           name: "Tempo Traveller 9/12 seater",
           url: "luxury-maharaja-tempo-traveller",
         },
-        { name: "Tempo Travellers 2x1", url: "tempo-travellers-2x1" },
+        { name: "Tempo Travellers 15 Seaters", url: "tempo-travellers-2x1" },
         { name: "Urbania - Modified", url: "urbania-modified" },
         { name: "Urbania 2x1", url: "urbania-2x1" },
       ],

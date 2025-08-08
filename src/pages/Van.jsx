@@ -20,21 +20,21 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Luxury Maharaja Tempo Traveller",
+    title: "Tempo Traveller 9/12 seater",
     description:
       "Spacious and reliable Tempo Travellers for group journeys and outstation tours.",
     url: "/luxury-maharaja-tempo-traveller",
   image: "/ourFleet/TT/TT/1.jpg",
   },
   {
-    title: "Tempo Travellers 2x1",
+    title: "Tempo Travellers 15 Seater",
     description:
       "Comfortable 2x1 Tempo Travellers for small groups and local travels.",
     url: "/tempo-travellers-2x1",
     image: "/ourFleet/TT/TT/1.jpg",
   },
   {
-    title: "Urbania - Modified",
+    title: "Urbania 9/12 seater",
     description:
       "Force Urbania offers a modern travel experience with ample space and style.",
     url: "/urbania-modified",
@@ -42,7 +42,7 @@ const carsData = [
     image: "/ourFleet/TT/Urbania/1.jpg",
   },
   {
-    title: "Urbania 2x1",
+    title: "Urbania 15 Seater",
     description:
       "Urbania 2x1 layout provides optimized space for comfortable longer journeys.",
     url: "/urbania-2x1",

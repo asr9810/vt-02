@@ -16,7 +16,7 @@ export default function Urbania2x1() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("/ourFleet/TT/Urbania/3.jpg");
+  const [mainImage, setMainImage] = useState("/ourFleet/TT/Urbania/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -36,8 +36,8 @@ export default function Urbania2x1() {
   };
 
   const KiaCarnivalConfig = {
-    vehicleName: `Urbania 2x1 rentals in Delhi NCR`,
-    introText: `Planning a group trip with extra comfort and space? The Urbania 2x1 is what you need. Vivek Travels offers chauffeur-driven Urbania 2x1 rentals from Delhi NCR for outstation tours, wedding travel, business trips, and airport transfers. `,
+    vehicleName: `Urbania 15 Seaters rentals in Delhi NCR`,
+    introText: `Planning a group trip with extra comfort and space? The Urbania 15 Seaters is what you need. Vivek Travels offers chauffeur-driven Urbania 2x1 rentals from Delhi NCR for outstation tours, wedding travel, business trips, and airport transfers. `,
     rentalIntroText: ` 
  	
 With the Urbania electrified 2x1 seating layout, all passengers enjoy more space, better legroom, and a more comfortable travel experience— perfect for families, friends, or small teams that are travelling together. The Urbania provides ample headroom, updated interiors, and a smooth suspension that can make long drives feel like a hassle-free enjoyable trip.`,

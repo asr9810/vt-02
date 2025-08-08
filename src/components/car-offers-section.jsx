@@ -7,6 +7,8 @@ export default function CarOffersSection({ isVisible, onClose }) {
     Math.floor(Math.random() * 41) + 10
   );
 
+  //bkl kha h chrom khol
+
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState([]);
 
@@ -38,10 +40,10 @@ export default function CarOffersSection({ isVisible, onClose }) {
       "Toyota Vellfire",
     ],
     "tempo-travellers": [
-      "Luxury Maharaja Tempo Traveller",
-      "Tempo Travellers 2x1",
-      "Urbania - Modified",
-      "Urbania 2x1",
+      "Tempo Traveller 9/12 seater",
+      "Tempo Traveller 15 Seater",
+      "Urbania 9/12 Seater",
+      "Urbania 15 Seater",
     ],
     "ev-cars": ["Tata Tigor", "Tata Nexon", "MG ZsEV", "Ioniq 5"],
     "luxury-buses": ["Mini Bus", "Luxury Coach", "Scania/Volvo Bus"],
@@ -183,7 +185,7 @@ export default function CarOffersSection({ isVisible, onClose }) {
     "Land Rover Defender": { seats: 8, features: [] },
     "Toyota Vellfire": { seats: 7, features: [] },
 
-    "Luxury Maharaja Tempo Traveller": {
+    "Tempo Traveller 9/12 seater": {
       seats: 12,
       features: [
         "Seating Capacity",
@@ -193,9 +195,9 @@ export default function CarOffersSection({ isVisible, onClose }) {
         "Ample Luggage Space",
       ],
     },
-    "Tempo Travellers 2x1": { seats: '15/17', features: [] },
-    "Urbania - Modified": { seats: '10/11/14', features: [] },
-    "Urbania 2x1": { seats: 16, features: [] },
+    "Tempo Traveller 15 Seater": { seats: '15/17', features: [] },
+    "Urbania 9/12 Seater": { seats: '10/11/14', features: [] },
+    "Urbania 15 Seater": { seats: 16, features: [] },
 
     "Tata Tigor": {
       seats: 5,
@@ -368,22 +370,22 @@ export default function CarOffersSection({ isVisible, onClose }) {
       "/ourFleet/Luxury/vellfire/3.jpg",
     ],
 
-    "Luxury Maharaja Tempo Traveller": [
+    "Tempo Traveller 9/12 seater": [
       "/ourFleet/TT/TT/1.jpg",
       "/ourFleet/TT/TT/2.jpg",
       "/ourFleet/TT/TT/3.jpg",
     ],
     
-    "Tempo Travellers 2x1": [
+    "Tempo Traveller 15 Seater": [
       "/ourFleet/TT/TT/1.jpg",
       "//ourFleet/TT/TT/4.jpg",
       "/ourFleet/TT/TT/3.jpg",
     ],
-    "Urbania - Modified": [
+    "Urbania 9/12 Seater": [
       "/ourFleet/TT/Urbania/1.jpg",
       "/ourFleet/TT/Urbania/3.jpg",
     ],
-    "Urbania 2x1": ["/ourFleet/TT/Urbania/1.jpg", "/ourFleet/TT/Urbania/2.jpg"],
+    "Urbania 15 Seater": ["/ourFleet/TT/Urbania/1.jpg", "/ourFleet/TT/Urbania/2.jpg"],
 
     "Tata Tigor": ["/ourFleet/EV/tigore/1.jpg", "/ourFleet/EV/tigore/2.jpg"],
     "Tata Nexon": ["/ourFleet/EV/nexon/1.jpg", "/ourFleet/EV/nexon/2.jpg"],

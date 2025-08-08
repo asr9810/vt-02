@@ -70,9 +70,9 @@ const Navbar = () => {
           name: "Tempo Traveller 9/12 seater",
           url: "luxury-maharaja-tempo-traveller",
         },
-        { name: "Tempo Travellers 2x1", url: "tempo-travellers-2x1" },
-        { name: "Urbania - Modified", url: "urbania-modified" },
-        { name: "Urbania 2x1", url: "urbania-2x1" },
+        { name: "Tempo Traveller 15 Seater", url: "tempo-travellers-2x1" },
+        { name: "Urbania 9/12 Seater", url: "urbania-modified" },
+        { name: "Urbania 15 Seater", url: "urbania-2x1" },
       ],
     },
     {

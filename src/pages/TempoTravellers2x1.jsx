@@ -34,7 +34,7 @@ export default function TempoTravellers2x1() {
 
   const KiaCarnivalConfig = {
     vehicleName: `Tempo Traveller 15 Seater rentals in Delhi NCR`,
-    introText: `Going with a group? Our Tempo Traveller 2x1 is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 2x1 Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
+    introText: `Going with a group? Our Tempo Traveller 15 Seaters is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 15 Seaters Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
     rentalIntroText: ` 
  	
 With plenty of space set out in a 2x1 configuration, you do not have to worry about a middle seat or bumping knees, everyone has enough space to relax and spread out!! The interiors are clean, spacious and ventilated and well looked after so that you can enjoy a comfortable journey.`,

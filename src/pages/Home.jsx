@@ -252,13 +252,13 @@ journey every time`,
       description: `Perfect for group outings and corporate events—you can comfortably fit 12-20 passengers with lots of room and comfortable seating and entertainment systems.`,
       brands: [
         {
-          carName: "Luxury Maharaja Tempo Traveller",
+          carName: "Tempo Traveller 9/12 seater",
           url: "luxury-maharaja-tempo-traveller",
         },
-        { carName: "Tempo Travellers 2x1", url: "tempo-travellers-2x1" },
-        { carName: "Urbania - Modified", url: "urbania-modified" },
-        { carName: "Urbania 2x1", url: "urbania-2x1" },
-      ],
+        { carName: "Tempo Traveller 15 Seater", url: "tempo-travellers-2x1" },
+        { carName: "Urbania 9/12 Seater", url: "urbania-modified" },
+        { carName: "Urbania 15 Seater", url: "urbania-2x1" },
+      ],  
     },
     "ev-cars": {
       title: "EV Cars",

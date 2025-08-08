@@ -16,7 +16,7 @@ export default function UrbaniaModified() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("/ourFleet/TT/Urbania/1.jpg");
+  const [mainImage, setMainImage] = useState("/ourFleet/TT/ub_1/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -36,7 +36,7 @@ export default function UrbaniaModified() {
   };
 
   const KiaCarnivalConfig = {
-    vehicleName: `Urbania - Modified rentals in Delhi NCR`,
+    vehicleName: `Urbania 9/12 Seater rentals in Delhi NCR`,
     introText: `Get ready for a new era of group travel with our Modified Urbania, where space, style, and comfort converge. Vivek Travels is pleased to provide chauffeur-driven Urbania rentals in Delhi NCR, for family vacations, wedding travel, VIP movements or extended outstation tours.`,
     rentalIntroText: ` 
  	
@@ -101,7 +101,7 @@ Our professional drivers are trained in long distance travel and group travel to
             lineHeight: "1.1",
           }}
         >
-          Urbania - Modified
+          Urbania 9/12 Seater
         </h1>
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
@@ -141,9 +141,9 @@ Our professional drivers are trained in long distance travel and group travel to
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
-                  "/ourFleet/TT/Urbania/1.jpg",
-                  "/ourFleet/TT/Urbania/3.jpg",
-                  "/ourFleet/TT/Urbania/3.jpg",
+                  "/ourFleet/TT/ub_1/1.jpg",
+                  "/ourFleet/TT/ub_1/3.jpg",
+                  "/ourFleet/TT/ub_1/3.jpg",
                 ].map((img, idx) => (
                   <img
                     key={idx}
