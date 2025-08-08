@@ -50,7 +50,7 @@ If you are need of executive transport in Delhi NCR, you are in the proper place
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "12 to 16.1 kmpl"],
+    ["Mileage", "12 to 16.1 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1950 cc to 2999 cc"],
   ],

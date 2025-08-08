@@ -81,7 +81,7 @@ Our professional drivers are trained in long distance travel and group travel to
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "11 kmpl"],
+      ["Mileage", "11 KMPL"],
       ["Seats", "10/11/14"],
       ["Engine", "2596 cc"],
     ],

@@ -80,7 +80,7 @@ Our trained chauffeurs are polite, on-time, and know how to manage everything ab
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "17 kmpl"],
+      ["Mileage", "17 KMPL"],
       ["Seats", "12 passengers+ driver"],
       ["Engine", "2596 cc"],
     ],

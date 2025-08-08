@@ -75,7 +75,7 @@ The plush seating, excellent A/C, world-class suspension, and quiet cabins means
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "2.5 to 4.0 kmpl"],
+      ["Mileage", "2.5 to 4.0 KMPL"],
       ["Seats", "39/41/45"],
       ["Engine", "10800 cc"],
     ],

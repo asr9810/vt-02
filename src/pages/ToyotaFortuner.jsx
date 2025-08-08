@@ -48,7 +48,7 @@ Vivek Travels has made it possible to rent a Toyota Fortuner for your powerful a
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 10.3 km/l"],
+    ["Mileage", "around 10.3 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2694 cc"],
   ],

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const [isFleetMobileOpen, setIsFleetMobileOpen] = useState(false); // Controls main Fleet toggle
   const [openFleetCategoryIndex, setOpenFleetCategoryIndex] = useState(null); // Controls subcategory open
-
+  
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";

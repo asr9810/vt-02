@@ -47,7 +47,7 @@ The Maruti Suzuki Invicto is the intersection of luxury and practicality - the q
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "23.24 kmpl"],
+    ["Mileage", "23.24 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "1987 cc"],
   ],

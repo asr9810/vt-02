@@ -47,7 +47,7 @@ Rent a Toyota Hycross with Vivek Travels for the ultimate travel experience from
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 23.24 km/l"],
+    ["Mileage", "around 23.24 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2393 cc"],
   ],

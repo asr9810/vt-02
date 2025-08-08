@@ -48,7 +48,7 @@ Looking for premium group transport in Delhi NCR? The Mercedes Viano is at your 
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "13 kmpl"],
+    ["Mileage", "13 KMPL"],
     ["Seats", "7 and 9"],
     ["Engine", "3500 cc"],
   ],

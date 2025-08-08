@@ -48,7 +48,7 @@ Book Hyundai Aura with Vivek Travels to make your travel enjoyable, trustworthy,
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "Approx 20–21 km/l"],
+    ["Mileage", "Approx 20–21 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1197 cc"],
   ],

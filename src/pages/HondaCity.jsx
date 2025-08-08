@@ -47,7 +47,7 @@ Rent a Honda City from Vivek Travels, and experience easy travel to and from Del
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 17.8 to 18.4 km/pl"],
+    ["Mileage", "around 17.8 to 18.4  KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1197 cc"],
   ],

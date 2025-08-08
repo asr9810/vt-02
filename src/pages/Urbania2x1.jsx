@@ -75,7 +75,7 @@ With the Urbania electrified 2x1 seating layout, all passengers enjoy more space
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "11 kmpl"],
+      ["Mileage", "11 KMPL"],
       ["Seats", "16"],
       ["Engine", "2596 cc"],
     ],

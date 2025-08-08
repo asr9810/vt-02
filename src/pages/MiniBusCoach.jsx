@@ -44,7 +44,7 @@ export default function MiniBusCoach() {
 
   rentalClosingParagraph: `Our professional and dependable driver is trained for group and long-distance travel to ensure everyone can get there safely, on time, and conveniently.`,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '8-17 kmpl'], ['Seats', '26'], ['Engine', '2200 cc to 3455cc']],
+  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '8-17 KMPL'], ['Seats', '26'], ['Engine', '2200 cc to 3455cc']],
 
   vehicleParagraph: `Book a Mini Bus Coach with Vivek Travels and the journey of group travel can be a simple, comfortable, and convenient operation - near or far.`
 };

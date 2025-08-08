@@ -49,7 +49,7 @@ The deluxe cabin of the Camry and its thoughtful features create a pleasant trav
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "25.49 kmpl"],
+    ["Mileage", "25.49 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "2487 CC"],
   ],

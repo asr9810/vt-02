@@ -413,22 +413,9 @@ journey every time`,
             height: "302px",
           }}
         >
-          <div className="px-[44px] py-[32px] w-full h-full flex flex-col justify-between">
+          <div className="px-[44px] py-[70px] w-full h-full flex flex-col justify-between">
             {/* Heading */}
-            <h2
-              className="text-white font-bold"
-              style={{
-                fontFamily: "DM Sans",
-                fontSize: "30px",
-                lineHeight: "11.17px",
-                // height: "21px",
-                // width: "207px",
-                // border:'1px solid black',
-                textAlign:'center'
-              }}
-            >
-              Pick Your Ride
-            </h2>
+           
 
             {/* Tabs */}
             <div
@@ -461,12 +448,12 @@ journey every time`,
 
             {/* Fields with Labels */}
             {/* <div className="flex items-start mt-6 gap-4"> */}
-            <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4 ">
+            <div className="flex flex-wrap lg:flex-nowrap items-center justify-center items-start mt-6 gap-4 ">
               {/* Location or From + Destination */}
               {activeTab === "local" ? (
                 <div className="flex flex-col">
                   <label
-                    className="text-white mb-[6px]"
+                    className="text-white mb-[10px]"
                     style={{
                       fontFamily: "DM Sans",
                       fontSize: "20px",
@@ -482,14 +469,14 @@ journey every time`,
                     placeholder="Start typing location name"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                    className="w-[100%] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                   />
                 </div>
               ) : (
                 <>
                   <div className="flex flex-col">
                     <label
-                      className="text-white mb-[6px]"
+                      className="text-white mb-[10px]"
                       style={{
                         fontFamily: "DM Sans",
                         fontSize: "20px",
@@ -510,7 +497,7 @@ journey every time`,
                   </div>
                   <div className="flex flex-col">
                     <label
-                      className="text-white mb-[6px]"
+                      className="text-white mb-[10px]"
                       style={{
                         fontFamily: "DM Sans",
                         fontSize: "20px",
@@ -535,7 +522,7 @@ journey every time`,
              
               <div className="flex flex-col">
                 <label
-                  className="text-white mb-[6px]"
+                  className="text-white mb-[10px]"
                   style={{
                     fontFamily: "DM Sans",
                     fontSize: "20px",
@@ -557,7 +544,7 @@ journey every time`,
               </div>
               <div className="flex flex-col">
                 <label
-                  className="text-white mb-[6px]"
+                  className="text-white mb-[10px]"
                   style={{
                     fontFamily: "DM Sans",
                     fontSize: "20px",
@@ -581,7 +568,7 @@ journey every time`,
               {/* Name */}
               <div className="flex flex-col">
                 <label
-                  className="text-white mb-[6px]"
+                  className="text-white mb-[10px]"
                   style={{
                     fontFamily: "DM Sans",
                     fontSize: "20px",
@@ -604,7 +591,7 @@ journey every time`,
               {/* Contact */}
               <div className="flex flex-col">
                 <label
-                  className="text-white mb-[6px]"
+                  className="text-white mb-[10px]"
                   style={{
                     fontFamily: "DM Sans",
                     fontSize: "20px",

@@ -83,7 +83,7 @@ Are you looking to experience India in a manner that is both an adventure and lu
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "around 22.41 km/l"],
+      ["Mileage", "around 22.41 KMPL"],
       ["Seats", "4 passengers+ driver"],
       ["Engine", "1197 cc"],
     ],

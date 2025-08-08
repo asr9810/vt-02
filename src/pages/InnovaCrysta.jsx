@@ -50,7 +50,7 @@ Vivek Travels is the best way to experience travel from Delhi NCR, and anywhere 
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 13.68 kmpl"],
+    ["Mileage", "around 13.68 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2393 cc"],
   ],

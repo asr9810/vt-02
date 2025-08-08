@@ -50,7 +50,7 @@ Book a Kia Carens today with Vivek Travels for your travel needs from Delhi NCR 
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "15.34 to 19.54 kmpl"],
+    ["Mileage", "15.34 to 19.54 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "1482 cc"],
   ],

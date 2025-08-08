@@ -13,7 +13,7 @@ export default function TempoTravellers2x1() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("/ourFleet/TT/Tempo Traveler2xl.png");
+  const [mainImage, setMainImage] = useState("/ourFleet/TT/TT_15/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -33,7 +33,7 @@ export default function TempoTravellers2x1() {
   };
 
   const KiaCarnivalConfig = {
-    vehicleName: `Tempo Travellers 2x1 rentals in Delhi NCR`,
+    vehicleName: `Tempo Traveller 15 Seater rentals in Delhi NCR`,
     introText: `Going with a group? Our Tempo Traveller 2x1 is the perfect vehicle for comfort and easy travelling. At Vivek Travels, we do 2x1 Tempo Travellers from Delhi NCR with chauffeur for Outstation Tours, family holidays, company travel, student trips and airport transfers.`,
     rentalIntroText: ` 
  	
@@ -76,7 +76,7 @@ With plenty of space set out in a 2x1 configuration, you do not have to worry ab
 
     vehicleSpecs: [
       ["Air conditioning", "yes"],
-      ["Mileage", "17 kmpl"],
+      ["Mileage", "17 KMPL"],
       ["Seats", "15-17"],
       ["Engine", "2596 cc"],
     ],
@@ -96,7 +96,7 @@ With plenty of space set out in a 2x1 configuration, you do not have to worry ab
             lineHeight: "1.1",
           }}
         >
-          Tempo Travellers 2x1
+          Tempo Traveller 15 Seater
         </h1>
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
@@ -135,9 +135,9 @@ With plenty of space set out in a 2x1 configuration, you do not have to worry ab
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
-                  "/ourFleet/TT/Tempo Traveler2xl.png",
-                  "/ourFleet/TT/Urbania/2.jpg",
-                  "/ourFleet/TT/TT.jpg",
+                  "/ourFleet/TT/TT_15/1.jpg",
+                  "/ourFleet/TT/TT_15/2.jpg",
+                  "/ourFleet/TT/TT_15/3.jpg",
                 ].map((img, idx) => (
                   <img
                     key={idx}

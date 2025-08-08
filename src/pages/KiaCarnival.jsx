@@ -49,7 +49,7 @@ Rent a Kia Carnival from Vivek Travels for premium group travel in Delhi NCR and
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "14.85 kmpl"],
+    ["Mileage", "14.85 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2151 cc"],
   ],

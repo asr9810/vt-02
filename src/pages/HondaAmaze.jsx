@@ -37,7 +37,7 @@ import ReservationBanner from "../components/ReservationBanner";
 //   rentalClosingParagraph: `Get your Honda Amaze booked with Vivek Travels so you can travel...`,
 //   vehicleSpecs: [
 //     ["Air conditioning", "yes"],
-//     ["Mileage", "around 18-19 kmp"],
+//     ["Mileage", "around 18-19KMPL"],
 //     ["Seats", "4 passengers+ driver"],
 //     ["Engine", "1197 cc"],
 //   ],
@@ -92,7 +92,7 @@ Ready to book? Call us, and we will be happy to assist you in planning your trip
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 18-19 kmp"],
+    ["Mileage", "around 18-19KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1197 cc"],
   ],

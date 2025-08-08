@@ -1157,7 +1157,7 @@ export default function About() {
           className="text-[#3D3E98] font-semibold text-[22px] md:text-[40px] text-center m-0"
           style={{ fontFamily: "DM Sans, sans-serif" }}
         >
-          Get to Know Vivek-Travel
+          Get to Know Vivek-Travels 
         </h1>
       </section>
 
@@ -1352,7 +1352,7 @@ export default function About() {
                     Mr. Vivek Bhatia
                   </h3>
                   <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
-                    Director At Vivek Travels Pvt. Ltd.
+                    Managing Director At Vivek Travels Pvt. Ltd.
                   </p>
                 </div>
                 <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
@@ -1380,7 +1380,7 @@ export default function About() {
                     Mr. Vistrit Bhatia
                   </h3>
                   <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
-                    Managing Director At Vivek Travels Pvt. Ltd.
+                    Director At Vivek Travels Pvt. Ltd.
                   </p>
                 </div>
                 <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">

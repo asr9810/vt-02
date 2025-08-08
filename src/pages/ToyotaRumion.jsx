@@ -49,7 +49,7 @@ Book your Toyota Rumion with Vivek Travels for effortless travelling from Delhi 
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 20.51 kmpl"],
+    ["Mileage", "around 20.51 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "1462 cc"],
   ],
