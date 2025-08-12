@@ -31,7 +31,7 @@ const carsData = [
     description:
       "Comfortable 2x1 Tempo Travellers for small groups and local travels.",
     url: "/tempo-travellers-2x1",
-    image: "/ourFleet/TT/TT/1.jpg",
+    image: "/ourFleet/TT/TT_15/1.jpg",
   },
   {
     title: "URBANIA 9/12 SEATER",
