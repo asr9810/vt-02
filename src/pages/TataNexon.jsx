@@ -76,7 +76,7 @@ With a bold design, ample on board space and effortless driving, the Tata Nexon 
       ["Air conditioning", "Yes"],
       ["Motor Power", "110 kW"],
       ["Seats", "4 passengers+ driver"],
-      ["Batter Capacity", "46.04 kWh"],
+      ["Batter Capacity", "46.08 kWh"],
     ],
 
     vehicleParagraph: `"Every vehicle in our EV fleet is well-maintained, thoroughly cleaned, and available for the trip you request. With us, you don't just travel; you travel well.`,

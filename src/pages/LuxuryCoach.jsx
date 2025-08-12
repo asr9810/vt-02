@@ -44,7 +44,7 @@ export default function LuxuryCoach() {
 
   rentalClosingParagraph: `Every coach comes with an experienced, courteous Chauffeur who puts group safety and schedule first, so you can enjoy the trip - not manage it. `,
 
-  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '6-10 mpg'], ['Seats', '35/41/45'], ['Engine', '6700cc to  10800 cc']],
+  vehicleSpecs: [['Air conditioning', 'yes'], ['Mileage', '10 MPG'], ['Seats', '35/41/45'], ['Engine', '6700cc to  10800 cc']],
 
   vehicleParagraph: `Vivek Travels is known for reliable, clean, and convenient Luxury Coach rentals - just what you need if your journey is just as important as the destination.`
 };
