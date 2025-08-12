@@ -1157,7 +1157,7 @@ export default function About() {
           className="text-[#3D3E98] font-semibold text-[22px] md:text-[40px] text-center m-0"
           style={{ fontFamily: "DM Sans, sans-serif" }}
         >
-          Get to Know Vivek-Travels 
+          Get to Know Vivek Travels 
         </h1>
       </section>
 
