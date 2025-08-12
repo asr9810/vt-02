@@ -92,7 +92,7 @@ Ready to book? Call us, and we will be happy to assist you in planning your trip
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 18-19KMPL"],
+    ["Mileage", "18KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1197 cc"],
   ],

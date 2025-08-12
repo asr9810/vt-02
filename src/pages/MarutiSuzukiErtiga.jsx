@@ -49,7 +49,7 @@ If you're searching for group transportation in Delhi NCR, you've come to the ri
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 20.3 to 20.51 KMPL"],
+    ["Mileage", "20.5 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2755 CC"],
   ],

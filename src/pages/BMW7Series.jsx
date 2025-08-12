@@ -50,7 +50,7 @@ If you need executive-style travel in Delhi NCR, you’ve come to the right plac
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "8-12.1 KMPL"],
+    ["Mileage", "12 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "2998 cc"],
   ],

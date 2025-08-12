@@ -49,7 +49,7 @@ If you are looking for a premium travel experience in the Delhi NCR region, look
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "8.6 to 19.33 KMPL"],
+    ["Mileage", "19.4 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "5000 cc"],
   ],

@@ -49,7 +49,7 @@ Rent a Maruti Suzuki Ciaz with Vivek Travels for stress free journeys from Delhi
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "around 20.04 to 20.65  KMPL"],
+    ["Mileage", "20.6  KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "1197 cc"],
   ],

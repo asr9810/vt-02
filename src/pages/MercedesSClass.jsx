@@ -49,7 +49,7 @@ You’ve found luxury travel in Delhi NCR if you are looking for it! Book a Merc
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "12 and 18 KMPL"],
+    ["Mileage", "18 KMPL"],
     ["Seats", "4 passengers+ driver"],
     ["Engine", "2999 cc"],
   ],

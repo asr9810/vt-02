@@ -48,7 +48,7 @@ If you're looking for high-end travel in the Delhi NCR or anywhere else - then t
 
   vehicleSpecs: [
     ["Air conditioning", "yes"],
-    ["Mileage", "19.28 KMPL"],
+    ["Mileage", "19.2 KMPL"],
     ["Seats", "6 passengers+ driver"],
     ["Engine", "2487 cc"],
   ],
