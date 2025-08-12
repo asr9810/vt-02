@@ -74,7 +74,7 @@ export default function LuxuryCars({ carType }) {
             }}
           >
             {/* Sedans Rent in Delhi NCR */}
-            Luxury Cars (4-7 Seater)
+            Luxury Cars
           </h2>
           <p
             className="mt-6 text-black text-left mx-auto"

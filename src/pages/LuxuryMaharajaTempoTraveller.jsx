@@ -100,7 +100,7 @@ Our trained chauffeurs are polite, on-time, and know how to manage everything ab
             lineHeight: "1.1",
           }}
         >
-          Luxury Maharaja Tempo Traveller
+          Tempo Traveller 9/12 seater
         </h1>
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">
