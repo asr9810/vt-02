@@ -23,21 +23,21 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Mini Bus Coach",
+    title: "MINI BUS COACH",
     description:
       "Spacious coaches ideal for long-distance corporate or group travel. Comfortable and efficient.",
     image: "/ourFleet/Buses/coach/1.jpg",
     url: "/mini-bus-coach",
   },
   {
-    title: "Luxury Coach",
+    title: "LUXURY COACH",
     description:
       "Bharat Benz luxury buses offer unmatched comfort, safety, and space for group journeys.",
     image: "/ourFleet/Buses/mb/1.jpg",
     url: "/luxury-coach",
   },
   {
-    title: "Scania/Volvo",
+    title: "SCANIA/VOLVO",
     description:
       "Volvo luxury coaches for ultra-comfortable highway and outstation travel. Book now.",
     image: "/ourFleet/Buses/volvo/1.jpg",

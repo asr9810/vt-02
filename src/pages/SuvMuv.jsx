@@ -44,58 +44,58 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Carens",
+    title: "KIA CARENS",
     description:
       "Book your ride with Carens. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/carens/1.jpg",
     url: "/kia-carens",
   },
   {
-    title: "Carnival",
+    title: "KIA CARNIVAL",
     description:
       "Book your ride with Carnival. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/carnival/1.jpg",
     url: "/kia-carnival",
   },
   {
-    title: "Crysta",
+    title: "INNOVA CRYSTA",
     description:
       "Book your ride with Crysta. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/crysta/1.jpg",
     url: "/innova-crysta",
   },
   {
-    title: "Ertiga",
+    title: "MARUTI SUZUKI ERTIGA",
     description:
       "Book your ride with Ertiga. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/ertiga/1.jpg",
     url: "/maruti-suzuki-ertiga",
   },
   {
-    title: "Fortuner",
+    title: "TOYOTA FORTUNER",
     description:
       "Book your ride with Fortuner. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/fortuner/1.jpg",
     url: "/toyota-fortuner",
   },
   {
-    title: "Hycross",
+    title: "INNOVA HYCROSS",
     description:
       "Book your ride with Hycross. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/hycross/1.jpg",
     url: "/innova-hycross",
   },
   {
-    title: "Invicto",
+    title: "MARUTI SUZUKI INVICTO",
     description:
       "Book your ride with Invicto. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/invicto/1.jpg",
     url: "/maruti-suzuki-invicto",
   },
   {
-    title: "Rumino",
+    title: "TOYOTA RUMION",
     description:
-      "Book your ride with Rumino. Spacious, comfortable, and perfect for your next journey.",
+      "Book your ride with Rumion. Spacious, comfortable, and perfect for your next journey.",
     image: "/ourFleet/SUV-MUV/rumino/1.jpg",
     url: "/toyota-rumion",
   },

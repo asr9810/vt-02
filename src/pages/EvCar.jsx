@@ -30,25 +30,25 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Ioniq5",
+    title: "IONIQ 5",
     description: "Hyundai Ioniq 5 — futuristic design and high-range EV for a smart, clean ride.",
     image: "/ourFleet/EV/ioniq5/1.jpg",
     url: "/ioniq-5",
   },
   {
-    title: "Mg",
+    title: "MG ZS EV",
     description: "MG ZS EV — spacious, electric, and built for sustainable city travel.",
     image: "/ourFleet/EV/mg/1.jpg",
     url: "/mg-zs-ev",
   },
   {
-    title: "Nexon",
+    title: "TATA NEXON ",
     description: "Tata Nexon EV — the perfect electric SUV for daily commutes and green adventures.",
     image: "/ourFleet/EV/nexon/1.jpg",
     url: "/tata-nexon",
   },
   {
-    title: "Tigore",
+    title: "TATA TIGOR",
     description: "Tata Tigor EV — compact, efficient, and affordable electric driving.",
     image: "/ourFleet/EV/tigore/1.jpg",
     url: "/tata-tigor",

@@ -5,49 +5,49 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Bmw",
+    title: "BMW 7 SERIES",
     description:
       "Experience sophistication with the BMW 7 Series. Perfect for executive travel and special occasions.",
     image: "/ourFleet/Luxury/bmw/1.jpg",
     url: "/bmw-7-series",
   },
   {
-    title: "Camry",
+    title: "TOYOTA CAMRY",
     description:
       "Toyota Camry blends comfort and performance. Book now for a refined and smooth ride.",
     image: "/ourFleet/Luxury/Camry/1.jpg",
     url: "/toyota-camry",
   },
   {
-    title: "Defendor",
+    title: "LAND ROVER DEFENDER",
     description:
       "Land Rover Defender — powerful, bold, and made for luxury off-road travel. Book now.",
     image: "/ourFleet/Luxury/Defendor/1.jpg",
     url: "/land-rover-defender",
   },
   {
-    title: "Eclass",
+    title: "MERCEDES E-CLASS",
     description:
       "Mercedes E-Class offers luxury and performance in every drive. Travel premium.",
     image: "/ourFleet/Luxury/eclass/1.jpg",
     url: "/mercedes-e-class",
   },
   {
-    title: "Jfx",
+    title: "JAGUAR XF",
     description:
       "Drive the Jaguar XF — sleek, sporty, and designed for modern luxury seekers.",
     image: "/ourFleet/Luxury/jfx/1.jpg",
     url: "/jaguar-xf",
   },
   {
-    title: "Sclass",
+    title: "MERCEDES S-CLASS",
     description:
       "Mercedes S-Class is the pinnacle of comfort, tech, and luxury. Travel like royalty.",
     image: "/ourFleet/Luxury/sclass/1.jpg",
     url: "/mercedes-s-class",
   },
   {
-    title: "Vellfire",
+    title: "TOYOTA VELLFIRE",
     description:
       "Toyota Vellfire offers unmatched space and elegance for family or VIP transport.",
     image: "/ourFleet/Luxury/vellfire/1.jpg",

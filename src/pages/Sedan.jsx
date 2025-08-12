@@ -5,35 +5,35 @@ import { useNavigate } from "react-router-dom";
 
 const carsData = [
   {
-    title: "Amaze",
+    title: "HONDA AMAZE",
     description:
       "Hire Maruti Suzuki Swift Dzire on rent. Contact Now & Get discounted deals on booking.",
     image: "/ourFleet/Sedan/amaze/1.jpg",
     url: "/honda-amaze",
   },
   {
-    title: "Aura",
+    title: "HYUNDAI AURA",
     description:
       "Spacious and powerful, the Innova Crysta is perfect for family or group travel. Book now for special rates.",
     image: "/ourFleet/Sedan/aura/1.jpg",
     url: "/hyundai-aura",
   },
   {
-    title: "Ciaz",
+    title: "MARUTI SUZUKI CIAZ",
     description:
       "Travel in unmatched luxury with our premium 4-7 seater Mercedes-Benz. Ideal for business or VIP travel.",
     image: "/ourFleet/Sedan/ciaz/1.jpg",
     url: "/maruti-suzuki-ciaz",
   },
   {
-    title: "Dzire",
+    title: "SWIFT DZIRE",
     description:
       "Hire Force Urbania for comfortable, safe, and affordable group transportation. Perfect for long routes.",
     image: "/ourFleet/Sedan/dzire/1.jpg",
     url: "/swift-dzire",
   },
   {
-    title: "Honda City",
+    title: "HONDA CITY",
     description:
       "Go green with the Tata Nexon EV. Eco-friendly, modern, and cost-effective for city rides.",
     image: "/ourFleet/Sedan/hondacity/1.jpg",
