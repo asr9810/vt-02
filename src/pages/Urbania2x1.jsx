@@ -95,7 +95,7 @@ With the Urbania electrified 2x1 seating layout, all passengers enjoy more space
             lineHeight: "1.1",
           }}
         >
-          Urbania 2x1
+          Urbania 15 Seaters
         </h1>
 
         <div className="w-full max-w-[1228px] flex flex-col lg:flex-row gap-10">

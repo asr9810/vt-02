@@ -142,7 +142,7 @@ Our professional drivers are trained in long distance travel and group travel to
               >
                 {[
                   "/ourFleet/TT/ub_1/1.jpg",
-                  "/ourFleet/TT/ub_1/3.jpg",
+                  "/ourFleet/TT/ub_1/2.jpg",
                   "/ourFleet/TT/ub_1/3.jpg",
                 ].map((img, idx) => (
                   <img
