@@ -64,7 +64,7 @@ import CarOffer from "./pages/CarOffer";
 import Terms from "./pages/terms";
 import PrivacyPolicy from "./pages/privacy-policy";
 
-import WhatsAppButton from "./components/WhatsappButton";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   return (
