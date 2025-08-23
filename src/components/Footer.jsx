@@ -130,7 +130,7 @@ const Footer = () => {
             {/* Terms & Conditions Links */}
             <div className="flex gap-[24px] text-gray-500 items-center">
               <Link
-                to="/terms"
+                to="/terms-condition"
                 className="font-jost font-normal text-[12px] hover:text-[#3D3E98] transition-colors"
               >
                 Terms & Conditions

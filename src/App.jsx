@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop"; 
+import ScrollToTop from "./components/ScrollToTop";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -61,6 +61,10 @@ import LuxuryCoach from "./pages/LuxuryCoach";
 import ScaniaVolvoBus from "./pages/ScaniaVolvoBus";
 import Gallery from "./components/Gallery";
 import CarOffer from "./pages/CarOffer";
+import Terms from "./pages/terms";
+import PrivacyPolicy from "./pages/privacy-policy";
+import ChatBot from "./components/ChatBot";
+import WhatsAppButton from "./components/WhatsappButton";
 
 export default function App() {
   return (
@@ -84,6 +88,8 @@ export default function App() {
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/vendor-application" element={<VendorApplication />} />
             <Route path="/contact-us" element={<Contact />} />
+            <Route path="/terms-condition" element={<Terms />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
 
             <Route path="/sedans" element={<Sedan carType="Sedans" />} />
             <Route path="/suv-muvs" element={<SuvMuv carType="SUV/MUVs" />} />
@@ -152,6 +158,8 @@ export default function App() {
             <Route path="/scania-volvo-bus" element={<ScaniaVolvoBus />} />
           </Routes>
         </main>
+        {/* <ChatBot /> */}
+        <WhatsAppButton/>
         <Footer />
       </div>
     </Router>

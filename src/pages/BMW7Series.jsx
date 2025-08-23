@@ -66,7 +66,8 @@ export default function BMW7Series() {
     name: "",
     contact: "",
   });
-  const [activeTab, setActiveTab] = useState("local");
+   const [activeTab, setActiveTab] = useState("local");
+   const [mainImage, setMainImage] = useState("/ourFleet/Luxury/bmw/1.jpg");
 
   const carouselRef = useRef(null);
 
@@ -106,7 +107,7 @@ export default function BMW7Series() {
               style={{ width: "100%" }}
             >
               <img
-                src="/ourFleet/Luxury/bmw/1.jpg"
+                src={mainImage}
                 alt="Main Car"
                 className="object-contain h-full"
               />
@@ -134,6 +135,7 @@ export default function BMW7Series() {
                     key={idx}
                     src={img}
                     alt={`Car ${idx}`}
+                    onClick={() => setMainImage(img)} 
                     className="w-[90px] h-[60px] sm:w-[160px] sm:h-[120px] md:w-[200px] md:h-[140px] object-cover rounded border p-1 sm:p-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                   />
                 ))}

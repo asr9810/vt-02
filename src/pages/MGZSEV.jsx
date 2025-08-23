@@ -138,7 +138,7 @@ If you're thinking about transitioning your driving to electric, an MG ZS EV is 
               >
                 {[
                   "/ourFleet/EV/mg/1.jpg",
-                  "/ourFleet/EV/mg/2.jpg",
+                  "/ourFleet/EV/mg/2.png",
                   "/ourFleet/EV/mg/3.jpg",
                 ].map((img, idx) => (
                   <img

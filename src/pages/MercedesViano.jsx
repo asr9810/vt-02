@@ -65,7 +65,7 @@ export default function MercedesViano() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("");
+  const [mainImage, setMainImage] = useState("ourFleet/Luxury/merc_viano/2.jpg");
 
   const carouselRef = useRef(null);
 
@@ -106,7 +106,7 @@ export default function MercedesViano() {
               // style={{ width: "100%" }}
             >
               <img
-                src={'ourFleet/Luxury/merc_viano/2.jpg'}
+               src={mainImage}
                 alt="Main Car"
                 className="object-contain "
               />

@@ -108,7 +108,7 @@ export default function KiaCarens() {
               style={{ width: "100%",}}
             >
               <img
-                src="/ourFleet/SUV-MUV/carens/1.jpg"
+                src={mainImage}
                 alt="Main Car"
                 className="object-contain h-full "
               />

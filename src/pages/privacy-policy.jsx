@@ -1,117 +1,152 @@
 import React from "react";
 
 const PrivacyPolicy = () => {
+  const sections = [
+    { id: "introduction", title: "Introduction" },
+    { id: "data-collection", title: "Data or Information Collection" },
+    { id: "how-we-collect", title: "We May Collect Data or Information in Different Ways" },
+    { id: "use-of-data", title: "Use of Data or Information" },
+    { id: "sharing", title: "Sharing of Information with Third Parties" },
+    { id: "security-retention", title: "Data Security & Retention" },
+    { id: "your-rights", title: "Your Rights" },
+    { id: "request-requirements", title: "Your Request Must" },
+    { id: "minors", title: "Use of This Site by Minors" },
+    { id: "contact", title: "Contact Us" },
+    { id: "governing-law", title: "Governing Laws & Jurisdiction" },
+  ];
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", lineHeight: "1.6" }}>
-      <h1>Privacy Policy</h1>
-      <p style={{ color: "#666" }}>Last updated: 12 August 2025 • Applies to: Vivek Travels</p>
-
-      <p>
-        A Privacy Policy is a legal statement that outlines how a business collects, uses, stores, and
-        protects user data. It also explains the rights that individuals have in relation to their personal
-        data and how they can exercise those rights. For us at Vivek Travels, this policy is part of our
-        commitment to full transparency and customer trust. We believe you should know what information we
-        collect, why we collect it, and how we keep it secure.
+    <div className="max-w-5xl mx-auto px-6 py-12 text-gray-800 leading-relaxed">
+      {/* Title */}
+      <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
+      <p className="text-sm text-gray-500 mb-8">
+        Last updated: 12 August 2025 • Applies to: Vivek Travels
       </p>
 
-      <h2 id="introduction">Introduction</h2>
-      <p>
-        This Privacy Policy applies to all users of Vivek Travels — including individual customers,
-        corporate clients, travel partners, and website visitors — who use our services, make bookings, or
-        contact us through our website or customer care channels. By using our website or services, you
-        consent to the collection and use of your information as described in this policy.
-      </p>
+      {/* Table of Contents */}
+      {/* <div className="mb-10">
+        <h2 className="text-xl font-semibold mb-3">Contents</h2>
+        <ul className="space-y-2 text-green-600 font-medium">
+          {sections.map((sec, index) => (
+            <li key={sec.id}>
+              <a href={`#${sec.id}`} className="hover:underline">
+                {index + 1}. {sec.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div> */}
 
-      <h2 id="data-collection">Data or Information Collection</h2>
-      <p>We collect various types of information, including personal and travel-related data. This may include:</p>
-      <ul>
-        <li><strong>Identity &amp; Contact:</strong> Full name, mobile number, email address, residential address, government identification details.</li>
-        <li><strong>Payments:</strong> Payment-related information processed via secure third-party gateways.</li>
-        <li><strong>Travel Details:</strong> Pickup and drop-off locations, date and time of travel, vehicle type, number of passengers, special requests.</li>
-        <li><strong>Technical Data:</strong> IP address, browser type, device details, and location data if GPS is enabled.</li>
-        <li><strong>Communications:</strong> Emails, call recordings, and feedback for service improvement.</li>
-      </ul>
+      {/* Sections */}
+      <div className="space-y-10">
+        <section id="introduction" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">1. Introduction</h2>
+          <p>
+            This Privacy Policy applies to all users of Vivek Travels — including individual customers,
+            corporate clients, travel partners, and website visitors — who use our services, make bookings, or
+            contact us through our website or customer care channels. By using our website or services, you
+            consent to the collection and use of your information as described in this policy.
+          </p>
+        </section>
 
-      <h2 id="how-we-collect">We May Collect Data or Information in Different Ways</h2>
-      <ul>
-        <li><strong>Directly from you:</strong> When you fill out a booking form, contact customer care, or send an inquiry.</li>
-        <li><strong>Automatically:</strong> Via cookies, web analytics tools, and similar technologies when you visit our website.</li>
-        <li><strong>From third parties:</strong> Trusted providers such as payment gateways, map services, and customer verification systems to ensure a seamless and secure user experience.</li>
-      </ul>
+        <section id="data-collection" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">2. Data or Information Collection</h2>
+          <p>We collect various types of information, including personal and travel-related data:</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li><strong>Identity & Contact:</strong> Full name, mobile number, email, address, government ID.</li>
+            <li><strong>Payments:</strong> Payment details via secure third-party gateways.</li>
+            <li><strong>Travel Details:</strong> Pickup/drop-off, date/time, vehicle type, passenger count.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, device info, location (if GPS enabled).</li>
+            <li><strong>Communications:</strong> Emails, call recordings, feedback for service improvement.</li>
+          </ul>
+        </section>
 
-      <h2 id="use-of-data">Use of Data or Information</h2>
-      <p>The data we collect is used to:</p>
-      <ul>
-        <li>Fulfill rental requests, confirm and manage bookings, process payments, and communicate relevant updates.</li>
-        <li>Coordinate with drivers and provide a smooth travel experience.</li>
-        <li>Maintain service quality, send reminders or promotional content (if opted in), and improve our website and operations.</li>
-        <li>Analyze aggregated and anonymized data for internal analytics, vehicle fleet planning, and logistics management.</li>
-      </ul>
+        <section id="how-we-collect" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">3. We May Collect Data or Information in Different Ways</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li><strong>Directly from you:</strong> When booking, contacting support, or sending inquiries.</li>
+            <li><strong>Automatically:</strong> Via cookies, analytics tools, and similar technologies.</li>
+            <li><strong>From third parties:</strong> Payment gateways, map services, verification systems.</li>
+          </ul>
+        </section>
 
-      <h2 id="sharing">Sharing of Information with Third Parties</h2>
-      <p>
-        We do not sell or rent your personal information to third parties. We may share your data with select
-        trusted partners who assist in delivering our services, such as payment processors, driver partners,
-        or legal authorities if required by law. These third parties are obligated to maintain the
-        confidentiality and security of your data and are only allowed to use it for service-related
-        purposes.
-      </p>
+        <section id="use-of-data" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">4. Use of Data or Information</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Fulfill bookings, process payments, and communicate updates.</li>
+            <li>Coordinate with drivers for smooth travel.</li>
+            <li>Maintain quality, send reminders/promotions (if opted in).</li>
+            <li>Analyze anonymized data for planning and operations.</li>
+          </ul>
+        </section>
 
-      <h2 id="security-retention">Data Security &amp; Retention</h2>
-      <p>
-        Your data security is important to us. We use industry-standard security measures such as encryption,
-        firewalls, secure servers, and limited access protocols to protect your data. Our team is trained to
-        handle sensitive information with care. We retain your personal data only as long as necessary for
-        fulfilling bookings, complying with legal or regulatory requirements, or resolving disputes. After
-        the required period, data is securely deleted or anonymized.
-      </p>
+        <section id="sharing" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">5. Sharing of Information with Third Parties</h2>
+          <p>
+            We do not sell or rent your personal information. Data may be shared with trusted partners such as
+            payment processors, driver partners, or legal authorities. These partners must maintain
+            confidentiality and use data only for service-related purposes.
+          </p>
+        </section>
 
-      <h2 id="your-rights">Your Rights</h2>
-      <p>You have full rights concerning your personal data, including the right to:</p>
-      <ul>
-        <li>Access the data we hold about you.</li>
-        <li>Correct inaccurate details.</li>
-        <li>Request deletion (where legally permissible).</li>
-        <li>Withdraw previously granted consent.</li>
-        <li>Opt out of promotional communications.</li>
-      </ul>
-      <p>
-        To exercise these rights, contact us using the details below, clearly stating your request, name,
-        contact information, and booking reference for faster processing.
-      </p>
+        <section id="security-retention" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">6. Data Security & Retention</h2>
+          <p>
+            We use encryption, firewalls, secure servers, and strict access controls to safeguard data. Data is
+            retained only as long as necessary for bookings, legal compliance, or dispute resolution. After
+            that, it is securely deleted or anonymized.
+          </p>
+        </section>
 
-      <h2 id="request-requirements">Your Request Must</h2>
-      <ul>
-        <li>Use the same contact details (email or phone) used during the booking.</li>
-        <li>Clearly specify the nature of your request — data access, correction, or deletion.</li>
-      </ul>
-      <p>We aim to respond to all verified requests within 15 to 30 business days.</p>
+        <section id="your-rights" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">7. Your Rights</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Access your data.</li>
+            <li>Correct inaccuracies.</li>
+            <li>Request deletion (where legally permissible).</li>
+            <li>Withdraw consent.</li>
+            <li>Opt out of promotional communications.</li>
+          </ul>
+        </section>
 
-      <h2 id="minors">Use of This Site by Minors</h2>
-      <p>
-        Our services are intended only for users aged 18 and above. We do not knowingly collect data from
-        minors. If a parent or guardian believes that their child has shared personal data with us, they
-        should contact us immediately so we can remove the data from our systems.
-      </p>
+        <section id="request-requirements" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">8. Your Request Must</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Use the same contact details as used in booking.</li>
+            <li>Clearly specify whether request is for access, correction, or deletion.</li>
+          </ul>
+          <p>We aim to respond to verified requests within 15–30 business days.</p>
+        </section>
 
-      <h2 id="contact">Contact Us</h2>
-      <p>If you have any concerns, questions, or feedback related to our Privacy Policy or how we handle your personal data, you can reach out to us directly.</p>
-      <address>
-        <strong>Address:</strong> SD Block, 22, Main Road, DDA Market, Block SD, Dakshini Pitampura, Pitampura, New Delhi, Delhi, 110088
-        <br />
-        <strong>Phone:</strong> <a href="tel:+919650627278">+91 96506 27278</a>
-        <br />
-        <strong>Email:</strong> <a href="mailto:sales@vivektravels.com">sales@vivektravels.com</a>
-      </address>
+        <section id="minors" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">9. Use of This Site by Minors</h2>
+          <p>
+            Our services are intended for users aged 18+. We do not knowingly collect data from minors. If a
+            child has shared data, parents/guardians should contact us for removal.
+          </p>
+        </section>
 
-      <h2 id="governing-law">Governing Laws &amp; Jurisdiction</h2>
-      <p>
-        By accessing this website or using our services, you agree to this Privacy Policy. Any disputes
-        arising from the use of your data will be governed by the laws of India. The courts located in New
-        Delhi shall have exclusive jurisdiction over any matters concerning this Privacy Policy.
-      </p>
+        <section id="contact" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">10. Contact Us</h2>
+          <p>If you have questions or concerns, contact us:</p>
+          <address className="not-italic space-y-1">
+            <p><strong>Address:</strong> SD Block, 22, Main Road, DDA Market, Block SD, Dakshini Pitampura, Pitampura, New Delhi, Delhi, 110088</p>
+            <p><strong>Phone:</strong> <a href="tel:+919650627278" className="text-green-600">+91 96506 27278</a></p>
+            <p><strong>Email:</strong> <a href="mailto:sales@vivektravels.com" className="text-green-600">sales@vivektravels.com</a></p>
+          </address>
+        </section>
 
-      <footer style={{ marginTop: "2rem", borderTop: "1px solid #ddd", paddingTop: "1rem" }}>
+        <section id="governing-law" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-3">11. Governing Laws & Jurisdiction</h2>
+          <p>
+            By using our services, you agree to this Privacy Policy. Any disputes will be governed by Indian
+            law. Courts in New Delhi shall have exclusive jurisdiction.
+          </p>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="mt-12 border-t pt-4 text-sm text-gray-500">
         <p>&copy; {new Date().getFullYear()} Vivek Travels. All rights reserved.</p>
       </footer>
     </div>
