@@ -63,7 +63,7 @@ import Gallery from "./components/Gallery";
 import CarOffer from "./pages/CarOffer";
 import Terms from "./pages/terms";
 import PrivacyPolicy from "./pages/privacy-policy";
-import ChatBot from "./components/ChatBot";
+
 import WhatsAppButton from "./components/WhatsappButton";
 
 export default function App() {
