@@ -24,3 +24,12 @@
   scrollbar-width: none;
 }
 
+
+/* Optional: make inner card content stretch */
+#featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1 article,
+#featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1 [class*="card"],
+#featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1 [class*="review"] {
+  display: flex;
+  flex-direction: column;
+}
+

@@ -81,11 +81,11 @@ const Footer = () => {
             <div className="w-[401px] h-[82px] mt-[10px] ">
               <div className="flex gap-4 mt-[40px]">
                 {[
-                  { href: "https://facebook.com", icon: <FaFacebookF /> },
-                  { href: "https://instagram.com", icon: <FaInstagram /> },
-                  { href: "https://linkedin.com", icon: <FaLinkedinIn /> },
-                  { href: "https://youtube.com", icon: <FaYoutube /> },
-                  { href: "https://twitter.com", icon: <FaXTwitter /> },
+                  { href: "https://www.facebook.com/share/1CeN9mgE8W/", icon: <FaFacebookF /> },
+                  { href: "https://www.instagram.com/vivektravels1969/", icon: <FaInstagram /> },
+                  { href: "https://www.linkedin.com/company/vivektravels1969/", icon: <FaLinkedinIn /> },
+                  { href: "https://www.youtube.com/@vivektravels4004", icon: <FaYoutube /> },
+                  // { href: "https://twitter.com", icon: <FaXTwitter /> },
                 ].map((social, index) => (
                   <a
                     key={index}

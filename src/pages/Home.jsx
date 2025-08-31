@@ -40,6 +40,7 @@ import { useIsMobile } from "@/hook/useIsMobile";
 import { StepsSection } from "../components/Why-ride-section";
 import StepsSectionDesktop from "../components/StepSectionDesctop";
 // import banner3 from "../assets/hero3.png";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("local");
@@ -66,6 +67,12 @@ export default function Home() {
   const [fade, setFade] = useState(true);
 
   const heroImages = [banner1, banner2, banner3];
+  const SERVICE_ID = "service_4jiyrgd";
+  const TEMPLATE_ID = "template_l5esbo8";
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
+  useEffect(() => {
+    if (PUBLIC_KEY) emailjs.init(PUBLIC_KEY);
+  }, []);
 
   // 3. Setup background slideshow
   useEffect(() => {
@@ -258,7 +265,7 @@ journey every time`,
         { carName: "Tempo Traveller 15 Seater", url: "tempo-travellers-2x1" },
         { carName: "Urbania 9/12 Seater", url: "urbania-modified" },
         { carName: "Urbania 15 Seater", url: "urbania-2x1" },
-      ],  
+      ],
     },
     "ev-cars": {
       title: "EV Cars",
@@ -351,6 +358,19 @@ journey every time`,
       // }, 100);
     }
   };
+//   const handleSearch = async () => {
+//   if (formData.location || formData.destination || formData.from) {
+//     setShowOffers(true);
+//     const query = new URLSearchParams(formData).toString();
+//     navigate(`/car-offers?${query}`);
+//   }
+//   try {
+//     await sendEnquiry(); // fire-and-forget send
+//     // optionally show a toast
+//   } catch (e) {
+//     console.error("Email send failed", e);
+//   }
+// };
 
   const chunkArrayWithPadding = (array, size) => {
     const chunks = [];
@@ -373,6 +393,67 @@ journey every time`,
 
     return () => clearInterval(timer);
   }, [mobileStatChunks.length]);
+
+  // --- time helpers ---
+  const pad = (n) => (n < 10 ? `0${n}` : `${n}`);
+
+  const todayISO = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  };
+
+  const dateIsToday = (yyyyMmDd) => {
+    if (!yyyyMmDd) return false;
+    return yyyyMmDd === todayISO();
+  };
+
+  // round up now to the next 30-min slot, then add +30 mins total buffer
+  const nowPlus30ToSlot = () => {
+    const d = new Date();
+    // add 30 minutes first for buffer
+    d.setMinutes(d.getMinutes() + 30);
+    // then snap to :00 or :30
+    const m = d.getMinutes();
+    const snapped = m <= 30 ? 30 : 60;
+    d.setMinutes(snapped, 0, 0);
+    return `${pad(d.getHours())}:${pad(snapped === 60 ? 0 : 30)}`;
+  };
+
+  // min time for a given date (today => now+30 snapped; future dates => 00:00)
+  const minTimeForDate = (yyyyMmDd) => {
+    if (dateIsToday(yyyyMmDd)) return nowPlus30ToSlot();
+    return "00:00";
+  };
+
+  const sendEnquiry = async () => {
+  // basic silent guards (same idea as CarForm)
+  if (activeTab === "outstation") {
+    if (!formData.from?.trim() || !formData.destination?.trim()) return;
+  } else {
+    if (!formData.location?.trim()) return;
+  }
+  if (!formData.date || !formData.time) return;
+  if (!/^[A-Za-z\s]+$/.test(formData.name)) return;
+  if (!/^\d{10}$/.test(formData.contact)) return;
+
+  const trip_from = activeTab === "outstation" ? formData.from : formData.location;
+  const trip_destination = activeTab === "outstation" ? formData.destination : "—";
+
+  const params = {
+    car_name: "Website Enquiry",        // or a selected car if you have one on the page
+    active_tab: activeTab,
+    from_name: formData.name,
+    phone: formData.contact,
+    trip_from,
+    trip_destination,
+    trip_datetime: `${formData.date} ${formData.time}`,
+    page_url: typeof window !== "undefined" ? window.location.href : "",
+    message: formData.return_date ? `Return date: ${formData.return_date}` : "-"
+  };
+
+  await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, PUBLIC_KEY);
+};
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -406,16 +487,16 @@ journey every time`,
     left: "136px",
   }}
 > */}
-        <div
+        {/* <div
           className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1300px] mx-auto left-1/2 transform -translate-x-1/2"
           style={{
             // top: "-50px",
             height: "302px",
           }}
-        >
+        > */}
+        <div className="hidden md:flex absolute z-10 bg-[#3D3E98] rounded-[3px] w-full max-w-[1300px] mx-auto left-1/2 -translate-x-1/2">
           <div className="px-[44px] py-[70px] w-full h-full flex flex-col justify-between">
             {/* Heading */}
-           
 
             {/* Tabs */}
             <div
@@ -448,17 +529,25 @@ journey every time`,
 
             {/* Fields with Labels */}
             {/* <div className="flex items-start mt-6 gap-4"> */}
-            <div className="flex flex-wrap lg:flex-nowrap items-center justify-center items-start mt-6 gap-4 ">
-              {/* Location or From + Destination */}
+            {/* Fields row — desktop */}
+            <div
+              className="
+                mt-6 grid gap-4
+                lg:grid-cols-8
+                md:grid-cols-4
+                grid-cols-2
+                items-end
+              "
+            >
+              {/* From / Destination / OR Location (depending on tab) */}
               {activeTab === "local" ? (
-                <div className="flex flex-col">
+                <div className="col-span-2">
                   <label
-                    className="text-white mb-[10px]"
+                    className="text-white mb-[10px] block"
                     style={{
                       fontFamily: "DM Sans",
-                      fontSize: "20px",
+                      fontSize: 20,
                       fontWeight: 700,
-                      lineHeight: "11.17px",
                     }}
                   >
                     Location
@@ -469,19 +558,18 @@ journey every time`,
                     placeholder="Start typing location name"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-[100%] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                    className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                   />
                 </div>
               ) : (
                 <>
-                  <div className="flex flex-col">
+                  <div className="col-span-2">
                     <label
-                      className="text-white mb-[10px]"
+                      className="text-white mb-[10px] block"
                       style={{
                         fontFamily: "DM Sans",
-                        fontSize: "20px",
+                        fontSize: 20,
                         fontWeight: 700,
-                        lineHeight: "11.17px",
                       }}
                     >
                       From
@@ -492,17 +580,16 @@ journey every time`,
                       placeholder="From"
                       value={formData.from}
                       onChange={handleInputChange}
-                      className="w-[180px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                      className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                     />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="col-span-2">
                     <label
-                      className="text-white mb-[10px]"
+                      className="text-white mb-[10px] block"
                       style={{
                         fontFamily: "DM Sans",
-                        fontSize: "20px",
+                        fontSize: 20,
                         fontWeight: 700,
-                        lineHeight: "11.17px",
                       }}
                     >
                       Destination
@@ -513,67 +600,115 @@ journey every time`,
                       placeholder="Destination"
                       value={formData.destination}
                       onChange={handleInputChange}
-                      className="w-[180px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                      className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                     />
                   </div>
                 </>
               )}
 
-             
-              <div className="flex flex-col">
+              {/* Pick Up Date */}
+              <div className="col-span-1">
                 <label
-                  className="text-white mb-[10px]"
+                  className="text-white mb-[10px] block"
                   style={{
                     fontFamily: "DM Sans",
-                    fontSize: "20px",
+                    fontSize: 20,
                     fontWeight: 700,
-                    lineHeight: "11.17px",
                   }}
                 >
-                  Date
+                  Pick Up Date
                 </label>
                 <input
                   type="date"
                   name="date"
                   value={formData.date}
-                  onChange={(e) =>
-                    setFormData({ ...formData, date: e.target.value })
-                  }
-                  className="w-[170px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  min={todayISO()} // helper below
+                  onChange={(e) => {
+                    const date = e.target.value;
+                    const minT = minTimeForDate(date); // helper below
+                    // if user already picked a time earlier than min, push it up
+                    setFormData((p) => ({
+                      ...p,
+                      date,
+                      time:
+                        p.time && dateIsToday(date) && p.time < minT
+                          ? minT
+                          : p.time,
+                    }));
+                  }}
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
-              <div className="flex flex-col">
+
+              {/* Pick Up Time (30-min steps + min=now+30 if today) */}
+              <div className="col-span-1">
                 <label
-                  className="text-white mb-[10px]"
+                  className="text-white mb-[10px] block"
                   style={{
                     fontFamily: "DM Sans",
-                    fontSize: "20px",
+                    fontSize: 20,
                     fontWeight: 700,
-                    lineHeight: "11.17px",
                   }}
                 >
-                  Time
+                  Pick Up Time
                 </label>
                 <input
                   type="time"
                   name="time"
+                  step={1800} // 30 minutes
+                  min={minTimeForDate(formData.date)} // helper below
                   value={formData.time}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    const minT = minTimeForDate(formData.date);
+                    setFormData((p) => ({
+                      ...p,
+                      time: val < minT ? minT : val,
+                    }));
+                  }}
+                  onFocus={() => {
+                    // if no time yet, prefill with min time
+                    if (!formData.time) {
+                      const minT = minTimeForDate(formData.date);
+                      setFormData((p) => ({ ...p, time: minT }));
+                    }
+                  }}
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
+
+              {/* Return Date */}
+              <div className="col-span-1">
+                <label
+                  className="text-white mb-[10px] block"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: 20,
+                    fontWeight: 700,
+                  }}
+                >
+                  Return Date
+                </label>
+                <input
+                  type="date"
+                  name="return_date"
+                  value={formData.return_date || ""}
+                  min={formData.date || todayISO()}
                   onChange={(e) =>
-                    setFormData({ ...formData, time: e.target.value })
+                    setFormData((p) => ({ ...p, return_date: e.target.value }))
                   }
-                  className="w-[130px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
 
               {/* Name */}
-              <div className="flex flex-col">
+              <div className="col-span-1">
                 <label
-                  className="text-white mb-[10px]"
+                  className="text-white mb-[10px] block"
                   style={{
                     fontFamily: "DM Sans",
-                    fontSize: "20px",
+                    fontSize: 20,
                     fontWeight: 700,
-                    lineHeight: "11.17px",
                   }}
                 >
                   Name
@@ -584,19 +719,18 @@ journey every time`,
                   placeholder="Enter your name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-[200px] h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
 
               {/* Contact */}
-              <div className="flex flex-col">
+              <div className="col-span-1">
                 <label
-                  className="text-white mb-[10px]"
+                  className="text-white mb-[10px] block"
                   style={{
                     fontFamily: "DM Sans",
-                    fontSize: "20px",
+                    fontSize: 20,
                     fontWeight: 700,
-                    lineHeight: "11.17px",
                   }}
                 >
                   Contact No.
@@ -607,27 +741,19 @@ journey every time`,
                   placeholder="+91 1234567890"
                   value={formData.contact}
                   onChange={handleInputChange}
-                  className="w-[150px] h-[40px] px-[8px] text-white placeholder:text-[#FFFFFF4D]  bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                  className="w-full h-[40px] px-[8px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
                 />
               </div>
 
-              {/* Search Button */}
-              <div className="flex flex-col justify-end mt-auto">
+              {/* Search / Submit */}
+              <div className="col-span-1 flex">
                 <button
                   onClick={handleSearch}
-                  className="w-[100px] h-[40px] bg-white text-[#3D3E98] font-semibold rounded-[8px] hover:bg-gray-100 transition"
+                  className="w-full h-[40px] bg-white text-[#3D3E98] font-semibold rounded-[8px] hover:bg-gray-100 transition"
                 >
                   Search
                 </button>
               </div>
-              {/* {(isMobile && showOffers) || (!isMobile && showOffers) ? (
-            <div className="w-full md:w-auto mt-8 md:mt-0 md:ml-6">
-              <CarOffersSection
-                isVisible={showOffers}
-                onClose={() => setShowOffers(false)}
-              />
-            </div>
-          ) : null} */}
             </div>
           </div>
         </div>
@@ -715,7 +841,7 @@ journey every time`,
 
                 <div>
                   <label className="block text-sm font-medium mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                    Date & Time
+                    Pick Up Date & Time
                   </label>
                   <div className="flex space-x-2">
                     <input

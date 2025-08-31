@@ -824,6 +824,177 @@ export default function CustomerTestimonials() {
     }
   }, []);
 
+//   useEffect(() => {
+//     const widgetId = "featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1";
+
+//     const removeReviewHeader = () => {
+//       const root = document.getElementById(widgetId);
+//       if (!root) return;
+
+//       // Try to remove the whole header bar (summary + CTA)
+//       // This targets the first immediate block inside the widget as a fallback.
+//       const possibleHeader =
+//         root.querySelector('[class*="header"], [data-featurable-header]') ||
+//         root.querySelector(":scope > div > div:first-child");
+
+//       if (possibleHeader) {
+//         possibleHeader.remove();
+//         return;
+//       }
+
+//       // Fallback: remove just the "Write a review" button by text
+//       const btn = Array.from(root.querySelectorAll("a,button")).find(
+//         (el) => el.textContent?.trim().toLowerCase() === "write a review"
+//       );
+//       if (btn) (btn.closest("div") || btn).remove();
+//     };
+
+//     // Run once and also observe for async render
+//     removeReviewHeader();
+//     const obs = new MutationObserver(removeReviewHeader);
+//     obs.observe(document.getElementById(widgetId) ?? document.body, {
+//       childList: true,
+//       subtree: true,
+//     });
+
+//     return () => obs.disconnect();
+//   }, []);
+
+// useEffect(() => {
+//   const widgetId = "featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1";
+//   const root = document.getElementById(widgetId);
+//   if (!root) return;
+
+//   const clean = () => {
+//     // 1) Remove the top summary bar (contains the "Write a review" CTA)
+//     const writeBtn = Array.from(root.querySelectorAll("a,button")).find((el) =>
+//       /write a review/i.test(el.textContent || "")
+//     );
+//     if (writeBtn) {
+//       const bar = writeBtn.closest("header,section,div");
+//       if (bar && /google|based on|reviews/i.test(bar.textContent || "")) {
+//         bar.remove();
+//       }
+//     }
+
+//     // 2) Remove "Powered by Featurable" footer/branding
+//     const branding = Array.from(
+//       root.querySelectorAll("a,div,section,footer")
+//     ).filter(
+//       (el) =>
+//         /powered by/i.test(el.textContent || "") &&
+//         /featurable/i.test(el.textContent || "")
+//     );
+//     branding.forEach((el) => el.remove());
+
+//     // 3) Make review cards equal height
+//     // Heuristic: find a container that holds multiple review "cards"
+//     const candidateContainers = Array.from(
+//       root.querySelectorAll("div,section,article")
+//     );
+//     const cardContainer = candidateContainers.find((el) => {
+//       const items = el.querySelectorAll(
+//         'article, [data-review], [class*="card"], [class*="review"]'
+//       );
+//       return items.length >= 3; // looks like the row with 3 cards
+//     });
+
+//     if (cardContainer) {
+//       const cards = Array.from(
+//         cardContainer.querySelectorAll(
+//           'article, [data-review], [class*="card"], [class*="review"]'
+//         )
+//       ).filter((el) => el.offsetParent !== null);
+
+//       if (cards.length) {
+//         // reset then equalize
+//         cards.forEach((c) => (c.style.minHeight = "auto"));
+//         const maxH = Math.max(...cards.map((c) => c.getBoundingClientRect().height));
+//         cards.forEach((c) => (c.style.minHeight = `${Math.ceil(maxH)}px`));
+//       }
+//     }
+//   };
+
+//   // run a few times to catch async render + observe future changes
+//   [0, 300, 800, 1500, 3000].forEach((ms) => setTimeout(clean, ms));
+//   const obs = new MutationObserver(() => setTimeout(clean, 0));
+//   obs.observe(root, { childList: true, subtree: true });
+//   window.addEventListener("resize", clean);
+
+//   return () => {
+//     obs.disconnect();
+//     window.removeEventListener("resize", clean);
+//   };
+// }, []);
+
+
+useEffect(() => {
+  const WIDGET_ID = "featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1";
+
+  const killIt = () => {
+    const root = document.getElementById(WIDGET_ID);
+    if (!root) return;
+
+    // 1) Kill the top summary / CTA (matches "Write a review" or "Based on … reviews")
+    const headerMatches = document.evaluate(
+      './/*[contains(translate(normalize-space(.),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"),"write a review") or contains(normalize-space(.),"Based on")]',
+      root,
+      null,
+      XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+      null
+    );
+    for (let i = 0; i < headerMatches.snapshotLength; i++) {
+      const node = headerMatches.snapshotItem(i);
+      const bar = node.closest("header, section, div");
+      if (bar) bar.remove();
+    }
+
+    // 2) Kill "Powered by Featurable"
+    const brandMatches = document.evaluate(
+      './/*[contains(translate(normalize-space(.),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"),"powered by") and contains(translate(normalize-space(.),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"),"featurable")]',
+      root,
+      null,
+      XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+      null
+    );
+    for (let i = 0; i < brandMatches.snapshotLength; i++) {
+      const node = brandMatches.snapshotItem(i);
+      const wrap = node.closest("footer, section, div, a") || node;
+      if (wrap) wrap.remove();
+    }
+
+    // 3) Equalize review card heights
+    const items = Array.from(
+      root.querySelectorAll(
+        'article, [data-review], [class*="card"], [class*="review"]'
+      )
+    ).filter((el) => el.offsetParent !== null);
+    if (items.length >= 3) {
+      items.forEach((c) => (c.style.minHeight = "auto"));
+      const maxH = Math.max(...items.map((c) => c.getBoundingClientRect().height));
+      items.forEach((c) => (c.style.minHeight = `${Math.ceil(maxH)}px`));
+      // Ensure inner layout stretches
+      items.forEach((c) => {
+        c.style.display = "flex";
+        c.style.flexDirection = "column";
+      });
+    }
+  };
+
+  // Run a few times + observe ongoing async renders
+  [0, 250, 800, 1500, 3000].forEach((t) => setTimeout(killIt, t));
+  const root = document.getElementById(WIDGET_ID) ?? document.body;
+  const obs = new MutationObserver(() => setTimeout(killIt, 0));
+  obs.observe(root, { childList: true, subtree: true });
+  window.addEventListener("resize", killIt);
+
+  return () => {
+    obs.disconnect();
+    window.removeEventListener("resize", killIt);
+  };
+}, []);
+
+
   return (
     <section className="gap-[22px] flex flex-col margin-0 auto ">
       {/* ✅ From Our Customers Section (Google Reviews) */}
@@ -832,13 +1003,6 @@ export default function CustomerTestimonials() {
           From Our Customers
         </h2>
       </div>
-
-      {/* Featurable reviews container */}
-      {/* <div
-        id="featurable-6366619a-14f8-4f58-a8a7-b64fc99071e1"
-        data-featurable-async
-        className="w-full flex justify-center"
-      ></div> */}
 
       {/* Featurable reviews container */}
       <div className="w-full flex justify-center px-4">
