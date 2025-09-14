@@ -156,7 +156,7 @@ const Footer = () => {
       </div>
 
       {/* Mobile Footer */}
-      {/* Mobile Footer */}
+  
       <div className="block md:hidden w-full">
         {/* Logo Section */}
         <div className="bg-white px-4 py-6 flex justify-center items-center  ">
@@ -173,9 +173,10 @@ const Footer = () => {
         <div className="bg-[#3D3E98] border-b-2 border-[#EB1C25] px-3 py-2">
           <ul className="flex flex-wrap justify-between items-center gap-x-[10px]">
             {[
-              { to: "/about", label: "About Us" },
+              { to: "/about", label: "About" },
+              { to: "/gallery", label: "Gallery" },
               { to: "/our-fleet", label: "Our Fleet" },
-              { to: "/our-services", label: "Our Services" },
+              { to: "/our-services", label: "Services" },
               { to: "/clients", label: "Clients" },
               { to: "/blogs", label: "Blogs" },
               { to: "/contact-us", label: "Contact Us" },

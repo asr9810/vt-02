@@ -6,6 +6,7 @@ import dummy2 from "../assets/carlogo.png";
 import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
+import CarForm from "../components/CarForm";
 
 const MercedesVianoConfig = {
   vehicleName: `Mercedes Viano Rental Service`,
@@ -65,7 +66,9 @@ export default function MercedesViano() {
     contact: "",
   });
   const [activeTab, setActiveTab] = useState("local");
-  const [mainImage, setMainImage] = useState("ourFleet/Luxury/merc_viano/2.jpg");
+  const [mainImage, setMainImage] = useState(
+    "ourFleet/Luxury/merc_viano/2.jpg"
+  );
 
   const carouselRef = useRef(null);
 
@@ -105,11 +108,7 @@ export default function MercedesViano() {
               className="border rounded-md flex justify-center items-center"
               // style={{ width: "100%" }}
             >
-              <img
-               src={mainImage}
-                alt="Main Car"
-                className="object-contain "
-              />
+              <img src={mainImage} alt="Main Car" className="object-contain " />
             </div>
 
             <div className="flex items-center justify-between w-full">
@@ -126,9 +125,9 @@ export default function MercedesViano() {
                 style={{ scrollbarWidth: "none" }}
               >
                 {[
-                  'ourFleet/Luxury/merc_viano/2.jpg',
-                  'ourFleet/Luxury/merc_viano/1.jpg',
-                  'ourFleet/Luxury/merc_viano/3.jpg',
+                  "ourFleet/Luxury/merc_viano/2.jpg",
+                  "ourFleet/Luxury/merc_viano/1.jpg",
+                  "ourFleet/Luxury/merc_viano/3.jpg",
                 ].map((img, idx) => (
                   <img
                     key={idx}
@@ -149,66 +148,8 @@ export default function MercedesViano() {
             </div>
           </div>
 
-          <div className="h-[80%] w-full lg:w-[460px] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">
-            <div className="flex mb-4">
-              <button
-                onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
-                  activeTab === "local"
-                    ? "bg-white text-[#3D3E98]"
-                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
-                }`}
-              >
-                Local / Airport
-              </button>
-              <button
-                onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
-                  activeTab === "outstation"
-                    ? "bg-white text-[#3D3E98]"
-                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
-                }`}
-              >
-                Outstation
-              </button>
-            </div>
-
-            <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map(
-                (field, idx) => (
-                  <div key={idx}>
-                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                      {field.charAt(0).toUpperCase() +
-                        field.slice(1).replace("Time", " & Time")}
-                    </label>
-                    <input
-                      type={
-                        field === "dateTime"
-                          ? "datetime-local"
-                          : field === "contact"
-                          ? "tel"
-                          : "text"
-                      }
-                      name={field}
-                      value={formData[field]}
-                      onChange={handleInputChange}
-                      placeholder={
-                        field === "contact"
-                          ? "+91 1234567890"
-                          : `Enter ${field}`
-                      }
-                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                    />
-                  </div>
-                )
-              )}
-              <button
-                type="submit"
-                className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"
-              >
-                Submit
-              </button>
-            </form>
+          <div className="w-full lg:w-[460px]  h-[80%] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">
+            <CarForm carName="Mercedes Viano" />
           </div>
         </div>
       </div>

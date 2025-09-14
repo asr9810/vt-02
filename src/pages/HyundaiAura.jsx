@@ -6,12 +6,13 @@ import dummy2 from "../assets/carlogo.png";
 import VehicleDetailInfoSection from "../components/VehicleDetailInfoSection";
 import WhyRideSection from "../components/Why-ride-section";
 import ReservationBanner from "../components/ReservationBanner";
+import CarForm from "../components/CarForm";
 
 const hyundaiAuraConfig = {
   vehicleName: `Hyundai Aura Rental Service`,
   introText: `We offer clean top-notch Hyundai Aura cars for rent—ideal for out-of-town trips getting to and from the airport, city-to-city travel, group outings, or basic pick-up and drop-off services. If you're planning a quick getaway or need a smooth ride around town, we've got your back. Based is Delhi, and we make sure every journey with us is cozy, stress-free, and won't break the bank.`,
   rentalIntroText: ` 
-Stylish yet simple, the Hyundai Aura suits people who like understated class and daily ease. Its sleek shape roomy inside, and great gas mileage give you a polished ride; whether you're going to work getting family from the airport, or taking off for a weekend trip. At Vivek Travels, we provide Hyundai Aura rentals with drivers so you can relax . From the time you get in, it's all about ease, attention, and a pleasant trip; how travel should be.`,
+Stylish yet simple, the Hyundai Aura is perfect for those who appreciate understated class and everyday convenience. Its sleek design, spacious interior and excellent fuel efficiency ensure a refined ride whether you’re commuting to work, picking up family from the airport or heading out for a weekend getaway. At Vivek Travels, we offer Hyundai Aura rentals with professional drivers so you can simply relax. From the moment you step in, it’s all about comfort, care and a pleasant journey, the way travel should be.`,
 
   rentalDetails: [
     {
@@ -158,68 +159,10 @@ export default function HyundaiAura() {
               </button> */}
             </div>
           </div>
-
-          <div className="h-[80%] w-full lg:w-[460px] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">
-            <div className="flex mb-4">
-              <button
-                onClick={() => setActiveTab("local")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-l-lg font-medium transition-colors text-sm md:text-[20px] ${
-                  activeTab === "local"
-                    ? "bg-white text-[#3D3E98]"
-                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
-                }`}
-              >
-                Local / Airport
-              </button>
-              <button
-                onClick={() => setActiveTab("outstation")}
-                className={`flex-1 py-2 md:py-3 px-2 md:px-4 rounded-r-lg font-medium transition-colors text-sm md:text-[20px] ${
-                  activeTab === "outstation"
-                    ? "bg-white text-[#3D3E98]"
-                    : "bg-[#4A3FA3] text-white hover:bg-[#3F3498]"
-                }`}
-              >
-                Outstation
-              </button>
-            </div>
-
-            <form className="flex flex-col gap-4 text-sm">
-              {["from", "destination", "dateTime", "name", "contact"].map(
-                (field, idx) => (
-                  <div key={idx}>
-                    <label className="block mb-1 font-['DM_Sans'] md:text-[20px] text-[15px]">
-                      {field.charAt(0).toUpperCase() +
-                        field.slice(1).replace("Time", " & Time")}
-                    </label>
-                    <input
-                      type={
-                        field === "dateTime"
-                          ? "datetime-local"
-                          : field === "contact"
-                          ? "tel"
-                          : "text"
-                      }
-                      name={field}
-                      value={formData[field]}
-                      onChange={handleInputChange}
-                      placeholder={
-                        field === "contact"
-                          ? "+91 1234567890"
-                          : `Enter ${field}`
-                      }
-                      className="placeholder:text-white placeholder:text-[14px] placeholder:font-['Montserrat'] placeholder:text-center w-full px-3 py-2 rounded-lg bg-[#4A3FA3] text-white border border-[#D9D9D9] h-[40px] text-sm md:text-base"
-                    />
-                  </div>
-                )
-              )}
-              <button
-                type="submit"
-                className="w-full mt-2 bg-white text-[#3D3E98] py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-base md:text-[18px]"
-              >
-                Submit
-              </button>
-            </form>
+      <div className="w-full lg:w-[460px]  h-[80%] border border-black bg-[#3D3E98] text-white rounded-[10px] px-6 py-8 flex flex-col gap-4">
+                <CarForm carName="Hyundai Aura" />
           </div>
+    
         </div>
       </div>
       <VehicleDetailInfoSection {...hyundaiAuraConfig} />

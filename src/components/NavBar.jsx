@@ -178,7 +178,7 @@ const Navbar = () => {
                     : "text-[#3D3E98] hover:text-[#2D2E78]"
                 }`}
               >
-                Our Fleet <TiArrowSortedDown className="ml-1" />
+                Our Fleet <TiArrowSortedDown className="ml-1  mt-2" />
               </span>
               {isFleetOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 z-50 w-[240px]">
@@ -488,10 +488,10 @@ const Navbar = () => {
         </div>
 
         {/* Social Media Icons (same as desktop) */}
-        <div className="flex gap-[16.45px] items-center w-[147.5405px] h-[16.3449px]">
+        <div className="flex gap-[16.45px] items-center w-[147.5405px] h-[16.3449px] ">
           {[
             {
-              href: "https://facebook.com",
+              href: "https://www.facebook.com/share/1CeN9mgE8W/",
               icon: (
                 <svg
                   width="12"
@@ -508,7 +508,7 @@ const Navbar = () => {
               ),
             },
             {
-              href: "https://instagram.com",
+              href: "https://www.instagram.com/vivektravels1969/",
               icon: (
                 <svg
                   width="12"
@@ -525,7 +525,7 @@ const Navbar = () => {
               ),
             },
             {
-              href: "https://linkedin.com",
+              href: "https://www.linkedin.com/company/vivektravels1969/",
               icon: (
                 <svg
                   width="12"
@@ -542,7 +542,7 @@ const Navbar = () => {
               ),
             },
             {
-              href: "https://youtube.com",
+              href: "https://www.youtube.com/@vivektravels4004",
               icon: (
                 <svg
                   width="12"
@@ -558,23 +558,23 @@ const Navbar = () => {
                 </svg>
               ),
             },
-            {
-              href: "https://twitter.com",
-              icon: (
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                    fill="#3D3E98"
-                  />
-                </svg>
-              ),
-            },
+            // {
+            //   href: "https://twitter.com",
+            //   icon: (
+            //     <svg
+            //       width="12"
+            //       height="12"
+            //       viewBox="0 0 24 24"
+            //       fill="none"
+            //       xmlns="http://www.w3.org/2000/svg"
+            //     >
+            //       <path
+            //         d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            //         fill="#3D3E98"
+            //       />
+            //     </svg>
+            //   ),
+            // },
           ].map(({ href, icon }, index) => (
             <a
               key={index}

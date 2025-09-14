@@ -367,7 +367,9 @@ export default function About() {
           {/* Scrollable Journey */}
           <div
             ref={scrollRef}
-            className="flex gap-[10rem] overflow-x-auto no-scrollbar px-4 sm:px-8 py-2 snap-x snap-mandatory"
+            // className="flex gap-[10rem] overflow-x-auto no-scrollbar px-4 sm:px-8 py-2 snap-x snap-mandatory"
+            className="flex gap-[10rem] overflow-x-auto no-scrollbar px-[50%] sm:px-8 py-2 snap-x snap-mandatory"
+
             style={{
               scrollSnapType: "x mandatory",
               WebkitOverflowScrolling: "touch",
@@ -614,10 +616,15 @@ export default function About() {
             </button>
 
             {/* Scrollable Container */}
-            <div
+            {/* <div
               ref={awardsScrollRef}
               className="flex gap-5 overflow-x-auto scroll-smooth w-full no-scrollbar px-8"
+            > */}
+            {/* <div
+              ref={awardsScrollRef}
+              className="flex gap-5 overflow-x-auto scroll-smooth w-full no-scrollbar px-[50%] sm:px-8 snap-x snap-mandatory"
             >
+
               {awardImages.map((img, i) => (
                 <div
                   key={i}
@@ -630,8 +637,25 @@ export default function About() {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
 
+<div
+  ref={awardsScrollRef}
+  className="flex gap-5 overflow-x-auto scroll-smooth w-full no-scrollbar justify-center sm:justify-start snap-x snap-mandatory"
+>
+  {awardImages.map((img, i) => (
+    <div
+      key={i}
+      className="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] h-[200px] md:h-[300px] flex-shrink-0 snap-center"
+    >
+      <img
+        src={img || "/placeholder.svg"}
+        alt={`Award ${i + 1}`}
+        className="w-full h-full object-cover rounded shadow-md"
+      />
+    </div>
+  ))}
+</div>
             {/* Right Arrow */}
             <button
               onClick={scrollRight}

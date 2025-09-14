@@ -336,41 +336,64 @@ journey every time`,
     return () => clearInterval(timer);
   }, [features.length]);
 
+  // const handleInputChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    // sanitize name -> only letters and spaces
+    if (name === "name") {
+      // Remove anything that's not A-Z, a-z or space
+      const sanitized = value.replace(/[^A-Za-z\s]/g, "");
+      setFormData((prev) => ({ ...prev, name: sanitized }));
+      return;
+    }
+
+    // sanitize contact -> only digits, max 10 digits
+    if (name === "contact") {
+      const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, contact: digitsOnly }));
+      return;
+    }
+
+    // default for other fields
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const navigate = useNavigate();
-  const handleSearch = () => {
-    console.log("Search clicked", formData);
+
+  // const handleSearch = () => {
+  //   console.log("Search clicked", formData);
+  //   if (formData.location || formData.destination || formData.from) {
+  //     setShowOffers(true);
+  //     const query = new URLSearchParams(formData).toString();
+  //     navigate(`/car-offers?${query}`);
+  //     // setTimeout(() => {
+  //     //   const offersElement = document.getElementById("offers-section");
+  //     //   if (offersElement) {
+  //     //     offersElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     //   }
+  //     // }, 100);
+  //   }
+  // };
+    const handleSearch = async () => {
     if (formData.location || formData.destination || formData.from) {
       setShowOffers(true);
       const query = new URLSearchParams(formData).toString();
       navigate(`/car-offers?${query}`);
-      // setTimeout(() => {
-      //   const offersElement = document.getElementById("offers-section");
-      //   if (offersElement) {
-      //     offersElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      //   }
-      // }, 100);
+    }
+    try {
+      await sendEnquiry(); // fire-and-forget send
+      // optionally show a toast
+    } catch (e) {
+      console.error("Email send failed", e);
     }
   };
-//   const handleSearch = async () => {
-//   if (formData.location || formData.destination || formData.from) {
-//     setShowOffers(true);
-//     const query = new URLSearchParams(formData).toString();
-//     navigate(`/car-offers?${query}`);
-//   }
-//   try {
-//     await sendEnquiry(); // fire-and-forget send
-//     // optionally show a toast
-//   } catch (e) {
-//     console.error("Email send failed", e);
-//   }
-// };
 
   const chunkArrayWithPadding = (array, size) => {
     const chunks = [];
@@ -426,34 +449,37 @@ journey every time`,
   };
 
   const sendEnquiry = async () => {
-  // basic silent guards (same idea as CarForm)
-  if (activeTab === "outstation") {
-    if (!formData.from?.trim() || !formData.destination?.trim()) return;
-  } else {
-    if (!formData.location?.trim()) return;
-  }
-  if (!formData.date || !formData.time) return;
-  if (!/^[A-Za-z\s]+$/.test(formData.name)) return;
-  if (!/^\d{10}$/.test(formData.contact)) return;
+    // basic silent guards (same idea as CarForm)
+    if (activeTab === "outstation") {
+      if (!formData.from?.trim() || !formData.destination?.trim()) return;
+    } else {
+      if (!formData.location?.trim()) return;
+    }
+    if (!formData.date || !formData.time) return;
+    if (!/^[A-Za-z\s]+$/.test(formData.name)) return;
+    if (!/^\d{10}$/.test(formData.contact)) return;
 
-  const trip_from = activeTab === "outstation" ? formData.from : formData.location;
-  const trip_destination = activeTab === "outstation" ? formData.destination : "—";
+    const trip_from =
+      activeTab === "outstation" ? formData.from : formData.location;
+    const trip_destination =
+      activeTab === "outstation" ? formData.destination : "—";
 
-  const params = {
-    car_name: "Website Enquiry",        // or a selected car if you have one on the page
-    active_tab: activeTab,
-    from_name: formData.name,
-    phone: formData.contact,
-    trip_from,
-    trip_destination,
-    trip_datetime: `${formData.date} ${formData.time}`,
-    page_url: typeof window !== "undefined" ? window.location.href : "",
-    message: formData.return_date ? `Return date: ${formData.return_date}` : "-"
+    const params = {
+      car_name: "Website Enquiry", // or a selected car if you have one on the page
+      active_tab: activeTab,
+      from_name: formData.name,
+      phone: formData.contact,
+      trip_from,
+      trip_destination,
+      trip_datetime: `${formData.date} ${formData.time}`,
+      page_url: typeof window !== "undefined" ? window.location.href : "",
+      message: formData.return_date
+        ? `Return date: ${formData.return_date}`
+        : "-",
+    };
+
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, PUBLIC_KEY);
   };
-
-  await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, PUBLIC_KEY);
-};
-
 
   return (
     <div className="min-h-screen bg-white">

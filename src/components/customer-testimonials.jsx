@@ -1217,7 +1217,7 @@ useEffect(() => {
         </div>
 
         {/* Mobile Corporate Clients */}
-        <div className="block md:hidden w-full px-4">
+        <div className="block md:hidden w-full px-2">
           <div className="grid grid-cols-2 gap-2">
             {corporateClients.slice(0, 4).map((client, index) => (
               <div
@@ -1232,6 +1232,28 @@ useEffect(() => {
                 />
               </div>
             ))}
+          </div>
+           {/* MOBILE VIEW MORE BUTTON — ADDED */}
+          <div className="flex justify-center mt-6">
+            <a
+              href="/clients"
+              className="px-6 flex justify-center items-center"
+              style={{
+                height: "36px",
+                borderRadius: "8px",
+                background: "white",
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 800,
+                fontSize: "16px",
+                lineHeight: "20px",
+                letterSpacing: "0.2em",
+                color: "#3D3E98",
+                textDecoration: "none",
+                minWidth: "160px",
+              }}
+            >
+              VIEW MORE
+            </a>
           </div>
         </div>
       </div>

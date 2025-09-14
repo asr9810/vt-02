@@ -55,11 +55,18 @@ const services = [
       "We own and operate a wide range of buses suited for all group sizes and travel purposes — from family trips, corporate retreats to educational tours. With operational fleet size of over 200 buses, you can choose your ride depending on the number of passengers from:\n• Tempo travellers and Urbania\n• Luxury Bus ranging from 27 to 49 seater\n• Volvo and Scania Buses ranging from 35 to 52 seater.",
     reverse: true,
   },
+  // {
+  //   title: "Wedding and Event Transportation Solutions",
+  //   image: "/tourister.png",
+  //   description:
+  //     "We expertise in seamless transport coordination for your big days or grand events — handled with elegance and punctuality.\n• Guest Transfers (Cars, Tempo Travellers, Buses)\n• Luxury Vehicles for VIPs\n• Multi-Location Pickups & Coordination\n• On-site Transport Manager (Optional)",
+  //   reverse: false,
+  // },
   {
     title: "Wedding and Event Transportation Solutions",
     image: "/tourister.png",
     description:
-      "We expertise in seamless transport coordination for your big days or grand events — handled with elegance and punctuality.\n• Guest Transfers (Cars, Tempo Travellers, Buses)\n• Luxury Vehicles for VIPs\n• Multi-Location Pickups & Coordination\n• On-site Transport Manager (Optional)",
+      "We have expertise in seamless transport coordination for your big days or grand events — handled with elegance and punctuality.\n• Guest Transfers (Cars, Tempo Travellers, Buses)\n• Luxury Vehicles for VIPs\n• Multi-Location Pickups & Coordination\n• On-site Transport Manager (Optional)",
     reverse: false,
   },
   {
@@ -69,20 +76,19 @@ const services = [
       "We have immense experience in handling international delegations and are trusted by top Government officials and international delegates. We are proud service providers in the events like G-20 Summit, South African Summit, Annual Functions of many Government Ministries and PSUs. Our protocol-trained drivers for high-security travel have always kept the trust and safety of the passengers as their top priority.",
     reverse: true,
   },
-{
-  title: "MICE Transport Services",
-  image: "/merc.png",
-  description:
-    "Vivek Travels provides reliable transportation solutions for Meetings, Incentives, Conferences, and Exhibitions (MICE) across Delhi NCR and throughout India.\n" +
-    "• We offer daily office commute services tailored for corporate professionals.\n" +
-    "• Our diverse fleet includes executive sedans, buses, and coaches to accommodate varying group sizes and requirements.\n" +
-    "• Committed to ensuring safe, punctual, and comfortable travel throughout Delhi NCR.\n" +
-    "• Flexible packages and special corporate offers are available for rentals, events, offsites, and business travel.\n" +
-    "• We specialize in managing professional transportation needs to facilitate seamless business operations.\n" +
-    "• Contact us today to discuss customized MICE travel solutions designed to meet your corporate objectives.",
-  reverse: false,
-}
-
+  {
+    title: "MICE Transport Services",
+    image: "/merc.png",
+    description:
+      "Vivek Travels provides reliable transportation solutions for Meetings, Incentives, Conferences, and Exhibitions (MICE) across Delhi NCR and throughout India.\n" +
+      "• We offer daily office commute services tailored for corporate professionals.\n" +
+      "• Our diverse fleet includes executive sedans, buses, and coaches to accommodate varying group sizes and requirements.\n" +
+      "• Committed to ensuring safe, punctual, and comfortable travel throughout Delhi NCR.\n" +
+      "• Flexible packages and special corporate offers are available for rentals, events, offsites, and business travel.\n" +
+      "• We specialize in managing professional transportation needs to facilitate seamless business operations.\n" +
+      "• Contact us today to discuss customized MICE travel solutions designed to meet your corporate objectives.",
+    reverse: false,
+  },
 ];
 
 const ServiceCard = ({
@@ -123,7 +129,7 @@ const ServiceCard = ({
           {description}
         </p> */}
 
-        <div
+        {/* <div
           className="text-[14px] font-light font-dmSans text-[#000000E5] text-justify leading-[20px] whitespace-pre-line"
           style={{
             fontFamily: "DM Sans, sans-serif",
@@ -137,11 +143,27 @@ const ServiceCard = ({
               </p>
             ) : null
           )}
+        </div> */}
+        <div
+          className="text-[14px] font-light font-dmSans text-[#000000E5] text-left md:text-justify leading-[20px] whitespace-pre-line"
+          style={{
+            fontFamily: "DM Sans, sans-serif",
+          }}
+        >
+          {description.split("•").map((line, index) =>
+            line.trim() ? (
+              <p key={index} className="mb-1">
+                {index > 0 ? "• " : ""}
+                {line.trim()}
+              </p>
+            ) : null
+          )}
         </div>
+
         <button
           className="w-full md:w-[211px] h-[50px] md:h-[65px] bg-[#3D3E98] text-white text-[18px] md:text-[24px] font-bold font-['DM Sans']"
           style={{
-             fontFamily: "DM Sans, sans-serif",
+            fontFamily: "DM Sans, sans-serif",
           }}
           onClick={onEnquireClick}
         >
@@ -177,9 +199,7 @@ const Services = () => {
         {/* Our Services Heading */}
         <h1
           className="font-['DM Sans'] font-bold text-[36px] md:text-[60px] leading-[110%] tracking-[1%] text-[#3D3E98] text-center"
-          style={{ height: 42,
-             fontFamily: "DM Sans, sans-serif",
-           }}
+          style={{ height: 42, fontFamily: "DM Sans, sans-serif" }}
         >
           Our Services
         </h1>
@@ -187,16 +207,16 @@ const Services = () => {
         {/* Intro Paragraph */}
         <p
           className="font-['DM Sans'] font-normal text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] tracking-[2%] text-[#000000] text-center max-w-[95vw] md:max-w-[1272px]"
-          style={{ 
+          style={{
             height: "auto",
             fontFamily: "DM Sans, sans-serif",
-           }}
+          }}
         >
-          At Vivek Travels, we take pride in offering premium transportaton
-          solutons tailored to your every need. With one of the largest and most
-          diverse fleets in the region, we cater to individuals, corporates,
-          insttutons, travel agencies, and event organizers with complete
-          flexibility and professionalism
+          At Vivek Travels, we take pride in offering premium transportation
+          solutions tailored to your every need. With one of the largest and
+          most diverse fleets in the region, we cater to individuals,
+          corporates, institutions, travel agencies, and event organizers with
+          complete flexibility and professionalism.
         </p>
 
         {/* Service Cards */}
