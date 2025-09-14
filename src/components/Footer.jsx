@@ -156,59 +156,82 @@ const Footer = () => {
       </div>
 
       {/* Mobile Footer */}
-  
-      <div className="block md:hidden w-full">
-        {/* Logo Section */}
-        <div className="bg-white px-4 py-6 flex justify-center items-center  ">
-          <Link to="/">
-            <img
-              src="/footlogo.png"
-              alt="Vivek Travels Logo"
-              className="w-[267px] h-[109px] object-contain"
-            />
-          </Link>
-        </div>
 
-        {/* Mobile Menu Bar */}
-        <div className="bg-[#3D3E98] border-b-2 border-[#EB1C25] px-3 py-2">
-          <ul className="flex flex-wrap justify-between items-center gap-x-[10px]">
-            {[
-              { to: "/about", label: "About" },
-              { to: "/gallery", label: "Gallery" },
-              { to: "/our-fleet", label: "Our Fleet" },
-              { to: "/our-services", label: "Services" },
-              { to: "/clients", label: "Clients" },
-              { to: "/blogs", label: "Blogs" },
-              { to: "/contact-us", label: "Contact Us" },
-            ].map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className="text-[10px] font-bold text-white text-center block"
-                  style={{
-                    fontFamily: "dm Sans",
-                    lineHeight: "20px",
-                    textTransform: "capitalize",
-                    // minWidth: "60px",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
-        {/* Copyright Section */}
-        <div className="bg-white flex justify-end items-center px-8 py-2">
-          <p
-            className="text-[6px] text-black text-center font-medium opacity-50 leading-[21.6px]"
-            style={{ fontFamily: "Montserrat" }}
+      {/* Mobile Footer */}
+<div className="block md:hidden w-full">
+  {/* Logo Section */}
+  <div className="bg-white px-4 py-6 flex justify-center items-center">
+    <Link to="/">
+      <img
+        src="/footlogo.png"
+        alt="Vivek Travels Logo"
+        className="w-[267px] h-[109px] object-contain"
+      />
+    </Link>
+  </div>
+
+  {/* Mobile Menu Bar */}
+  <div className="bg-[#3D3E98] border-b-2 border-[#EB1C25] px-3 py-2">
+    <ul className="flex flex-wrap justify-between items-center gap-x-[10px]">
+      {[
+        { to: "/about", label: "About" },
+        { to: "/gallery", label: "Gallery" },
+        { to: "/our-fleet", label: "Our Fleet" },
+        { to: "/our-services", label: "Services" },
+        { to: "/clients", label: "Clients" },
+        { to: "/blogs", label: "Blogs" },
+        { to: "/contact-us", label: "Contact Us" },
+      ].map((item) => (
+        <li key={item.to}>
+          <Link
+            to={item.to}
+            className="text-[10px] font-bold text-white text-center block"
+            style={{
+              fontFamily: "dm Sans",
+              lineHeight: "20px",
+              textTransform: "capitalize",
+            }}
           >
-            Design with love © vivektravels 2024. All rights reserved
-          </p>
-        </div>
-      </div>
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Terms & Conditions + Privacy */}
+  <div className="bg-white flex justify-center items-center px-4 py-2">
+    <div className="flex gap-3 text-gray-500">
+      <Link
+        to="/terms-condition"
+        className="text-[8px] font-normal hover:text-[#3D3E98] transition-colors"
+        style={{ fontFamily: "Montserrat" }}
+      >
+        Terms & Conditions
+      </Link>
+      <span className="text-gray-400 text-[8px]">|</span>
+      <Link
+        to="/privacy"
+        className="text-[8px] font-normal hover:text-[#3D3E98] transition-colors"
+        style={{ fontFamily: "Montserrat" }}
+      >
+        Privacy Policy
+      </Link>
+    </div>
+  </div>
+
+  {/* Copyright Section */}
+  <div className="bg-white flex justify-center items-center px-4 py-2">
+    <p
+      className="text-[6px] text-black text-center font-medium opacity-50 leading-[21.6px]"
+      style={{ fontFamily: "Montserrat" }}
+    >
+      Design with love © vivektravels 2024. All rights reserved
+    </p>
+  </div>
+</div>
+
     </footer>
   );
 };
