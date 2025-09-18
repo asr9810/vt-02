@@ -26,7 +26,7 @@ const navigate = useNavigate();
   {
     title: "Wedding Transportation Solutions",
     description: "A range of elegant options for a seamless and memorable day.",
-    image: "/tourister.png",
+    image: "/wedding.png",
   },
   {
     title: "VIP & Delegate Travel Services",

@@ -151,19 +151,19 @@ const mobileSteps = [
   {
     step: "STEP 2",
     title: "Select Your Vehicle",
-    description: "Customize your trip: pick-up, drop-off, and vehicle, your way!",
+    description: "Select the ideal vehicle for your travel needs",
     icon: "/cars.svg",
   },
   {
     step: "STEP 3",
     title: "Get The Best Rates",
-    description: "Customize your trip: pick-up, drop-off, and vehicle, your way!",
+    description: "Choose to pay by card,net banking, or UPI.",
     icon: "/money.svg",
   },
   {
     step: "STEP 4",
     title: "Enjoy Your Trip",
-    description: "Customize your trip: pick-up, drop-off, and vehicle, your way!",
+    description: "Enjoy a smooth and hassle-free journey.",
     icon: "/routes.svg",
   },
 ];

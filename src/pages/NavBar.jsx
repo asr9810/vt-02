@@ -241,7 +241,7 @@ const Navbar = () => {
                 to="/our-services"
                 className="text-[#3D3E98] font-semibold text-[16px] leading-[21.6px] text-center capitalize hover:text-[#2D2E78] transition-colors"
               >
-                Our Services
+                Services
               </Link>
             </li>
             <li>
@@ -412,7 +412,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
               className="block text-[#3D3E98] font-semibold"
             >
-              Our Services
+              Services
             </Link>
           </li>
           <li>

@@ -116,10 +116,10 @@ export default function VendorApplication() {
             className="flex flex-col gap-6 items-center sm:items-start"
           >
             {[
-              { name: "name", label: "Name" },
+              { name: "name", label: "Name*" },
               { name: "email", label: "Email" },
               { name: "address", label: "Address" },
-              { name: "contactNo", label: "Contact No." },
+              { name: "contactNo", label: "Contact No.*" },
               { name: "vehicle", label: "Name of Vehicle" },
               { name: "location", label: "Location" },
             ].map((field, idx) => (

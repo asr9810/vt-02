@@ -1,6 +1,8 @@
 // import roadImage from "../assets/aboutImg4.png";
 import vivek from "../assets/vivekBhatiaImage.png";
 import vistrit from "../assets/vistritBhatiaImg.png";
+import ceo from "../assets/ceo.png";
+import director from "../assets/director.png";
 import eyesImg from "../assets/eyes.png";
 import visionImg from "../assets/vision.png";
 // import visionImg from "../assets/vision2.svg";
@@ -10,6 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import roadImage from "../assets/roadvert1.png";
 import busImage from "../assets/bus-top-view.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 
 export default function About() {
   // Timeline data for Our Journey section
@@ -284,17 +287,18 @@ export default function About() {
         ></iframe>
         
       </section> */}
-      <section className="relative w-full overflow-hidden h-[200px] sm:h-[300px] md:h-[450px] lg:h-[646px]">
-        <iframe
-          className="w-full h-full"
-          aria-label="About video"
-          src="https://www.youtube-nocookie.com/embed/ad8vIJYF2uc?enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&mute=1&autoplay=0&loop=1&playlist=ad8vIJYF2uc&fs=0"
-          frameBorder="0"
-          allow="autoplay; encrypted-media; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </section>
+   <section className="relative w-full overflow-hidden">
+  <video
+    className="w-full h-[80%] object-cover"
+    src="/video.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+</section>
+
+
 
       {/* Content Section */}
       <section className="py-16 bg-white ">
@@ -303,7 +307,7 @@ export default function About() {
             style={{
               width: "1262px",
               height: "77px",
-              gap: "72px",
+              gap: "0px",
             }}
           >
             <p
@@ -440,84 +444,118 @@ export default function About() {
       </section>
 
       {/* Our Leadership Section */}
-      <section className="py-16 bg-white">
-        <div className="flex justify-center px-4 sm:px-6 lg:px-0">
-          <div className="max-w-[1272px] w-full flex flex-col gap-10">
-            {/* Header */}
-            <div className="flex flex-col gap-4 text-center">
-              <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] font-[DM Sans]">
-                Our Leadership
-              </h2>
-              <p className="text-[15px] leading-[22px] text-black font-[Montserrat] max-w-full text-center">
-                At Vivek Travels, our leadership blends decades of experience
-                with forward-thinking vision. Committed to service excellence
-                and innovation, they've transformed a legacy brand into a
-                modern, reliable transport partner. Their dedication to trust,
-                safety, and customer-first values continues to drive every
-                journey we deliver.
-              </p>
-            </div>
+     <section className="py-16 bg-white">
+  <div className="flex justify-center px-4 sm:px-6 lg:px-0">
+    <div className="max-w-[1272px] w-full flex flex-col gap-10">
+      {/* Header */}
+      <div className="flex flex-col gap-4 text-center">
+        <h2 className="text-[32px] sm:text-[36px] md:text-[40px] font-bold text-[#3D3E98] font-[DM Sans]">
+          Our Leadership
+        </h2>
+        <p className="text-[15px] leading-[22px] text-black font-[Montserrat] max-w-full text-center">
+          At Vivek Travels, our leadership blends decades of experience
+          with forward-thinking vision. Committed to service excellence
+          and innovation, they've transformed a legacy brand into a
+          modern, reliable transport partner. Their dedication to trust,
+          safety, and customer-first values continues to drive every
+          journey we deliver.
+        </p>
+      </div>
 
-            {/* Cards */}
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Card 1 */}
-              <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6 w-full lg:w-1/2">
-                <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
-                  <img
-                    src={vivek || "/placeholder.svg"}
-                    alt="Mr. Vivek Bhatia"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
-                    Mr. Vivek Bhatia
-                  </h3>
-                  <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
-                    Managing Director At Vivek Travels Pvt. Ltd.
-                  </p>
-                </div>
-                <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
-                  A visionary with decades of experience, Mr. Vivek Bhatia has
-                  been the driving force behind Vivek Travels' strong reputation
-                  for reliability and service excellence. Under his leadership,
-                  the company has grown from a humble beginning into a trusted
-                  name in the transport industry. His values of integrity,
-                  punctuality, and customer-first service continue to guide the
-                  brand's foundation.
-                </p>
-              </div>
-
-              {/* Card 2 */}
-              <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6 w-full lg:w-1/2">
-                <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
-                  <img
-                    src={vistrit || "/placeholder.svg"}
-                    alt="Mr. Vistrit Bhatia"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
-                    Mr. Vistrit Bhatia
-                  </h3>
-                  <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
-                    Director At Vivek Travels Pvt. Ltd.
-                  </p>
-                </div>
-                <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
-                  Mr. Vistrit Bhatia represents the next generation of
-                  leadership at Vivek Travels. With a focus on innovation,
-                  operational efficiency, and enhanced customer experience, he
-                  is spearheading the brand's transformation in a changing
-                  travel landscape. His dynamic approach ensures Vivek Travels
-                  remains relevant, future-ready, and firmly rooted in trust.
-                </p>
-              </div>
-            </div>
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Card 1 */}
+        <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6">
+          <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
+            <img
+              src={vivek || "/placeholder.svg"}
+              alt="Mr. Vivek Bhatia"
+              className="w-full h-full object-cover"
+            />
           </div>
+          <div className="flex flex-col gap-2">
+            <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
+              Mr. Vivek Bhatia
+            </h3>
+            <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
+              Managing Director At Vivek Travels Pvt. Ltd.
+            </p>
+          </div>
+          <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
+            With over four decades of industry expertise, Mr. Vivek Bhatia has transformed Vivek Travels from a modest operation into a nationwide leader in passenger mobility. His philosophy of integrity, punctuality, and customer-centric service has shaped a company culture that prioritizes trust above all. Today, Vivek Travels stands as a symbol of reliability and excellence, a legacy he continues to strengthen through visionary leadership.
+          </p>
         </div>
-      </section>
+
+        {/* Card 2 */}
+        <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6">
+          <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
+            <img
+              src={vistrit || "/placeholder.svg"}
+              alt="Mr. Vistrit Bhatia"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
+              Mr. Vistrit Bhatia
+            </h3>
+            <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
+              Director At Vivek Travels Pvt. Ltd.
+            </p>
+          </div>
+          <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
+            Carrying forward the ethos established by the company’s founding leadership, Mr. Vistrit Bhatia embodies the bridge between legacy and transformation. His initiatives focus on enhancing customer touchpoints, streamlining operations, and embedding innovation at every level. Under his direction, Vivek Travels is evolving into a mobility brand that is both deeply rooted and future-facing.
+          </p>
+        </div>
+
+        {/* Card 3 - CEO */}
+        <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6">
+          <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
+            <img
+              src={ceo || "/placeholder.svg"}
+              alt="Mr. Kamal Baluja"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
+              Mr. Kamal Baluja
+            </h3>
+            <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
+              Chief Executive Officer
+            </p>
+          </div>
+          <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
+            As Chief Executive Officer, Mr. Kamal Baluja provides strategic leadership and vision to Vivek Travels. With decades of experience in business management and operations, he has been instrumental in driving the company’s sustainable growth, financial strength, and competitive positioning. His stewardship ensures Vivek Travels continues to deliver industry-leading standards of reliability, customer service, and innovation across India’s transport sector.
+          </p>
+        </div>
+
+        {/* Card 4 - Director */}
+        <div className="bg-[#F2F2F2] p-5 flex flex-col gap-6">
+          <div className="w-full h-[240px] sm:h-[300px] md:h-[400px]">
+            <img
+              src={director || "/placeholder.svg"}
+              alt="Mr. Rajesh Malik"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h3 className="text-[24px] sm:text-[28px] md:text-[35px] font-semibold text-black font-[Montserrat]">
+              Mr. Rajesh Malik
+            </h3>
+            <p className="text-[15px] font-semibold text-black font-[Montserrat] capitalize">
+              Director
+            </p>
+          </div>
+          <p className="text-[15px] leading-[22px] text-black font-[Montserrat] text-justify">
+            As Director, Mr. Rajesh Malik plays a key role in strengthening Vivek Travels’ operational excellence and governance. His expertise in aligning processes with customer expectations has enhanced efficiency, accountability, and service delivery across the organization. With a focus on consistency and transparency, he ensures the company maintains its reputation as one of India’s most trusted mobility providers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Mission Vision And Values Section */}
       <section className="py-16 bg-white">
@@ -530,15 +568,15 @@ export default function About() {
             {[
               {
                 title: "MISSION",
-                desc: "To provide safe, reliable, and flexible vehicle rental solutions through exceptional service, high-quality vehicles, and a seamless travel experience. While promoting affordability, innovation, and sustainability, we strive to ensure customer satisfaction and build lasting trust.",
+                desc: "To empower seamless mobility by offering safe, reliable, and personalized transport solutions, setting a benchmark for excellence in every journey undertaken.",
               },
               {
                 title: "VISION",
-                desc: "To revolutionize travel with safe, reliable, and sustainable road transport that enhances accessibility and customer experience. We aim to lead in passenger mobility through innovation, efficiency, environmental responsibility, and service excellence at every step.",
+                desc: "To lead the journey towards smarter, safer, and greener transport, ensuring travel that supports progress, responsibility, and enduring value for generations ahead.",
               },
               {
                 title: "VALUES",
-                desc: "We value safety, reliability, innovation, sustainability, and customer delight-delivering accessible, affordable, and flexible mobility solutions. Through integrity, collaboration, and operational excellence, we remain committed to building a responsible and future-forward transport ecosystem.",
+                desc: "Rooted in trust, guided by transparency, and fuelled by responsibility - our values ensure every customer experiences clarity, consistency, and genuine care on the road.",
               },
             ].map((card, i) => (
               <div

@@ -146,7 +146,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-gray-500 font-jost font-normal text-[12px]">
-              Design with love © vivektravels 2024. All right reserved
+              © Vivek Travels Private Limted 2025. All right reserved
             </div>
           </div>
         </div>
@@ -177,7 +177,6 @@ const Footer = () => {
       {[
         { to: "/about", label: "About" },
         { to: "/gallery", label: "Gallery" },
-        { to: "/our-fleet", label: "Our Fleet" },
         { to: "/our-services", label: "Services" },
         { to: "/clients", label: "Clients" },
         { to: "/blogs", label: "Blogs" },

@@ -50,7 +50,7 @@ const services = [
   },
   {
     title: "Luxury & Corporate Bus Rentals",
-    image: "/bus.png",
+    image: "/bus_2.png",
     description:
       "We own and operate a wide range of buses suited for all group sizes and travel purposes — from family trips, corporate retreats to educational tours. With operational fleet size of over 200 buses, you can choose your ride depending on the number of passengers from:\n• Tempo travellers and Urbania\n• Luxury Bus ranging from 27 to 49 seater\n• Volvo and Scania Buses ranging from 35 to 52 seater.",
     reverse: true,
@@ -64,7 +64,7 @@ const services = [
   // },
   {
     title: "Wedding and Event Transportation Solutions",
-    image: "/tourister.png",
+    image: "/tourister-1.png",
     description:
       "We have expertise in seamless transport coordination for your big days or grand events — handled with elegance and punctuality.\n• Guest Transfers (Cars, Tempo Travellers, Buses)\n• Luxury Vehicles for VIPs\n• Multi-Location Pickups & Coordination\n• On-site Transport Manager (Optional)",
     reverse: false,
