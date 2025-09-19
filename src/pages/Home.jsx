@@ -42,8 +42,6 @@ import StepsSectionDesktop from "../components/StepSectionDesctop";
 // import banner3 from "../assets/hero3.png";
 import emailjs from "@emailjs/browser";
 
-
-
 export default function Home() {
   const [activeTab, setActiveTab] = useState("local");
   const [showOffers, setShowOffers] = useState(false);
@@ -383,7 +381,7 @@ journey every time`,
   //     // }, 100);
   //   }
   // };
-  const handleSearch = async () => {
+    const handleSearch = async () => {
     if (formData.location || formData.destination || formData.from) {
       setShowOffers(true);
       const query = new URLSearchParams(formData).toString();
@@ -504,9 +502,28 @@ journey every time`,
           />
         </div>
 
-
+        {/* Content Container */}
+        {/* desktop view */}
+        {/* <div
+  className="hidden md:block  absolute z-10 rounded-[3px] bg-[#3D3E98] opacity-100 border border-black"
+  style={{
+    width: "1250px",
+    height: "302px",
+    top: "-50px",
+    left: "136px",
+  }}
+> */}
+        {/* <div
+          className="hidden md:flex absolute z-10 bg-[#3D3E98]  rounded-[3px] w-full max-w-[1300px] mx-auto left-1/2 transform -translate-x-1/2"
+          style={{
+            // top: "-50px",
+            height: "302px",
+          }}
+        > */}
         <div className="hidden md:flex absolute z-10 bg-[#3D3E98] rounded-[3px] w-full max-w-[1300px] mx-auto left-1/2 -translate-x-1/2">
           <div className="px-[44px] py-[70px] w-full h-full flex flex-col justify-between">
+            {/* Heading */}
+
             {/* Tabs */}
             <div
               className="flex space-x-4 mt-[12px] justify-center"
@@ -536,17 +553,19 @@ journey every time`,
               </button>
             </div>
 
-            {/* Fields row */}
+            {/* Fields with Labels */}
+            {/* <div className="flex items-start mt-6 gap-4"> */}
+            {/* Fields row — desktop */}
             <div
               className="
-        mt-6 grid gap-4
-        lg:grid-cols-7
-        md:grid-cols-4
-        grid-cols-2
-        items-end
-      "
+                mt-6 grid gap-4
+                lg:grid-cols-7
+                md:grid-cols-4
+                grid-cols-2
+                items-end
+              "
             >
-              {/* Location OR From + Destination */}
+              {/* From / Destination / OR Location (depending on tab) */}
               {activeTab === "local" ? (
                 <div className="col-span-2">
                   <label
@@ -613,38 +632,76 @@ journey every time`,
                 </>
               )}
 
-              {/* Pickup Time */}
- {/* Pickup Time */}
-<div className="col-span-1">
-  <label className="text-white mb-[10px] block">Pick Up Time</label>
-  <select
-    value={formData.time}
-    onChange={(e) => setFormData((p) => ({ ...p, time: e.target.value }))}
-    className="w-full h-[40px] px-[16px] text-white bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
-  >
-    {Array.from({ length: 48 }, (_, i) => {
-      const hour = Math.floor(i / 2);
-      const minute = i % 2 === 0 ? "00" : "30";
-      const time = new Date();
-      time.setHours(hour, minute);
+              {/* Pick Up Date */}
+              <div className="col-span-1">
+                <label
+                  className="text-white mb-[10px] block"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: 20,
+                    fontWeight: 700,
+                  }}
+                >
+                  Pick Up Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  min={todayISO()} // helper below
+                  onChange={(e) => {
+                    const date = e.target.value;
+                    const minT = minTimeForDate(date); // helper below
+                    // if user already picked a time earlier than min, push it up
+                    setFormData((p) => ({
+                      ...p,
+                      date,
+                      time:
+                        p.time && dateIsToday(date) && p.time < minT
+                          ? minT
+                          : p.time,
+                    }));
+                  }}
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div>
 
-      // Format to 12-hour with AM/PM
-      const formatted = time.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      });
-
-      return (
-        <option key={i} value={formatted}>
-          {formatted}
-        </option>
-      );
-    })}
-  </select>
-</div>
-
-
+              {/* Pick Up Time (30-min steps + min=now+30 if today)
+              <div className="col-span-1">
+                <label
+                  className="text-white mb-[10px] block"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: 20,
+                    fontWeight: 700,
+                  }}
+                >
+                  Pick Up Time
+                </label>
+                <input
+                  type="time"
+                  name="time"
+                  step={1800} // 30 minutes
+                  min={minTimeForDate(formData.date)} // helper below
+                  value={formData.time}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    const minT = minTimeForDate(formData.date);
+                    setFormData((p) => ({
+                      ...p,
+                      time: val < minT ? minT : val,
+                    }));
+                  }}
+                  onFocus={() => {
+                    // if no time yet, prefill with min time
+                    if (!formData.time) {
+                      const minT = minTimeForDate(formData.date);
+                      setFormData((p) => ({ ...p, time: minT }));
+                    }
+                  }}
+                  className="w-full h-[40px] px-[16px] text-white placeholder:text-[#FFFFFF4D] bg-transparent rounded-[8px] border border-[#D9D9D9] text-sm"
+                />
+              </div> */}
 
               {/* Return Date */}
               <div className="col-span-1">
@@ -714,7 +771,7 @@ journey every time`,
                 />
               </div>
 
-              {/* Submit */}
+              {/* Search / Submit */}
               <div className="col-span-1 flex">
                 <button
                   onClick={handleSearch}
@@ -724,8 +781,6 @@ journey every time`,
                 </button>
               </div>
             </div>
-
-            
           </div>
         </div>
 
